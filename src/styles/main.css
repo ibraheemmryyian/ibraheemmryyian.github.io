@@ -85,6 +85,30 @@ body::before {
     text-transform: uppercase;
 }
 
+.social-links {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    align-items: center;
+}
+
+.social-icon {
+    color: var(--text-secondary);
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    border-radius: 8px;
+    background: transparent;
+}
+
+.social-icon:hover {
+    color: var(--text-primary);
+    background: #e2e8f0;
+    transform: translateY(-2px);
+}
+
 /* Section Styling */
 .portfolio-section {
     margin-bottom: 8rem;

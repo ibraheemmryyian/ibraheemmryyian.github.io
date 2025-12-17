@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Github, Linkedin, Mail } from 'lucide-react';
 import { projects } from './data/projects';
 import PortalCard from './components/PortalCard';
 import Timeline from './components/Timeline';
@@ -34,7 +35,7 @@ function App() {
         "@type": "Organization",
         "name": "SymbioFlows"
       },
-      "url": "https://ibraheemmryyian.github.io",
+      "url": "https://ibraheemmryyian.com",
       "sameAs": [
         "https://github.com/ibraheemmryyian",
         "https://symbioflows.com"
@@ -85,6 +86,23 @@ function App() {
           className="brand-subtitle"
         >
           High-Performance AI Engineering
+        </motion.div>
+
+        <motion.div
+          className="social-links"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.4, duration: 0.8 }}
+        >
+          <a href="https://github.com/ibraheemmryyian" target="_blank" rel="noopener noreferrer" className="social-icon">
+            <Github size={24} />
+          </a>
+          <a href="https://linkedin.com/in/ibraheem-mryyian" target="_blank" rel="noopener noreferrer" className="social-icon">
+            <Linkedin size={24} />
+          </a>
+          <a href="mailto:contact@ibraheemmryyian.com" className="social-icon">
+            <Mail size={24} />
+          </a>
         </motion.div>
       </header>
 
