@@ -310,12 +310,15 @@ body::before {
     height: 90vh;
     /* Viewport height for timeline */
     overflow-y: auto;
-    scroll-snap-type: y mandatory;
+    scroll-snap-type: y proximity;
+    /* Changed from mandatory to prevent scroll trapping */
     position: relative;
     scrollbar-width: none;
     -ms-overflow-style: none;
+    /* Allow scroll to escape the container */
+    overscroll-behavior: contain;
     /* Extra padding to ensure the last item is easy to snap to and scroll past */
-    padding-bottom: 20vh;
+    padding-bottom: 30vh;
 }
 
 /* Background Curve */
@@ -469,5 +472,158 @@ body::before {
     .visual-content {
         height: 200px;
         min-height: 200px;
+    }
+}
+
+/* ========================================
+   TECHNICAL DEEP DIVES SECTION
+   ======================================== */
+
+.architecture-section {
+    margin-top: 4rem;
+}
+
+.section-intro {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+    max-width: 600px;
+}
+
+.architecture-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.architecture-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.arch-header {
+    padding: 1.5rem 2rem;
+    background: #fafafa;
+    border-bottom: 1px solid var(--card-border);
+}
+
+.arch-header h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.arch-subtitle {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-top: 0.25rem;
+    display: block;
+}
+
+.arch-docs {
+    padding: 0;
+}
+
+.doc-section {
+    border-bottom: 1px solid var(--card-border);
+}
+
+.doc-section:last-child {
+    border-bottom: none;
+}
+
+.doc-section summary {
+    padding: 1rem 2rem;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: background 0.2s;
+    list-style: none;
+}
+
+.doc-section summary::-webkit-details-marker {
+    display: none;
+}
+
+.doc-section summary::after {
+    content: '+';
+    margin-left: auto;
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    transition: transform 0.2s;
+}
+
+.doc-section[open] summary::after {
+    content: '−';
+}
+
+.doc-section summary:hover {
+    background: #f8fafc;
+}
+
+.doc-number {
+    font-family: 'JetBrains Mono', 'SF Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    background: #f1f5f9;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+}
+
+.doc-content {
+    margin: 0;
+    padding: 1.5rem 2rem 2rem;
+    background: #f8fafc;
+    font-family: 'JetBrains Mono', 'SF Mono', 'Consolas', monospace;
+    font-size: 0.85rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-x: auto;
+}
+
+.arch-tech {
+    padding: 1rem 2rem;
+    background: #fafafa;
+    border-top: 1px solid var(--card-border);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.arch-tag {
+    font-size: 0.75rem;
+    font-weight: 600;
+    background: var(--text-primary);
+    color: #fff;
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+    .arch-header {
+        padding: 1rem 1.25rem;
+    }
+
+    .doc-section summary {
+        padding: 0.75rem 1.25rem;
+    }
+
+    .doc-content {
+        padding: 1rem 1.25rem;
+        font-size: 0.75rem;
+    }
+
+    .arch-tech {
+        padding: 0.75rem 1.25rem;
     }
 }

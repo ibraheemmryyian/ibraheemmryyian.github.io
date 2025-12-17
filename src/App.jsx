@@ -126,6 +126,45 @@ function App() {
         </div>
       </section>
 
+      {/* Section 3: Technical Deep Dives */}
+      <section className="portfolio-section architecture-section">
+        <h2 className="section-title">Technical Deep Dives</h2>
+        <p className="section-intro">Explore the architecture and engineering decisions behind each flagship project.</p>
+        <div className="architecture-grid">
+          {aiProjects.filter(p => p.documentation).map((project) => (
+            <motion.div
+              key={project.id}
+              className="architecture-card"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              <div className="arch-header" style={{ borderLeft: `4px solid ${project.color}` }}>
+                <h3>{project.title}</h3>
+                <span className="arch-subtitle">{project.subtitle}</span>
+              </div>
+              <div className="arch-docs">
+                {project.documentation.map((doc, idx) => (
+                  <details key={idx} className="doc-section">
+                    <summary>
+                      <span className="doc-number">0{idx + 1}</span>
+                      {doc.title}
+                    </summary>
+                    <pre className="doc-content">{doc.content}</pre>
+                  </details>
+                ))}
+              </div>
+              {project.tech && (
+                <div className="arch-tech">
+                  {project.tech.map(t => <span key={t} className="arch-tag">{t}</span>)}
+                </div>
+              )}
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
       <footer className="footer">
         <p>© 2025 Ibraheem Mryyian. Advanced Engineering Portfolio.</p>
       </footer>
