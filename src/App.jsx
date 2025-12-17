@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Github, Linkedin, Mail } from 'lucide-react';
+import { Github, Mail } from 'lucide-react';
 import { projects } from './data/projects';
 import PortalCard from './components/PortalCard';
 import Timeline from './components/Timeline';
@@ -97,10 +97,7 @@ function App() {
           <a href="https://github.com/ibraheemmryyian" target="_blank" rel="noopener noreferrer" className="social-icon">
             <Github size={24} />
           </a>
-          <a href="https://linkedin.com/in/ibraheem-mryyian" target="_blank" rel="noopener noreferrer" className="social-icon">
-            <Linkedin size={24} />
-          </a>
-          <a href="mailto:contact@ibraheemmryyian.com" className="social-icon">
+          <a href="mailto:imrryyian@gmail.com" className="social-icon">
             <Mail size={24} />
           </a>
         </motion.div>
