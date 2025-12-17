@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Sitemap: https://ibraheemmryyian.github.io/sitemap.xml
+
+# Block development/build artifacts
+Disallow: /node_modules/
+Disallow: /.git/
