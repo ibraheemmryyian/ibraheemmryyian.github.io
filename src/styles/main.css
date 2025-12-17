@@ -306,19 +306,10 @@ body::before {
 }
 
 /* ZIG ZAG TIMELINE STYLES */
+/* Timeline is now part of normal page flow - no separate scroll container */
 .timeline-container.snap-scroll {
-    height: 90vh;
-    /* Viewport height for timeline */
-    overflow-y: auto;
-    scroll-snap-type: y proximity;
-    /* Changed from mandatory to prevent scroll trapping */
     position: relative;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    /* Allow scroll to escape the container */
-    overscroll-behavior: contain;
-    /* Extra padding to ensure the last item is easy to snap to and scroll past */
-    padding-bottom: 30vh;
+    /* No height restriction, no overflow - part of main page scroll */
 }
 
 /* Background Curve */
@@ -339,13 +330,12 @@ body::before {
 }
 
 .timeline-section {
-    height: 90vh;
+    min-height: 80vh;
     width: 100%;
-    scroll-snap-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0 1rem;
+    padding: 2rem 1rem;
     position: relative;
     z-index: 1;
 }
