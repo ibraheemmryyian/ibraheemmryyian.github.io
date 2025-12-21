@@ -56,50 +56,50 @@ export const projects = [
   },
   {
     id: 'jarvis',
-    title: 'J.A.R.V.I.S v2',
-    subtitle: 'Local AI Assistant',
-    url: '',
+    title: 'J.A.R.V.I.S',
+    subtitle: 'Autonomous AI Workforce Platform',
+    url: 'https://github.com/ibraheemmryyian/jarvis',
     component: 'JarvisSimulator',
-    description: 'A multi-agent AI system for autonomous task execution, code generation, and project scaffolding—all running locally.',
+    description: 'A locally-running autonomous AI platform with 57 specialized agents. $0 API costs, complete data privacy, self-healing execution.',
     color: '#3b82f6',
-    tech: ['Python', 'Tkinter', 'LM Studio', 'Multi-Agent'],
+    tech: ['Python', 'FastAPI', 'LM Studio', 'PyQt6', 'SQLite'],
     isFlagship: true,
     details: {
-      problem: "Cloud AI assistants lack deep system integration and can't execute complex multi-step tasks autonomously.",
-      solution: "A modular agent architecture with task planning, sandboxed execution, and context management.",
+      problem: "Cloud AI assistants cost money per API call, expose sensitive data to third parties, and can't execute complex multi-step tasks autonomously.",
+      solution: "A 57-agent local AI workforce with self-healing execution, 4-layer terminal security, and adaptive token management—all running on your hardware.",
       features: [
-        { title: 'Task Executor', desc: 'Plans multi-step tasks via LLM, detects task type (coding/research/writing), runs QA feedback loops.' },
-        { title: 'Context Manager', desc: 'Monitors token usage, archives completed tasks, summarizes context to prevent overflow.' },
-        { title: 'Terminal Sandbox', desc: 'Whitelisted commands only. Blocks dangerous operations and command chaining.' },
-        { title: 'Design Engine', desc: 'Injects layout patterns, color palettes, and typography to avoid generic outputs.' },
-        { title: 'Code Indexer', desc: 'Retrieves relevant project context for accurate code generation.' },
-        { title: 'Git Agent', desc: 'Handles version control: init, commit, push, and GitHub repo creation.' }
+        { title: '57 Specialized Agents', desc: 'Coding, research, business analysis, content writing—each domain has dedicated agents.' },
+        { title: 'Self-Healing Execution', desc: 'Detects errors during multi-step tasks and automatically fixes them without manual intervention.' },
+        { title: '4-Layer Terminal Security', desc: 'Blocked commands, blocked patterns, blocked keywords, and whitelist-only execution in sandboxed workspace.' },
+        { title: 'Context Recycling', desc: 'Prevents token overflow by summarizing and compressing context when approaching limits.' },
+        { title: 'Adaptive Token Limits', desc: 'Adjusts token allocation (4K-16K) based on task complexity: planning, standard, component, or max.' },
+        { title: 'Cross-Platform', desc: 'Automatic Linux→Windows command translation. Works on any OS with Python.' }
       ]
     },
     documentation: [
       {
-        title: "Project Structure",
-        content: "jarvis/\n├── agents/                     # Agent modules\n│   ├── autonomous.py           # Task executor\n│   ├── recycler.py             # Context management\n│   ├── router.py               # Intent classification\n│   ├── orchestrator.py         # Task routing\n│   ├── project_manager.py      # File indexing\n│   ├── qa.py                   # Syntax validation\n│   ├── terminal.py             # Command execution\n│   ├── code_indexer.py         # Context retrieval\n│   ├── design_creativity.py    # Layout generation\n│   ├── git_agent.py            # Version control\n│   └── ...\n│\n├── jarvis_ui.py                # Main UI\n└── jarvis_workspace/\n    ├── .context/               # Task state\n    └── projects/               # Generated projects"
+        title: "Architecture Overview",
+        content: "┌─────────────────────────────────────────────────────────────┐\n│                      JARVIS CORE                             │\n├─────────────────────────────────────────────────────────────┤\n│  ┌─────────────┐    ┌─────────────┐    ┌─────────────┐     │\n│  │   Router    │───▶│ Orchestrator│───▶│  Recycler   │     │\n│  │  (Intent)   │    │ (Dispatch)  │    │ (Context)   │     │\n│  └─────────────┘    └─────────────┘    └─────────────┘     │\n│                            │                                 │\n│         ┌──────────────────┼──────────────────┐             │\n│         ▼                  ▼                  ▼             │\n│  ┌────────────┐    ┌────────────┐    ┌────────────┐        │\n│  │  Coding    │    │  Research  │    │  Business  │        │\n│  │  Agents    │    │  Agents    │    │  Agents    │        │\n│  └────────────┘    └────────────┘    └────────────┘        │\n│                                                              │\n├─────────────────────────────────────────────────────────────┤\n│  LM Studio (Local LLM) ◀──────────────────────────────────▶ │\n└─────────────────────────────────────────────────────────────┘"
       },
       {
-        title: "Execution Flow",
-        content: "User Input → UI → Tool Router\n\n• Simple tasks → Direct tool execution\n• Complex tasks → Autonomous flow:\n\n1. Task executor receives objective\n2. Context manager initializes state\n3. LLM generates step plan\n4. For each step:\n   ├── Retrieve relevant context\n   ├── Generate code\n   ├── Add files to project\n   ├── Run QA validation\n   └── Mark step complete\n5. Review completed project"
+        title: "Core Infrastructure",
+        content: "🏗️ Core Agents\n\nautonomous.py (57KB)\n  Self-healing multi-step execution loop\n\norchestrator.py (23KB)\n  Task routing and agent coordination\n\nrecycler.py (20KB)\n  Context window management\n  Prevents token overflow\n\nmemory.py (17KB)\n  Persistent memory with SQLite"
       },
       {
-        title: "Task Executor",
-        content: "Orchestrates multi-step execution.\n\nCore Methods:\n• run(objective) — Entry point\n• _plan_steps() — Generate step plan\n• _execute_step() — Run single step with context\n• _detect_task_type() — Classify: coding/research/writing\n• _run_qa_feedback() — Validation loop with auto-fix"
+        title: "Development Agents",
+        content: "💻 Code Generation & QA\n\ncoder.py\n  Full-stack code generation\n\ncode_indexer.py\n  AST-based code search\n\ncode_reviewer.py\n  Automated code review\n\nqa.py\n  Quality assurance with auto-fix\n\nvisual_qa.py\n  Vision-based UI validation\n\nterminal.py\n  Sandboxed command execution\n  4-layer security model"
       },
       {
-        title: "Context Manager",
-        content: "Prevents token overflow.\n\nCore Methods:\n• set_task() — Initialize, archive old contexts\n• mark_step_complete() — Log completion\n• needs_recycling() — Check capacity threshold\n• recycle() — Summarize and continue"
+        title: "Research & Business Agents",
+        content: "🔬 Research\n\nbrute_research.py\n  Multi-source research (20+ sources)\n\nacademic_research.py\n  arXiv, Semantic Scholar, CrossRef\n\nsynthesis.py\n  Cross-source analysis\n\n💼 Business\n\nbusiness_analyst.py\n  SWOT, BMC, Porter's 5 Forces\n\npitch_deck.py\n  Investor deck generation\n\ncontent_writer.py\n  Blog, email, social content"
       },
       {
-        title: "Terminal Sandbox",
-        content: "Safe command execution.\n\nSecurity Layers:\n1. Blocked Commands: rm, del, sudo, format\n2. Blocked Patterns: ;, &&, ||, | (no chaining)\n3. Blocked Keywords: delete, destroy, remove\n4. Whitelist: npm, pip, python, node, git\n\nAll commands run in isolated workspace."
+        title: "Security Model",
+        content: "4-Layer Terminal Security\n\n┌────────────────────────────────────┐\n│ Layer 1: Blocked Commands          │\n│   rm, del, sudo, format            │\n├────────────────────────────────────┤\n│ Layer 2: Blocked Patterns          │\n│   ; && || | > (no chaining)        │\n├────────────────────────────────────┤\n│ Layer 3: Blocked Keywords          │\n│   delete, destroy, remove          │\n├────────────────────────────────────┤\n│ Layer 4: Whitelist Only            │\n│   npm, pip, python, node, git      │\n└────────────────────────────────────┘\n\nAll commands run in isolated workspace."
       },
       {
-        title: "Available Tools",
-        content: "Tools:\n• autonomous_task(objective) — Multi-step projects\n• cofounder_task(type, objective) — Research/writing\n• git_push(project, message) — Version control\n• write_file(filename, content) — Quick edits\n• deep_research(topic) — Web research"
+        title: "Stats & Tech Stack",
+        content: "Project Stats\n─────────────────────────────\nTotal Agents      57\nLines of Code     20,000+\nAPI Endpoints     25+\nAPI Cost          $0\nLLM               Local (any GGUF model)\n\nTech Stack\n─────────────────────────────\nLanguage          Python 3.11+\nLLM Backend       LM Studio (local)\nAPI               FastAPI\nDatabase          SQLite / Supabase\nTesting           Playwright (headless)\nVoice             Piper TTS, Vosk STT\nUI                PyQt6"
       }
     ]
   },
