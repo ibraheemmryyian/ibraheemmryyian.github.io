@@ -1,16 +1,45 @@
-# React + Vite
+# Ibraheem Mryyian — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio showcasing AI engineering projects and full-stack work.
 
-Currently, two official plugins are available:
+## Live Site
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**[ibraheemmryyian.github.io](https://ibraheemmryyian.github.io)**
 
-## React Compiler
+## Featured Projects
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### SymbioFlows
+AI-powered industrial waste valorization platform. Uses DeepSeek R1 for waste stream prediction, vector matching for cross-industry opportunities, and automated LOI generation.
 
-## Expanding the ESLint configuration
+**Stack:** Node.js, Python, AWS Lambda, DeepSeek R1
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### J.A.R.V.I.S v2
+Local multi-agent AI assistant for autonomous task execution, code generation, and project scaffolding.
+
+**Stack:** Python, Tkinter, LM Studio, Multi-Agent Architecture
+
+## Tech Stack
+
+- **Framework:** React 19 + Vite
+- **Animation:** Framer Motion
+- **Icons:** Lucide React
+- **SEO:** React Helmet Async, JSON-LD structured data
+- **Deployment:** GitHub Pages
+
+## Development
+
+```bash
+# Install dependencies
+npm install
+
+# Start dev server
+npm run dev
+
+# Build for production
+npm run build
+```
+
+## Contact
+
+- GitHub: [@ibraheemmryyian](https://github.com/ibraheemmryyian)
+- Email: imrryyian@gmail.com
