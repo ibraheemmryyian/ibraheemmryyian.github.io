@@ -52,7 +52,7 @@ export const projects = [
       },
       {
         title: "System Architecture",
-        content: "Two separate codebases:\n\n1. /mvp_backend (Production)\nNode.js, Express, PDFKit, AWS Lambda\nHandles API requests, report generation, PDF creation, email delivery.\nIncludes verification suite for logic safety.\n\n2. /backend (AI Layer)\nPython, TensorFlow, Scikit-learn, NetworkX\nRuns computational tasks: Monte Carlo simulations, vector matching.\nIsolated from production for stability."
+        content: "Hybrid Microservices Architecture:\n\n1. Production Core (Node.js/Express/AWS Lambda)\n   Powering the user-facing application. Orchestrates PDF generation, email delivery, and API routing. Implements strict logic gates to ensure report validity.\n\n2. AI Analysis Engine (Python/TensorFlow/NetworkX)\n   Isolated computational layer for heavy lifting. Performs Monte Carlo simulations to model waste volume, runs vector similarity searches for cross-industry matching, and executes graph algorithms for supply chain optimization."
       },
       {
         title: "AI Pipeline",
