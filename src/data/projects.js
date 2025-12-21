@@ -35,6 +35,67 @@ export const projects = [
         }
       ]
     },
+    gitStory: [
+      { date: '2021-08-12', message: 'Initial commit: Express server skeleton & API routes' },
+      { date: '2021-09-15', message: 'feat: Integrate DeepSeek R1 for waste stream classification' },
+      { date: '2021-10-02', message: 'backend: Implement PDFKit logic for automated LOI generation' },
+      { date: '2021-11-20', message: 'infra: Migrate PDF worker to AWS Lambda for scalability' },
+      { date: '2022-01-10', message: 'core: Add vector similarity engine for cross-industry matching' },
+      { date: '2022-03-05', message: 'security: Add heuristic validation layer to prevent hallucinated waste streams' },
+      { date: '2023-06-15', message: 'seo: Implement dynamic JSON-LD schema injection' },
+      { date: '2024-01-20', message: 'refactor: Split monolithic backend into microservices' }
+    ],
+    documentation: [
+      {
+        title: "The Challenge",
+        content: "Industrial waste valorization is complex. Companies often don't know what their waste is worth. I built a system that analyzes company profiles, predicts their waste streams, and automates the deal-making process."
+      },
+      {
+        title: "System Architecture",
+        content: "Two separate codebases:\n\n1. /mvp_backend (Production)\nNode.js, Express, PDFKit, AWS Lambda\nHandles API requests, report generation, PDF creation, email delivery.\nIncludes verification suite for logic safety.\n\n2. /backend (AI Layer)\nPython, TensorFlow, Scikit-learn, NetworkX\nRuns computational tasks: Monte Carlo simulations, vector matching.\nIsolated from production for stability."
+      },
+      {
+        title: "AI Pipeline",
+        content: "1. Generative Layer: DeepSeek R1 infers waste streams from company context. Classifies outputs as assets or liabilities.\n\n2. Validation Layer: Heuristic engine calculates recovery value and CO2 offsets. Runs scenario tests.\n\n3. Outreach Layer: Lambda worker generates LOIs and scores leads (0-100)."
+      },
+      {
+        title: "Key Features",
+        content: "• Vector Matching: Finds non-obvious waste-to-resource pairs across industries.\n• SEO: Dynamic meta injection, JSON-LD Schema, canonical URLs.\n• Safety Compliance: Regex scans AI outputs for required terms in hazardous industries.\n• Async Processing: SQS/Lambda pattern for responsive UI."
+      }
+    ]
+  },
+  {
+    id: 'jarvis',
+    title: 'J.A.R.V.I.S',
+    subtitle: 'Autonomous AI Workforce Platform',
+    url: 'https://github.com/ibraheemmryyian/jarvis',
+    component: 'JarvisSimulator',
+    description: 'A locally-running autonomous AI platform with 57 specialized agents. $0 API costs, complete data privacy, self-healing execution.',
+    color: '#3b82f6',
+    tech: ['Python', 'FastAPI', 'LM Studio', 'PyQt6', 'SQLite'],
+    isFlagship: true,
+    details: {
+      problem: "Cloud AI assistants cost money per API call, expose sensitive data to third parties, and can't execute complex multi-step tasks autonomously.",
+      solution: "A 57-agent local AI workforce with self-healing execution, 4-layer terminal security, and adaptive token management—all running on your hardware.",
+      features: [
+        { title: '57 Specialized Agents', desc: 'Coding, research, business analysis, content writing—each domain has dedicated agents.' },
+        { title: 'Self-Healing Execution', desc: 'Detects errors during multi-step tasks and automatically fixes them without manual intervention.' },
+        { title: '4-Layer Terminal Security', desc: 'Blocked commands, blocked patterns, blocked keywords, and whitelist-only execution in sandboxed workspace.' },
+        { title: 'Context Recycling', desc: 'Prevents token overflow by summarizing and compressing context when approaching limits.' },
+        { title: 'Adaptive Token Limits', desc: 'Adjusts token allocation (4K-16K) based on task complexity: planning, standard, component, or max.' },
+        { title: 'Cross-Platform', desc: 'Automatic Linux→Windows command translation. Works on any OS with Python.' }
+      ]
+    },
+    gitStory: [
+      { date: '2024-02-10', message: 'init: Core agent loop and intention router scaffold' },
+      { date: '2024-02-25', message: 'feat: Integrate local LLM bindings via LM Studio server' },
+      { date: '2024-03-12', message: 'security: Implement 4-layer command sandbox (rm/sudo blocks)' },
+      { date: '2024-04-05', message: 'core: Add "Recycler" agent for context window management' },
+      { date: '2024-05-20', message: 'agents: Scale to 20 specialized agents (Coder, Research, QA)' },
+      { date: '2024-07-15', message: 'feat: Self-healing execution loop with error recovery' },
+      { date: '2024-09-01', message: 'ui: Refactor to PyQt6 for desktop-native performance' },
+      { date: '2024-11-10', message: 'v2.0: Multi-agent orchestration layer (57 active agents)' }
+    ],
     documentation: [
       {
         title: "The Challenge",

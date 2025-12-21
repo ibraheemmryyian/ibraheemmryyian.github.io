@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink, Maximize2 } from 'lucide-react';
-import JarvisSimulator from './JarvisSimulator';
+import JarvisArchitecture from './JarvisArchitecture';
 import TechnicalDocs from './TechnicalDocs';
 
 export default function PortalCard({ project, isExpanded, onExpand, onClose }) {
@@ -75,7 +75,7 @@ export default function PortalCard({ project, isExpanded, onExpand, onClose }) {
                 ) : (
                     <>
                         {project.component === 'JarvisSimulator' ? (
-                            <JarvisSimulator isActive={isInteractive} />
+                            <JarvisArchitecture isActive={isInteractive} />
                         ) : (
                             <iframe
                                 src={project.url}
