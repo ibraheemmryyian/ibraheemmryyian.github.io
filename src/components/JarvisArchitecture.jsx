@@ -21,7 +21,7 @@ export default function JarvisArchitecture({ isActive }) {
             </div>
 
             {/* Central Neural Core */}
-            <div className="relative z-10">
+            <div className="relative z-10 scale-75 md:scale-100 transition-transform duration-500">
                 {/* Core Glow */}
                 <motion.div
                     animate={{ scale: [1, 1.1, 1], opacity: [0.5, 0.8, 0.5] }}

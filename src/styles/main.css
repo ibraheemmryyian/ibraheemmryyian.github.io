@@ -193,6 +193,26 @@ body::before {
     /* Force solid */
 }
 
+@media (max-width: 768px) {
+    .portal-card.expanded {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+        border: none;
+    }
+
+    .card-header {
+        padding: 1rem;
+    }
+
+    .portal-card {
+        height: 300px;
+        /* Smaller init height on mobile */
+    }
+}
+
 /* Card Header */
 .card-header {
     padding: 1.5rem;
