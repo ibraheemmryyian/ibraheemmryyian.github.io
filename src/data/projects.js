@@ -111,6 +111,10 @@ export const projects = [
       {
         title: "Stats & Tech Stack",
         content: "Project Stats\n─────────────────────────────\nTotal Agents      57\nLines of Code     20,000+\nAPI Endpoints     25+\nAPI Cost          $0\nLLM               Local (any GGUF model)\n\nTech Stack\n─────────────────────────────\nLanguage          Python 3.11+\nLLM Backend       LM Studio (local)\nAPI               FastAPI\nDatabase          SQLite / Supabase\nTesting           Playwright (headless)\nVoice             Piper TTS, Vosk STT\nUI                PyQt6"
+      },
+      {
+        title: "Case Study: Autonomous Invention",
+        content: "Feature: ATRA-G Algorithm\n\nJarvis autonomously invented \"Adaptive Topology-Aware Resource Allocation\" (ATRA-G), a novel framework for decentralized swarms.\n\nExecution:\n• Prompt: \"Develop a novel algorithmic concept for decentralized AI swarms.\"\n• Result: Jarvis performed literature review, formulated the math, wrote the simulation code (Python), and generated a Nature-style paper.\n\nOutcomes:\n• 37% Higher Resource Utilization vs Baseline\n• 22% Lower Task Latency\n• 100% Autonomy (Zero user intervention in the loop)"
       }
     ]
   },
