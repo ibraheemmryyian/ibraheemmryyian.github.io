@@ -90,7 +90,7 @@ export const projects = [
     documentation: [
       {
         title: "Architecture Overview",
-        content: "┌─────────────────────────────────────────────────────────────┐\n│                      JARVIS CORE                             │\n├─────────────────────────────────────────────────────────────┤\n│  ┌─────────────┐    ┌─────────────┐    ┌─────────────┐     │\n│  │   Router    │───▶│ Orchestrator│───▶│  Recycler   │     │\n│  │  (Intent)   │    │ (Dispatch)  │    │ (Context)   │     │\n│  └─────────────┘    └─────────────┘    └─────────────┘     │\n│                            │                                 │\n│         ┌──────────────────┼──────────────────┐             │\n│         ▼                  ▼                  ▼             │\n│  ┌────────────┐    ┌────────────┐    ┌────────────┐        │\n│  │  Coding    │    │  Research  │    │  Business  │        │\n│  │  Agents    │    │  Agents    │    │  Agents    │        │\n│  └────────────┘    └────────────┘    └────────────┘        │\n│                                                              │\n├─────────────────────────────────────────────────────────────┤\n│  LM Studio (Local LLM) ◀──────────────────────────────────▶ │\n└─────────────────────────────────────────────────────────────┘"
+        component: 'JarvisFlowDiagram'
       },
       {
         title: "Core Infrastructure",
@@ -114,6 +114,7 @@ export const projects = [
       }
     ]
   },
+
   {
     id: 'gnn',
     title: 'GNN Visualizer',
@@ -147,7 +148,7 @@ export const projects = [
       },
       {
         title: "Rendering Engine Architecture",
-        content: "The rendering loop uses a hybrid approach:\n\n1. Physics Layer (D3-Force)\n   Calculates x,y coordinates using charge (repulsion) and link (attraction) forces.\n   Benchmarks: 60fps stable at < 2000 nodes.\n\n2. Render Layer (React vs Canvas)\n   Adaptive switching. Small graphs use SVG (better styling/interaction). Large graphs (>1000 nodes) switch to Canvas API for raw performance."
+        content: "The rendering loop uses a hybrid approach:\n\n1. Physics Layer (D3-Force)\n   Calculates x,y coordinates using charge (repulsion) and link (attraction) forces.\n   Benchmarks: 120fps stable at < 2000 nodes.\n   Optimization: Uses Barnes-Hut approximation via d3-quadtree to reduce efficient force calculation from O(n²) to O(n log n).\n\n2. Render Layer (React vs Canvas)\n   Adaptive switching. Small graphs (<1000 nodes) use SVG for better styling/interaction events.\n   Large graphs (>1000 nodes) automatically switch to Canvas API, using an offscreen buffer for raw pixel manipulation."
       },
       {
         title: "Algorithmic Implementation",

@@ -1,5 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import JarvisFlowDiagram from './JarvisFlowDiagram';
+
+const COMPONENT_MAP = {
+    'JarvisFlowDiagram': <JarvisFlowDiagram />
+};
 
 export default function TechnicalDocs({ project }) {
     if (!project.documentation) {
@@ -65,8 +70,12 @@ export default function TechnicalDocs({ project }) {
                             {section.title}
                         </h2>
                         <div className="prose prose-invert max-w-none prose-p:text-gray-300 prose-headings:text-white prose-strong:text-[#10b981]">
-                            {/* Render content - accepting basic HTML/JSX or just text with simple newline handling */}
-                            {typeof section.content === 'string' ? (
+                            {/* Render content - checks for custom component or string/JSX */}
+                            {section.component && COMPONENT_MAP[section.component] ? (
+                                <div className="my-8">
+                                    {COMPONENT_MAP[section.component]}
+                                </div>
+                            ) : typeof section.content === 'string' ? (
                                 <p className="whitespace-pre-line leading-relaxed">{section.content}</p>
                             ) : (
                                 section.content
