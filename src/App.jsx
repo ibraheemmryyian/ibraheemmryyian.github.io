@@ -141,27 +141,28 @@ function App() {
         </div>
       </section>
 
-      {/* Section 3: Technical Deep Dives */}
-      <section className="portfolio-section architecture-section">
-        <h2 className="section-title">Technical Deep Dives</h2>
-        <p className="section-intro">Explore the architecture and engineering decisions behind each flagship project.</p>
-        <div className="architecture-grid">
-          {aiProjects.filter(p => p.documentation).map((project) => (
+      {/* Section 3: Case Study - Jarvis */}
+      {(() => {
+        const jarvis = projects.find(p => p.id === 'jarvis');
+        if (!jarvis || !jarvis.documentation) return null;
+        return (
+          <section className="portfolio-section architecture-section">
+            <h2 className="section-title">Case Study: Autonomous AI</h2>
+            <p className="section-intro">A deep dive into the architecture of J.A.R.V.I.S—a 57-agent autonomous workflow platform.</p>
             <motion.div
-              key={project.id}
-              className="architecture-card"
+              className="architecture-card featured-case-study"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <div className="arch-header" style={{ borderLeft: `4px solid ${project.color}` }}>
-                <h3>{project.title}</h3>
-                <span className="arch-subtitle">{project.subtitle}</span>
+              <div className="arch-header" style={{ borderLeft: `4px solid ${jarvis.color}` }}>
+                <h3>{jarvis.title}</h3>
+                <span className="arch-subtitle">{jarvis.subtitle}</span>
               </div>
               <div className="arch-docs">
-                {project.documentation.map((doc, idx) => (
-                  <details key={idx} className="doc-section">
+                {jarvis.documentation.map((doc, idx) => (
+                  <details key={idx} className="doc-section" open={idx === 0}>
                     <summary>
                       <span className="doc-number">0{idx + 1}</span>
                       {doc.title}
@@ -170,20 +171,20 @@ function App() {
                   </details>
                 ))}
               </div>
-              {project.tech && (
+              {jarvis.tech && (
                 <div className="arch-tech">
-                  {project.tech.map(t => <span key={t} className="arch-tag">{t}</span>)}
+                  {jarvis.tech.map(t => <span key={t} className="arch-tag">{t}</span>)}
                 </div>
               )}
             </motion.div>
-          ))}
-        </div>
-      </section>
+          </section>
+        );
+      })()}
 
       <footer className="footer">
         <p>© 2025 Ibraheem Mryyian. Advanced Engineering Portfolio.</p>
       </footer>
-    </div>
+    </div >
   );
 }
 
