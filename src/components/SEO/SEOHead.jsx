@@ -1,5 +1,4 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
 
 export default function SEOHead({ title, description, image, url, script }) {
     const siteTitle = "Ibraheem Mryyian | AI Engineer";
@@ -9,7 +8,7 @@ export default function SEOHead({ title, description, image, url, script }) {
     const metaUrl = url || "https://ibraheemmryyian.github.io/";
 
     return (
-        <Helmet>
+        <>
             {/* Primary Meta Tags */}
             <title>{fullTitle}</title>
             <meta name="title" content={fullTitle} />
@@ -36,6 +35,7 @@ export default function SEOHead({ title, description, image, url, script }) {
                     {JSON.stringify(script)}
                 </script>
             )}
-        </Helmet>
+        </>
     );
+
 }
