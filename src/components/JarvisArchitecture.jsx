@@ -1,170 +1,139 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Terminal, Cpu, Share2, Shield, Activity, GitBranch, MessageSquare } from 'lucide-react';
 
 export default function JarvisArchitecture({ isActive }) {
-    // Orbits for the satellite nodes
-    const orbit1 = { duration: 20, repeat: Infinity, ease: "linear" };
-    const orbit2 = { duration: 15, repeat: Infinity, ease: "linear", reverse: true };
-    const orbit3 = { duration: 25, repeat: Infinity, ease: "linear" };
+    const [activeTab, setActiveTab] = useState('TERMINAL');
+    const [logs, setLogs] = useState([]);
+
+    // Simulation Data
+    const features = {
+        'CNS': { color: '#8b5cf6', icon: <GitBranch size={14} />, label: 'Neural Graph' },
+        'TELEGRAM': { color: '#0ea5e9', icon: <MessageSquare size={14} />, label: 'Comms Uplink' },
+        'SECURITY': { color: '#ef4444', icon: <Shield size={14} />, label: 'Sandbox L4' },
+    };
+
+    const bootSequence = [
+        { type: 'sys', msg: 'J.A.R.V.I.S kernel_v2.4.0 active' },
+        { type: 'sys', msg: 'Loading neural interface...' },
+        { type: 'info', msg: 'Connecting to local LLM (DeepSeek-R1-Distill)... OK' },
+        { type: 'cns', msg: 'CNS: Indexing repository... 1,024 nodes found.' },
+        { type: 'cns', msg: 'CNS: Dependency graph built (0.4s).' },
+        { type: 'tel', msg: 'TELEGRAM: User authorized (ID: 99281).' },
+        { type: 'tel', msg: 'TELEGRAM: Incoming command: "/deploy --prod"' },
+        { type: 'agent', msg: 'AGENT[Dev_01]: Analyzing deployment constraints...' },
+        { type: 'sec', msg: 'SANDBOX: Blocked unauthorized network call (port 8080).' },
+        { type: 'agent', msg: 'AGENT[Dev_01]: Patching configuration...' },
+        { type: 'success', msg: 'Deployment sequence initiated.' },
+    ];
+
+    // Log rotation effect
+    useEffect(() => {
+        if (!isActive) return;
+        let index = 0;
+        const interval = setInterval(() => {
+            setLogs(prev => {
+                const newLogs = [...prev, bootSequence[index % bootSequence.length]];
+                if (newLogs.length > 8) newLogs.shift();
+                return newLogs;
+            });
+            index++;
+        }, 1500);
+        return () => clearInterval(interval);
+    }, [isActive]);
 
     return (
-        <div className="w-full h-full bg-[#0a0a0a] relative overflow-hidden flex items-center justify-center font-mono">
-
-            {/* Background Grid & Particles */}
-            <div className="absolute inset-0 opacity-20">
-                <svg width="100%" height="100%">
-                    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#3b82f6" strokeWidth="0.5" />
-                    </pattern>
-                    <rect width="100%" height="100%" fill="url(#grid)" />
-                </svg>
-            </div>
-
-            {/* Central Neural Core */}
-            <div className="relative z-10 scale-75 md:scale-100 transition-transform duration-500">
-                {/* Core Glow */}
-                <motion.div
-                    animate={{ scale: [1, 1.1, 1], opacity: [0.5, 0.8, 0.5] }}
-                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                    className="absolute inset-0 bg-blue-500 blur-3xl rounded-full opacity-30"
-                />
-
-                {/* Core Structure */}
-                <div className="w-32 h-32 rounded-full border-2 border-blue-500/50 flex items-center justify-center bg-black/60 relative backdrop-blur-sm">
-                    <motion.div
-                        animate={{ rotate: 360 }}
-                        transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-                        className="absolute inset-0 border-t-2 border-blue-400 rounded-full"
-                    />
-                    <motion.div
-                        animate={{ rotate: -360 }}
-                        transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-                        className="absolute inset-2 border-b-2 border-cyan-400 rounded-full"
-                    />
-                    <div className="text-blue-100 font-bold text-center">
-                        <div className="text-xs text-blue-400">CORE</div>
-                        <div>ORCHESTRATOR</div>
-                    </div>
+        <div className="w-full h-full bg-[#0a0a0a] font-mono text-xs overflow-hidden flex flex-col border-t border-white/5">
+            {/* Top Bar */}
+            <div className="h-8 bg-black/50 border-b border-white/5 flex items-center px-4 justify-between backdrop-blur-sm">
+                <div className="flex gap-4">
+                    {Object.entries(features).map(([key, data]) => (
+                        <div key={key} className="flex items-center gap-2 opacity-70">
+                            <span style={{ color: data.color }}>{data.icon}</span>
+                            <span className="text-[10px] font-bold tracking-wider text-gray-500">{key}</span>
+                        </div>
+                    ))}
                 </div>
-
-                {/* Satellite Nodes */}
-                {/* Research Agent */}
-                <motion.div
-                    className="absolute w-full h-full top-0 left-0"
-                    animate={{ rotate: 360 }}
-                    transition={orbit1}
-                >
-                    <motion.div
-                        className="absolute -top-24 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-                        animate={{ rotate: -360 }} // Counter-rotate to keep text upright
-                        transition={orbit1}
-                    >
-                        <div className="w-12 h-12 rounded-lg border border-purple-500/50 bg-black/80 flex items-center justify-center shadow-[0_0_15px_rgba(168,85,247,0.3)]">
-                            <span className="text-purple-400 text-xs font-bold">RSRCH</span>
-                        </div>
-                        {isActive && <div className="text-[10px] text-purple-300 bg-purple-900/30 px-2 py-0.5 rounded">Context: 12GB</div>}
-                    </motion.div>
-                </motion.div>
-
-                {/* Coding Agent */}
-                <motion.div
-                    className="absolute w-full h-full top-0 left-0"
-                    animate={{ rotate: -360 }}
-                    transition={orbit2}
-                >
-                    <motion.div
-                        className="absolute top-1/2 -right-32 -translate-y-1/2 flex flex-col items-center gap-2"
-                        animate={{ rotate: 360 }}
-                        transition={orbit2}
-                    >
-                        <div className="w-14 h-14 rounded-lg border border-green-500/50 bg-black/80 flex items-center justify-center shadow-[0_0_15px_rgba(34,197,94,0.3)]">
-                            <span className="text-green-400 text-xs font-bold">DEV_01</span>
-                        </div>
-                        {isActive && <div className="text-[10px] text-green-300 bg-green-900/30 px-2 py-0.5 rounded">Active</div>}
-                    </motion.div>
-                </motion.div>
-
-                {/* Business Agent */}
-                <motion.div
-                    className="absolute w-full h-full top-0 left-0"
-                    animate={{ rotate: 360 }}
-                    transition={orbit3}
-                >
-                    <motion.div
-                        className="absolute -bottom-24 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-                        animate={{ rotate: -360 }}
-                        transition={orbit3}
-                    >
-                        <div className="w-12 h-12 rounded-lg border border-amber-500/50 bg-black/80 flex items-center justify-center shadow-[0_0_15px_rgba(245,158,11,0.3)]">
-                            <span className="text-amber-400 text-xs font-bold">BUS</span>
-                        </div>
-                    </motion.div>
-                </motion.div>
-
-                {/* Connecting Lines (SVG Overlay) */}
-                <svg className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] pointer-events-none opacity-40">
-                    <motion.circle
-                        cx="200" cy="200" r="100"
-                        fill="none"
-                        stroke="#3b82f6"
-                        strokeWidth="1"
-                        strokeDasharray="4 4"
-                        animate={{ rotate: 360 }}
-                        transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-                    />
-                    <motion.circle
-                        cx="200" cy="200" r="140"
-                        fill="none"
-                        stroke="#3b82f6"
-                        strokeWidth="0.5"
-                        opacity="0.5"
-                    />
-                </svg>
-
-            </div>
-
-            {/* Terminal Output / System Status */}
-            <div className="absolute bottom-4 left-4 right-4 bg-black/80 border border-white/10 rounded p-2 text-[10px] text-gray-400 font-mono">
-                <div className="flex justify-between border-b border-white/10 pb-1 mb-1">
-                    <span className="text-blue-400">SYSTEM_STATUS</span>
-                    <span className="text-green-400">OPTIMAL</span>
-                </div>
-                <div className="space-y-1">
-                    <div className="flex gap-2">
-                        <span className="text-gray-600">AUTH:</span>
-                        <span>[LOCAL_MACHINE]</span>
-                    </div>
-                    <div className="flex gap-2">
-                        <span className="text-gray-600">AGENTS:</span>
-                        <span>57 ACTIVE_NODES</span>
-                    </div>
-                    <div className="flex gap-2">
-                        <span className="text-gray-600">SEC:</span>
-                        <span className="text-red-400">SANDBOX_L4 [ENFORCED]</span>
-                    </div>
+                <div className="flex items-center gap-2 text-green-500/80">
+                    <Activity size={12} className="animate-pulse" />
+                    <span className="text-[10px] font-bold">ONLINE</span>
                 </div>
             </div>
 
-            {/* Floating Data Particles */}
-            {isActive && [...Array(5)].map((_, i) => (
-                <motion.div
-                    key={i}
-                    className="absolute w-1 h-1 bg-white rounded-full"
-                    initial={{ opacity: 0, x: 0, y: 0 }}
-                    animate={{
-                        opacity: [0, 1, 0],
-                        x: (Math.random() - 0.5) * 300,
-                        y: (Math.random() - 0.5) * 300,
-                    }}
-                    transition={{
-                        duration: 2 + Math.random() * 2,
-                        repeat: Infinity,
-                        delay: Math.random() * 2
-                    }}
-                    style={{ left: '50%', top: '50%' }}
-                />
-            ))}
+            {/* Main Content */}
+            <div className="flex-1 p-4 md:p-6 overflow-hidden relative">
+                <div className="absolute inset-0 bg-[#0a0a0a]" />
 
+                {/* Grid Background */}
+                <div className="absolute inset-0 opacity-10"
+                    style={{ backgroundImage: 'linear-gradient(#333 1px, transparent 1px), linear-gradient(90deg, #333 1px, transparent 1px)', backgroundSize: '20px 20px' }}>
+                </div>
+
+                {/* Content Container */}
+                <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-4 h-full">
+
+                    {/* Left: System Stats */}
+                    <div className="hidden md:flex flex-col gap-4">
+                        <div className="p-3 border border-white/10 rounded-lg bg-white/5">
+                            <div className="text-[10px] text-gray-500 mb-2">CPU LOAD (AGENTS)</div>
+                            <div className="h-16 flex items-end gap-1">
+                                {[40, 65, 30, 80, 50, 90, 45].map((h, i) => (
+                                    <motion.div
+                                        key={i}
+                                        animate={{ height: `${h + Math.random() * 20}%` }}
+                                        transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+                                        className="flex-1 bg-blue-500/50 rounded-sm"
+                                    />
+                                ))}
+                            </div>
+                        </div>
+                        <div className="p-3 border border-white/10 rounded-lg bg-white/5">
+                            <div className="text-[10px] text-gray-500 mb-2">MEMORY (VECTOR DB)</div>
+                            <div className="text-xl font-bold text-purple-400">8.2 GB</div>
+                            <div className="text-[10px] text-gray-600">Context Window: 128k</div>
+                        </div>
+                    </div>
+
+                    {/* Middle: Terminal Logs */}
+                    <div className="col-span-2 md:col-span-2 border border-white/10 rounded-lg bg-black/80 p-3 font-mono text-xs md:text-sm shadow-inner relative overflow-hidden">
+                        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-blue-500/50 to-transparent opacity-50" />
+                        <div className="flex flex-col gap-2 h-full justify-end">
+                            <AnimatePresence>
+                                {logs.map((log, i) => (
+                                    <motion.div
+                                        key={i}
+                                        initial={{ opacity: 0, x: -10 }}
+                                        animate={{ opacity: 1, x: 0 }}
+                                        className="flex gap-3"
+                                    >
+                                        <span className="text-gray-600">[{new Date().toLocaleTimeString().split(' ')[0]}]</span>
+                                        <span className={`
+                                            ${log.type === 'cns' ? 'text-purple-400' : ''}
+                                            ${log.type === 'tel' ? 'text-blue-400' : ''}
+                                            ${log.type === 'sec' ? 'text-red-400' : ''}
+                                            ${log.type === 'info' ? 'text-gray-300' : ''}
+                                            ${log.type === 'agent' ? 'text-green-400' : ''}
+                                        `}>
+                                            {log.type === 'sys' ? <span className="text-yellow-500/80">root@jarvis:~# {log.msg}</span> : log.msg}
+                                        </span>
+                                    </motion.div>
+                                ))}
+                            </AnimatePresence>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            {/* Overlay for non-active state */}
+            {!isActive && (
+                <div className="absolute inset-0 bg-black/40 backdrop-blur-[1px] flex items-center justify-center">
+                    <div className="px-4 py-2 border border-blue-500/30 bg-blue-500/10 rounded-full text-blue-400 text-xs font-bold tracking-widest animate-pulse">
+                        SYSTEM STANDBY
+                    </div>
+                </div>
+            )}
         </div>
     );
 }
