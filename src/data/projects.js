@@ -36,12 +36,12 @@ export const projects = [
       ]
     },
     gitStory: [
-      { date: '2022-01-15', message: 'init: Core microservices architecture setup' },
-      { date: '2023-06-20', message: 'feat: Implement Financial Projection Engine with verified market data' },
-      { date: '2023-08-10', message: 'perf: Optimize heuristic validation layer (latency < 100ms)' },
-      { date: '2024-11-05', message: 'audit: Production Readiness Audit - Passed 100% Stability Checks' },
-      { date: '2024-12-12', message: 'feat: Deploy Universal CNS indexing for autonomous maintenance' },
-      { date: '2025-01-20', message: 'scale: Horizontal scaling of LOI generation service on AWS Lambda' }
+      { date: '2024-08-15', message: 'init: Core microservices architecture setup' },
+      { date: '2024-10-20', message: 'feat: Implement Financial Projection Engine with verified market data' },
+      { date: '2024-11-10', message: 'perf: Optimize heuristic validation layer (latency < 100ms)' },
+      { date: '2024-12-05', message: 'audit: Production Readiness Audit - Passed 100% Stability Checks' },
+      { date: '2025-01-12', message: 'feat: Deploy Universal CNS indexing for autonomous maintenance' },
+      { date: '2025-02-01', message: 'scale: Horizontal scaling of LOI generation service on AWS Lambda' }
     ],
     documentation: [
       {

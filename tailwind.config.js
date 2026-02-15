@@ -1,6 +1,6 @@
 
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
     content: [
         "./index.html",
         "./src/**/*.{js,ts,jsx,tsx}",
@@ -8,14 +8,14 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                background: "#0f172a", // Slate 900
-                "background-alt": "#1e293b", // Slate 800
+                background: "#0f172a",
+                "background-alt": "#1e293b",
                 card: "#1e293b",
-                border: "#334155", // Slate 700
-                "text-primary": "#f8fafc", // Slate 50
-                "text-secondary": "#94a3b8", // Slate 400
-                accent: "#6366f1", // Indigo 500
-                "accent-hover": "#4f46e5", // Indigo 600
+                border: "#334155",
+                "text-primary": "#f8fafc",
+                "text-secondary": "#94a3b8",
+                accent: "#6366f1",
+                "accent-hover": "#4f46e5",
                 "text-disabled": "#475569"
             },
             fontFamily: {
