@@ -21,9 +21,10 @@ export default function Resume({ onBack }) {
                 </button>
                 <button
                     onClick={() => window.print()}
+                    title="Save as PDF using the system print dialog"
                     className="flex items-center gap-2 px-6 py-2 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700 transition-colors font-medium"
                 >
-                    <Printer size={18} /> Print PDF
+                    <Printer size={18} /> Download PDF
                 </button>
             </div>
 
