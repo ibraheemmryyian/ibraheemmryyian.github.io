@@ -57,7 +57,7 @@ function App() {
       <Navbar />
 
       <main>
-        <Hero />
+        <Hero onNavigate={setView} />
 
         <About />
 
