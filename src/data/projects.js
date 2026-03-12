@@ -140,18 +140,18 @@ export const projects = [
   {
     id: 'telegravity',
     title: 'TeleGravity',
-    subtitle: 'Distributed Data Orchestration',
+    subtitle: 'Autonomous Coding Infrastructure',
     url: 'https://github.com/ibraheemmryyian/telegravity',
-    description: 'High-performance distributed system for heavy data orchestration and exfiltration. Engineered for the 3M+ material listings data moat powering SymbioFlows.',
+    description: 'Proprietary 89-agent autonomous coding system engineered for high-velocity software evolution. Capable of driving 1000+ verified commits in 6 months from scratch.',
     color: '#3b82f6',
-    tech: ['Node.js', 'Go', 'Redis', 'PostgreSQL'],
+    tech: ['Node.js', 'Go', 'Local LLMs', 'PostgreSQL'],
     isFlagship: true,
     details: {
-      problem: "Traditional scraping and data ingestion pipelines are too slow and fragile for high-volume, multi-source industrial data collection.",
-      solution: "A distributed relay system using high-concurrency workers to ingest, clean, and pipe 3M+ industrial data points into a centralized data moat.",
+      problem: "Traditional software development cycles are hindered by human bottlenecks and slow iteration loops in complex architectures.",
+      solution: "A massively parallel agentic framework that understands, refactors, and deploys code autonomously within high-integrity sandboxes.",
       features: [
-        { title: 'Concurrency Engine', desc: 'Capable of handling 10k+ concurrent requests with minimal overhead using optimized Node.js clusters.' },
-        { title: 'Data Moat Logistics', desc: 'Managed the ingestion and validation of 3M+ unique material listings for GCC industrial markets.' }
+        { title: '89-Agent Swarm', desc: 'Specialized workforce including researchers, architects, and recursive debuggers operating in concert.' },
+        { title: 'High-Velocity Output', desc: 'Demonstrated capacity of 1000+ production-ready commits over a 6-month period, pre-funding.' }
       ]
     }
   },

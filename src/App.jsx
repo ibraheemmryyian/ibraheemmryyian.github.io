@@ -23,7 +23,7 @@ function App() {
   };
 
   // Group projects
-  const aiProjects = projects.filter(p => ['symbioflows', 'jarvis'].includes(p.id));
+  const aiProjects = projects.filter(p => ['symbioflows', 'jarvis', 'telegravity'].includes(p.id));
   const frontendProjects = projects.filter(p => !['symbioflows', 'jarvis'].includes(p.id));
 
   // JSON-LD Structured Data (Schema.org)
