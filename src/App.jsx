@@ -1,13 +1,16 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Github, Mail } from 'lucide-react';
+import { Github, Mail, FileText } from 'lucide-react';
 import { projects } from './data/projects';
 import PortalCard from './components/PortalCard';
 import Timeline from './components/Timeline';
+import Resume from './components/Resume';
+import Mission from './components/Mission';
 import SEOHead from './components/SEO/SEOHead';
 
 function App() {
   const [activeProject, setActiveProject] = useState(null);
+  const [view, setView] = useState('home'); // 'home' | 'resume'
 
   const handleExpand = (project) => {
     setActiveProject(project);
@@ -46,100 +49,124 @@ function App() {
   return (
     <div className="app-container">
       <SEOHead
-        title={activeProject ? activeProject.title : "Home"}
+        title={view === 'resume' ? "Resume" : (activeProject ? activeProject.title : "Home")}
         script={schema}
       />
 
-      {/* Backdrop for Expanded Portal */}
-      <AnimatePresence>
-        {activeProject && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="portal-backdrop"
-            style={{
-              position: 'fixed',
-              top: 0, left: 0, width: '100%', height: '100%',
-              background: 'rgba(255, 255, 255, 0.8)',
-              backdropFilter: 'blur(5px)',
-              zIndex: 900
-            }}
-            onClick={handleClose}
-          />
-        )}
-      </AnimatePresence>
+      {view === 'resume' && <Resume onBack={() => setView('home')} />}
 
-      <header className="hero">
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="brand-title"
-        >
-          IBRAHEEM MRYYIAN.
-        </motion.h1>
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.2, duration: 0.8 }}
-          className="brand-subtitle"
-        >
-          High-Performance AI Engineering
-        </motion.div>
+      {view === 'resume' ? (
+        <Resume onBack={() => setView('home')} />
+      ) : (
+        <>
+          {/* Backdrop for Expanded Portal */}
+          <AnimatePresence>
+            {activeProject && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="portal-backdrop"
+                style={{
+                  position: 'fixed',
+                  top: 0, left: 0, width: '100%', height: '100%',
+                  background: 'rgba(255, 255, 255, 0.8)',
+                  backdropFilter: 'blur(5px)',
+                  zIndex: 900
+                }}
+                onClick={handleClose}
+              />
+            )}
+          </AnimatePresence>
 
-        <motion.div
-          className="social-links"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.4, duration: 0.8 }}
-        >
-          <a href="https://github.com/ibraheemmryyian" target="_blank" rel="noopener noreferrer" className="social-icon">
-            <Github size={24} />
-          </a>
-          <a href="mailto:imrryyian@gmail.com" className="social-icon">
-            <Mail size={24} />
-          </a>
-        </motion.div>
-      </header>
+          <header className="hero min-h-[60vh] flex flex-col justify-center">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1 }}
+              className="relative"
+            >
+              <motion.h1
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                className="brand-title"
+              >
+                IBRAHEEM <br /> MRYYIAN.
+              </motion.h1>
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.4, duration: 1 }}
+                className="brand-subtitle flex items-center gap-4"
+              >
+                <span className="w-12 h-[1px] bg-accent" />
+                High-Performance AI Engineering
+              </motion.div>
+            </motion.div>
 
-      {/* TIMELINE SECTION */}
-      <section className="portfolio-section">
-        <h2 className="section-title">The Evolution</h2>
-        <Timeline />
-      </section>
+            <motion.div
+              className="social-links"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.6, duration: 0.8 }}
+            >
+              <SocialLink href="https://github.com/ibraheemmryyian" icon={Github} />
+              <SocialLink href="mailto:imrryyian@gmail.com" icon={Mail} />
+              <button
+                onClick={() => setView('resume')}
+                className="social-icon group"
+                title="View Resume"
+                style={{ border: 'none', background: 'none', cursor: 'pointer' }}
+              >
+                <FileText size={20} className="group-hover:text-accent transition-colors" />
+                <span className="text-xs uppercase tracking-widest ml-2 opacity-0 group-hover:opacity-100 transition-opacity font-bold">Generated Resume</span>
+              </button>
+            </motion.div>
+          </header>
 
-      {/* Section 1: AI Infrastructure */}
-      <section className="portfolio-section">
-        <h2 className="section-title">Intelligence Infrastructure</h2>
-        <div className="project-grid featured">
-          {aiProjects.map((project) => (
-            <PortalCard
-              key={project.id}
-              project={project}
-              isExpanded={activeProject?.id === project.id}
-              onExpand={handleExpand}
-              onClose={handleClose}
-            />
-          ))}
-        </div>
-      </section>
+          {/* MISSION SECTION */}
+          <Mission />
 
-      {/* Section 2: Frontend Experiences */}
-      <section className="portfolio-section">
-        <h2 className="section-title">Digital Experiences</h2>
-        <div className="project-grid standard">
-          {frontendProjects.map((project) => (
-            <PortalCard
-              key={project.id}
-              project={project}
-              isExpanded={activeProject?.id === project.id}
-              onExpand={handleExpand}
-              onClose={handleClose}
-            />
-          ))}
-        </div>
-      </section>
+          {/* TIMELINE SECTION */}
+          <section className="portfolio-section">
+            <h2 className="section-title">The Evolution</h2>
+            <Timeline />
+          </section>
+
+          {/* Section 1: AI Infrastructure */}
+          <section className="portfolio-section">
+            <h2 className="section-title">Intelligence Infrastructure</h2>
+            <div className="project-grid featured">
+              {aiProjects.map((project) => (
+                <PortalCard
+                  key={project.id}
+                  project={project}
+                  isExpanded={activeProject?.id === project.id}
+                  onExpand={handleExpand}
+                  onClose={handleClose}
+                />
+              ))}
+            </div>
+          </section>
+
+          {/* Section 2: Frontend Experiences */}
+          <section className="portfolio-section">
+            <h2 className="section-title">Digital Experiences</h2>
+            <div className="project-grid standard">
+              {frontendProjects.map((project) => (
+                <PortalCard
+                  key={project.id}
+                  project={project}
+                  isExpanded={activeProject?.id === project.id}
+                  onExpand={handleExpand}
+                  onClose={handleClose}
+                />
+              ))}
+            </div>
+          </section>
+        </>
+      )}
 
       {/* Section 3: Technical Deep Dives */}
       <section className="portfolio-section architecture-section">
@@ -186,5 +213,11 @@ function App() {
     </div>
   );
 }
+
+const SocialLink = ({ href, icon: Icon, target = "_blank" }) => (
+  <a href={href} target={target} rel="noopener noreferrer" className="social-icon">
+    <Icon size={20} />
+  </a>
+);
 
 export default App;

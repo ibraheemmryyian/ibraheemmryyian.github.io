@@ -1,22 +1,46 @@
 @import "tailwindcss";
 
 :root {
-    /* Professional Light Theme */
-    --bg-color: #f8fafc;
+    /* Premium Executive Theme */
+    --bg-color: #020617;
+    /* Slate 950 - Deep dark */
+    --text-primary: #f8fafc;
     /* Slate 50 */
-    --text-primary: #1e293b;
-    /* Slate 800 */
-    --text-secondary: #64748b;
-    /* Slate 500 */
-    --accent: #0f172a;
-    /* Slate 900 */
+    --text-secondary: #94a3b8;
+    /* Slate 400 */
+    --accent: #38bdf8;
+    /* Sky 400 */
+    --accent-glow: rgba(56, 189, 248, 0.4);
 
-    --card-bg: #ffffff;
-    --card-border: #e2e8f0;
-    /* Slate 200 */
-    --glass-blur: 15px;
+    --card-bg: rgba(15, 23, 42, 0.6);
+    /* Slate 900 with transparency */
+    --card-border: rgba(51, 65, 85, 0.5);
+    /* Slate 700 with transparency */
+    --glass-blur: 20px;
 
-    --timeline-line: #cbd5e1;
+    --timeline-line: #1e293b;
+}
+
+.glass-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid var(--card-border);
+}
+
+.text-reveal {
+    background: linear-gradient(to right, #fff 20%, #475569 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% auto;
+    animation: shine 5s linear infinite;
+}
+
+@keyframes shine {
+    to {
+        background-position: 200% center;
+    }
 }
 
 body {
@@ -38,10 +62,10 @@ body::before {
     width: 100%;
     height: 100%;
     background-image:
-        linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+        linear-gradient(rgba(56, 189, 248, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(56, 189, 248, 0.05) 1px, transparent 1px);
     background-size: 40px 40px;
-    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, transparent 100%);
+    mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 1) 0%, transparent 80%);
     pointer-events: none;
     z-index: -1;
 }
@@ -118,14 +142,14 @@ body::before {
 }
 
 .section-title {
-    font-size: 0.9rem;
-    letter-spacing: 2px;
-    color: var(--text-secondary);
-    margin-bottom: 3rem;
-    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 4px;
+    color: var(--accent);
+    margin-bottom: 4rem;
+    font-weight: 800;
     text-transform: uppercase;
-    border-bottom: 2px solid var(--card-border);
-    padding-bottom: 1rem;
+    border-left: 2px solid var(--accent);
+    padding-left: 1.5rem;
     display: inline-block;
 }
 
@@ -155,44 +179,55 @@ body::before {
     }
 }
 
-/* PORTAL CARD - LIGHT THEME & RESIZED */
+/* PORTAL CARD - PREMIUM DARK THEME */
 .portal-card {
     position: relative;
-    height: 400px;
+    height: 450px;
     background: var(--card-bg);
     border: 1px solid var(--card-border);
-    border-radius: 12px;
+    border-radius: 24px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     cursor: pointer;
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
     z-index: 1;
 }
 
 .portal-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    border-color: #cbd5e1;
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.8), 0 18px 36px -18px rgba(0, 0, 0, 0.5);
+    border-color: var(--accent);
 }
 
-/* Expanded State - 2/3 Scale centered */
+.portal-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(56, 189, 248, 0.15) 0%, transparent 80%);
+    opacity: 0;
+    transition: opacity 0.5s;
+    pointer-events: none;
+}
+
+.portal-card:hover::after {
+    opacity: 1;
+}
+
+/* Expanded State - Premium Centering */
 .portal-card.expanded {
     position: fixed;
-    top: 10%;
-    left: 10%;
-    width: 80%;
-    height: 80%;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
     z-index: 2000;
-    /* High z-index */
     cursor: default;
-    border-radius: 16px;
-    box-shadow: 0 50px 100px -20px rgba(0, 0, 0, 0.3);
-    /* Strong shadow */
-    border: 1px solid var(--card-border);
-    background: #fff !important;
-    /* Force solid */
+    border-radius: 32px;
+    box-shadow: 0 0 0 100vmax rgba(2, 6, 23, 0.9);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    background: #0f172a !important;
 }
 
 @media (max-width: 768px) {
