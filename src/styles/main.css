@@ -91,23 +91,26 @@ body::before {
 }
 
 .brand-title {
-    font-size: 6rem;
+    font-size: clamp(3rem, 10vw, 6rem);
     font-weight: 800;
     letter-spacing: -3px;
     line-height: 0.9;
     margin: 0;
     color: var(--text-primary);
-    background: linear-gradient(to bottom right, #0f172a, #475569);
+    background: linear-gradient(to bottom right, #fff, #64748b);
+    /* Replaced slate-400 with 500 for more depth */
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .brand-subtitle {
-    font-size: 1.1rem;
-    letter-spacing: 3px;
+    font-size: 0.9rem;
+    letter-spacing: 5px;
+    /* Increased tracking for more air */
     color: var(--text-secondary);
     margin-top: 1.5rem;
-    font-weight: 600;
+    font-weight: 500;
     text-transform: uppercase;
 }
 
@@ -196,16 +199,17 @@ body::before {
 }
 
 .portal-card:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.8), 0 18px 36px -18px rgba(0, 0, 0, 0.5);
-    border-color: var(--accent);
+    transform: translateY(-4px);
+    /* Minimal lift */
+    box-shadow: 0 40px 80px -20px rgba(0, 0, 0, 0.9);
+    border-color: rgba(56, 189, 248, 0.4);
 }
 
 .portal-card::after {
     content: '';
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(56, 189, 248, 0.15) 0%, transparent 80%);
+    background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(56, 189, 248, 0.08) 0%, transparent 60%);
     opacity: 0;
     transition: opacity 0.5s;
     pointer-events: none;

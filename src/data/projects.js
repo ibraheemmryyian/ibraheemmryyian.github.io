@@ -5,7 +5,7 @@ export const projects = [
     title: 'SymbioFlows',
     subtitle: 'Founder & Lead Engineer',
     url: 'https://symbioflows.com',
-    description: 'Enterprise-grade AI platform for industrial symbiosis. Orchestrates a microservices architecture to quantify waste-to-revenue potential with 100% financial audit accuracy.',
+    description: 'Enterprise-grade AI platform for industrial symbiosis. Orchestrates a proprietary data moat of 3M+ material listings to quantify waste-to-revenue potential with 100% financial audit accuracy.',
     color: '#10b981',
     tech: ['Node.js', 'AWS Lambda', 'Python', 'DeepSeek R1', 'PostgreSQL'],
     isFlagship: true,
@@ -94,10 +94,10 @@ export const projects = [
 
   {
     id: 'email-telemetry',
-    title: 'Nexus Telemetry',
-    subtitle: 'Stealth Email Tracking System',
+    title: 'Nexus Analytics',
+    subtitle: 'Engagement Intelligence System',
     url: 'https://github.com/ibraheemmryyian/nexus-telemetry',
-    description: 'Advanced email telemetry system capable of fingerprinting clients and tracking engagement behind privacy proxies.',
+    description: 'Advanced engagement intelligence system for fingerprinting client environments and tracking behavioral data behind privacy proxies.',
     color: '#ef4444',
     tech: ['Node.js', 'Canvas API', 'Redis', 'Pixel Tracking'],
     isFlagship: true,
@@ -134,6 +134,24 @@ export const projects = [
         { title: 'Hybrid Rendering', desc: 'Seamlessly switches between SVG (interaction) and Canvas/WebGL (performance) for large graphs.' },
         { title: 'Force-Directed Physics', desc: 'Real-time layout optimization using D3-force with Barnes-Hut approximation.' },
         { title: 'Algorithm Playground', desc: 'Live execution of Dijkstra, BFS, and Louvain Community Detection in the browser.' }
+      ]
+    }
+  },
+  {
+    id: 'telegravity',
+    title: 'TeleGravity',
+    subtitle: 'Distributed Data Orchestration',
+    url: 'https://github.com/ibraheemmryyian/telegravity',
+    description: 'High-performance distributed system for heavy data orchestration and exfiltration. Engineered for the 3M+ material listings data moat powering SymbioFlows.',
+    color: '#3b82f6',
+    tech: ['Node.js', 'Go', 'Redis', 'PostgreSQL'],
+    isFlagship: true,
+    details: {
+      problem: "Traditional scraping and data ingestion pipelines are too slow and fragile for high-volume, multi-source industrial data collection.",
+      solution: "A distributed relay system using high-concurrency workers to ingest, clean, and pipe 3M+ industrial data points into a centralized data moat.",
+      features: [
+        { title: 'Concurrency Engine', desc: 'Capable of handling 10k+ concurrent requests with minimal overhead using optimized Node.js clusters.' },
+        { title: 'Data Moat Logistics', desc: 'Managed the ingestion and validation of 3M+ unique material listings for GCC industrial markets.' }
       ]
     }
   },

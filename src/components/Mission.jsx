@@ -14,42 +14,42 @@ export default function Mission() {
                     className="space-y-12"
                 >
                     <div className="space-y-4">
-                        <h2 className="text-sm font-bold tracking-[0.3em] text-accent uppercase">
-                            The Narrative
+                        <h2 className="text-xs font-bold tracking-[0.5em] text-accent uppercase opacity-50">
+                            Protocol 00
                         </h2>
-                        <h3 className="text-4xl md:text-6xl font-bold leading-tight">
-                            Built Through <span className="text-reveal">Thick and Thin.</span>
+                        <h3 className="text-4xl md:text-5xl font-medium tracking-tight">
+                            The Architecture of <span className="text-reveal">Result.</span>
                         </h3>
                     </div>
 
-                    <div className="text-xl md:text-2xl text-text-secondary leading-relaxed font-light italic border-l-4 border-accent pl-8 py-4 bg-accent/5 rounded-r-xl">
-                        "For over 5 months, we've operated in the trenches of high-stakes engineering. From 9 AM to 5 AM sprints, navigating the pressures of investor scrutiny and the relentless demand for innovation, this journey has been defined by grit, no sleep, and the unwavering pursuit of excellence."
+                    <div className="text-xl md:text-2xl text-text-secondary leading-relaxed font-light border-l border-accent/20 pl-8 py-2">
+                        "Reliability is not an achievement; it is a requirement. I design systems where failure is mathematically improbable and manual intervention is a legacy concept. The goal is silence."
                     </div>
 
-                    <p className="text-lg text-text-secondary leading-relaxed max-w-3xl">
-                        I don't just build software; I architect <strong>resilience</strong>. My experience spans the spectrum of survival—from early-stage conceptualization to the stress-testing of production environments. I specialize in autonomous systems that don't just function, but thrive under pressure.
+                    <p className="text-lg text-text-secondary/80 leading-relaxed max-w-3xl">
+                        I specialize in <strong className="text-white">autonomous drift correction</strong> and high-integrity infrastructure. My focus is on the delta between a functioning system and an optimized one. I don't build to impress; I build to finish.
                     </p>
 
-                    <div className="grid md:grid-cols-2 gap-8 pt-8">
+                    <div className="grid md:grid-cols-2 gap-8 pt-4">
                         <MissionCard
                             icon={Shield}
-                            title="High-Integrity Systems"
-                            desc="Engineering self-healing architectures and secure microservices prepared for enterprise adoption."
+                            title="Zero-Trust Integrity"
+                            desc="Security and stability as foundational constants, not secondary layers."
                         />
                         <MissionCard
                             icon={Zap}
-                            title="Agentic Autonomy"
-                            desc="Developing autonomous agent frameworks that bridge the gap between AI research and real-world utility."
+                            title="Pure Autonomy"
+                            desc="Agentic systems designed for independent problem-solving and self-healing."
                         />
                         <MissionCard
                             icon={Target}
-                            title="Investor-Ready Scale"
-                            desc="Building with the foresight of rapid scaling, technical debt management, and sustainable growth."
+                            title="Surgical Scaling"
+                            desc="Expanding capacity without expanding complexity or overhead."
                         />
                         <MissionCard
                             icon={Coffee}
-                            title="Relentless Execution"
-                            desc="Honed through months of high-intensity delivery where failure was never an option."
+                            title="Cold Execution"
+                            desc="Technical delivery stripped of drama. Results-only orientation."
                         />
                     </div>
                 </motion.div>
