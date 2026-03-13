@@ -44,18 +44,18 @@ export default function JarvisArchitecture({ isActive }) {
     }, [isActive]);
 
     return (
-        <div className="w-full h-full bg-white font-mono text-xs overflow-hidden flex flex-col border-t border-gray-200">
+        <div className="w-full h-full bg-[#0f172a] font-mono text-xs overflow-hidden flex flex-col border-t border-slate-800">
             {/* Top Bar */}
-            <div className="h-8 bg-gray-50 border-b border-gray-200 flex items-center px-4 justify-between backdrop-blur-sm">
+            <div className="h-8 bg-slate-950/50 border-b border-slate-800 flex items-center px-4 justify-between backdrop-blur-sm">
                 <div className="flex gap-4">
                     {Object.entries(features).map(([key, data]) => (
                         <div key={key} className="flex items-center gap-2">
                             <span style={{ color: data.color }}>{data.icon}</span>
-                            <span className="text-[10px] font-bold tracking-wider text-neutral-600">{key}</span>
+                            <span className="text-[10px] font-bold tracking-wider text-slate-400">{key}</span>
                         </div>
                     ))}
                 </div>
-                <div className="flex items-center gap-2 text-green-600">
+                <div className="flex items-center gap-2 text-green-400">
                     <Activity size={12} className="animate-pulse" />
                     <span className="text-[10px] font-bold">ONLINE</span>
                 </div>
@@ -63,11 +63,11 @@ export default function JarvisArchitecture({ isActive }) {
 
             {/* Main Content */}
             <div className="flex-1 p-4 md:p-6 overflow-hidden relative">
-                <div className="absolute inset-0 bg-[#f8fafc]" />
+                <div className="absolute inset-0 bg-[#0f172a]" />
 
                 {/* Grid Background */}
-                <div className="absolute inset-0 opacity-10"
-                    style={{ backgroundImage: 'linear-gradient(#cbd5e1 1px, transparent 1px), linear-gradient(90deg, #cbd5e1 1px, transparent 1px)', backgroundSize: '20px 20px' }}>
+                <div className="absolute inset-0 opacity-20"
+                    style={{ backgroundImage: 'linear-gradient(#1e293b 1px, transparent 1px), linear-gradient(90deg, #1e293b 1px, transparent 1px)', backgroundSize: '20px 20px' }}>
                 </div>
 
                 {/* Content Container */}
@@ -75,8 +75,8 @@ export default function JarvisArchitecture({ isActive }) {
 
                     {/* Left: System Stats */}
                     <div className="hidden md:flex flex-col gap-4">
-                        <div className="p-3 border border-gray-200 rounded-lg bg-white">
-                            <div className="text-[10px] text-gray-500 mb-2">CPU LOAD (AGENTS)</div>
+                        <div className="p-3 border border-slate-800 rounded-lg bg-slate-900/50">
+                            <div className="text-[10px] text-slate-500 mb-2">CPU LOAD (AGENTS)</div>
                             <div className="h-16 flex items-end gap-1">
                                 {[40, 65, 30, 80, 50, 90, 45].map((h, i) => (
                                     <motion.div
@@ -88,16 +88,16 @@ export default function JarvisArchitecture({ isActive }) {
                                 ))}
                             </div>
                         </div>
-                        <div className="p-3 border border-gray-200 rounded-lg bg-white">
-                            <div className="text-[10px] text-gray-500 mb-2">MEMORY (VECTOR DB)</div>
-                            <div className="text-xl font-bold text-purple-600">8.2 GB</div>
-                            <div className="text-[10px] text-gray-600">Context Window: 128k</div>
+                        <div className="p-3 border border-slate-800 rounded-lg bg-slate-900/50">
+                            <div className="text-[10px] text-slate-500 mb-2">MEMORY (VECTOR DB)</div>
+                            <div className="text-xl font-bold text-purple-400">8.2 GB</div>
+                            <div className="text-[10px] text-slate-400">Context Window: 128k</div>
                         </div>
                     </div>
 
                     {/* Middle: Terminal Logs */}
-                    <div className="col-span-2 md:col-span-2 border border-blue-200 rounded-lg bg-white p-3 font-mono text-xs md:text-sm shadow-inner relative overflow-hidden">
-                        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-blue-200 to-transparent opacity-50" />
+                    <div className="col-span-2 md:col-span-2 border border-blue-500/30 rounded-lg bg-black/40 p-3 font-mono text-xs md:text-sm shadow-inner relative overflow-hidden">
+                        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-blue-500/20 to-transparent opacity-50" />
                         <div className="flex flex-col gap-2 h-full justify-end">
                             <AnimatePresence>
                                 {logs.map((log, i) => (
@@ -107,15 +107,15 @@ export default function JarvisArchitecture({ isActive }) {
                                         animate={{ opacity: 1, x: 0 }}
                                         className="flex gap-3"
                                     >
-                                        <span className="text-blue-500/70">[{new Date().toLocaleTimeString().split(' ')[0]}]</span>
+                                        <span className="text-blue-400/50">[{new Date().toLocaleTimeString().split(' ')[0]}]</span>
                                         <span className={`
-                                            ${log.type === 'cns' ? 'text-purple-600 font-medium' : ''}
-                                            ${log.type === 'tel' ? 'text-blue-600 font-medium' : ''}
-                                            ${log.type === 'sec' ? 'text-red-600 font-medium' : ''}
-                                            ${log.type === 'info' ? 'text-neutral-500' : ''}
-                                            ${log.type === 'agent' ? 'text-green-600 font-medium' : ''}
+                                            ${log.type === 'cns' ? 'text-purple-400 font-medium' : ''}
+                                            ${log.type === 'tel' ? 'text-blue-400 font-medium' : ''}
+                                            ${log.type === 'sec' ? 'text-red-400 font-medium' : ''}
+                                            ${log.type === 'info' ? 'text-slate-500' : ''}
+                                            ${log.type === 'agent' ? 'text-green-400 font-medium' : ''}
                                         `}>
-                                            {log.type === 'sys' ? <span className="text-amber-600 font-bold">root@jarvis:~# {log.msg}</span> : log.msg}
+                                            {log.type === 'sys' ? <span className="text-amber-400 font-bold">root@jarvis:~# {log.msg}</span> : log.msg}
                                         </span>
                                     </motion.div>
                                 ))}
@@ -128,8 +128,8 @@ export default function JarvisArchitecture({ isActive }) {
 
             {/* Overlay for non-active state */}
             {!isActive && (
-                <div className="absolute inset-0 bg-white/40 backdrop-blur-[1px] flex items-center justify-center">
-                    <div className="px-4 py-2 border border-blue-500/30 bg-blue-500/10 rounded-full text-blue-600 text-xs font-bold tracking-widest animate-pulse">
+                <div className="absolute inset-0 bg-slate-950/40 backdrop-blur-[1px] flex items-center justify-center">
+                    <div className="px-4 py-2 border border-blue-500/30 bg-blue-500/10 rounded-full text-blue-400 text-xs font-bold tracking-widest animate-pulse">
                         SYSTEM STANDBY
                     </div>
                 </div>
