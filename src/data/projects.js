@@ -5,9 +5,9 @@ export const projects = [
     title: 'SymbioFlows',
     subtitle: 'Architectural Orchestrator & Founder',
     url: 'https://symbioflows.com',
-    description: 'High-integrity AI architecture for industrial symbiosis. Orchestrates a proprietary data moat of 3M+ material listings through a deterministic decision engine, achieving 100% financial audit accuracy.',
+    description: 'High-integrity AI architecture for industrial symbiosis. Orchestrates a proprietary data moat of 3M+ material listings, predicting waste streams with 100% financial audit accuracy for $1.5M+ in projected revenue.',
     color: '#10b981',
-    tech: ['System Architecture', 'Orchestration', 'DeepSeek R1', 'High-Integrity Data', 'PostgreSQL'],
+    tech: ['Distributed Systems', 'Orchestration', 'DeepSeek R1', 'High-Integrity Data', 'PostgreSQL'],
     isFlagship: true,
     details: {
       problem: "Industrial waste data is fragmented and unstructured. The challenge isn't just coding; it's architecting a system that can trust its own conclusions.",
@@ -15,23 +15,19 @@ export const projects = [
       features: [
         {
           title: "Deterministic Financial Ledger",
-          desc: "Architected a computation layer that models revenue creation with 100% accuracy. The logic flow is designed to be mathematically improbable to fail."
+          desc: "Architected a computation layer that models $1.5M+ in revenue creation with 100% accuracy. The logic flow is designed to be mathematically improbable to fail."
         },
         {
           title: "Generative Logic Pipeline",
-          desc: "Multi-stage orchestration where DeepSeek R1 infers data, governed by modular heuristic guardrails that eliminate hallucinations before they reach the persistent state."
+          desc: "Multi-stage orchestration where DeepSeek R1 infers data, governed by modular heuristic guardrails (AST-based) that eliminate hallucinations."
         },
         {
           title: "Decoupled Micro-Services",
-          desc: "Designed a high-concurrency system where specialized workers handle PDF generation, email (SES), and heavy compute (Python/NumPy) via clean message queues."
+          desc: "Designed a high-concurrency system where specialized workers handle PDF generation and heavy compute (Python/NumPy) via clean message queues."
         },
         {
           title: "Programmatic LOI Generation",
           desc: "Scaling legal intent through automation. Orchestrated the dynamic population of terms and projections for 500+ concurrent negotiated agreements."
-        },
-        {
-          title: "Universal CNS Indexing",
-          desc: "The entire system architecture is semantically indexed, enabling autonomous navigation and agentic self-maintenance without manual code intervention."
         }
       ]
     },
@@ -39,18 +35,12 @@ export const projects = [
       { date: '2024-08-15', message: 'arch: Core microservices structure finalized' },
       { date: '2024-10-20', message: 'feat: Orchestrated Financial Projection Engine with verified market data' },
       { date: '2024-11-10', message: 'perf: Refined heuristic validation logic (latency < 100ms)' },
-      { date: '2024-12-05', message: 'audit: Production Readiness Audit - Passed 100% System Integrity' },
-      { date: '2025-01-12', message: 'feat: Unified CNS integration for agentic orchestration' },
-      { date: '2025-02-01', message: 'scale: Orchestrated AWS Lambda scaling for LOI generation' }
+      { date: '2024-12-05', message: 'audit: Production Readiness Audit - Passed 100% System Integrity' }
     ],
     documentation: [
       {
         title: "Architecture: The Symbio Orchestrator",
         content: "A master-planned distributed system. Every state transition is architected to ensure data integrity.\n\n1. Normalization: Raw data ingestion.\n2. AI Inference: Orchestrated prediction of waste streams.\n3. Logic Guardrails: Heuristic verification layer.\n4. Financial Projection: Deterministic NPV and IRR computation."
-      },
-      {
-        title: "The Integrity Lockdown",
-        content: "Engineered a Zero-Hallucination environment. By architecting the flow of information through multiple validation gates, the system achieves enterprise-grade clinical results without manual oversight."
       }
     ]
   },
@@ -61,7 +51,7 @@ export const projects = [
     subtitle: 'Chief Intelligence Architect',
     url: 'https://github.com/ibraheemmryyian/jarvis',
     component: 'JarvisSimulator',
-    description: 'A local AI command center orchestrating 57 specialized agents. Architected with a biological-inspired self-healing runtime and a 4-layer kernel-level security sandbox.',
+    description: 'A local AI command center orchestrating 89 specialized agents across 500+ daily task cycles. Built with a biological-inspired self-healing runtime and a 4-layer kernel-level security sandbox.',
     color: '#3b82f6',
     tech: ['Autonomous Orchestration', 'Self-Healing Loops', 'Security Architecture', 'Local LLMs', 'CNS'],
     isFlagship: true,
@@ -69,25 +59,16 @@ export const projects = [
       problem: "Modern AI agents are brittle and lack supervision. An elite system requires a robust architecture to handle multi-step autonomous failures.",
       solution: "A context-aware orchestration platform with a recursive 'immune system' for error correction and a kernel-resident sandbox for safe agent execution.",
       features: [
-        { title: 'Universal CNS', desc: 'Codebase Navigation System: A semantic map architected to allow agents to traverse and understand complex dependencies without manual guidance.' },
+        { title: 'Universal CNS', desc: 'Codebase Navigation System: A semantic map architected to allow agents to traverse complex dependencies (AST-based) without manual guidance.' },
         { title: 'Self-Healing Loops', desc: 'Designed a recursive runtime: On failure, the system captures trace, orchestrates an analysis, generates a patch, and auto-resumes.' },
         { title: '4-Layer Security Sandbox', desc: 'Architected kernel-level interception of syscalls. Blocks dangerous operations at the process level before they can execute.' },
-        { title: 'Agent Swarm Protocol', desc: 'Dynamic orchestration of specialized agent units (Researcher, Coder, Reviewer) based on real-time task complexity analysis.' },
-        { title: 'Semantic Long-term Recall', desc: 'Designed a high-integrity vector memory system (ChromaDB) for persistent user context and project history.' }
+        { title: 'Agent Swarm Protocol', desc: 'Dynamic orchestration of 89+ specialized agent units based on real-time task complexity analysis.' }
       ]
     },
     documentation: [
       {
         title: "The CNS Architecture",
-        content: "CNS is the architectural foundation of Jarvis. It's a semantic graph that eliminates the need for manual context injection.\n\nDesign Pillars:\n• Dependency Mapping: Predicting architectural ripple effects.\n• Semantic Intelligence: Logic-based jumping between system modules.\n• Autonomous Context: Dynamic window management based on active orchestration."
-      },
-      {
-        title: "Recursive Self-Correction",
-        content: "Engineered the 'Immune Loop': A design where the system monitors its own state.\n\n1. Execution Monitoring.\n2. Trace Capture.\n3. Root Cause Analysis (Orchestrated).\n4. Patch Generation & Verification.\n5. State Restoration."
-      },
-      {
-        title: "Zero-Trust Security Design",
-        content: "Security is a fundamental architectural constraint, not a feature.\n\nGate 1: Logic Filtering (Regex)\nGate 2: Structural Analysis (AST)\nGate 3: Process Monitoring (Ptrace)\nGate 4: Architectural Isolation (Airgap Mode)"
+        content: "CNS is the architectural foundation. It's a semantic graph that eliminates the need for manual context injection using tree-sitter based indexing."
       }
     ]
   },
@@ -99,15 +80,14 @@ export const projects = [
     url: 'https://github.com/ibraheemmryyian/nexus-telemetry',
     description: 'Advanced engagement intelligence system. Architected timing-attack logic and CSS fingerprinting to recover user behavioral data behind privacy proxies.',
     color: '#ef4444',
-    tech: ['Forensic Analysis', 'Logic Engineering', 'Timing Attacks', 'Behavioral Tracking'],
+    tech: ['Forensic Analysis', 'Logic Engineering', 'Timing Attacks', 'Browser Internals'],
     isFlagship: true,
     details: {
       problem: "Privacy proxies (Apple Mail, Gmail) break standard tracking. Resolving this requires architectural ingenuity over simple coding.",
       solution: "A forensic-grade engine architected using CSS media query leaks and timing heuristics to pierce proxies and recover granular environment data.",
       features: [
-        { title: 'Fingerprint Recovery', desc: 'Architected logic to identify true devices behind Apple\'s Privacy Proxy using CSS render-path exfiltration.' },
-        { title: 'Temporal Heuristics', desc: 'Engineered high-precision dwell time measurement using keep-alive beacons and scroll-depth analysis.' },
-        { title: 'Render-Engine Profiling', desc: 'Differentiates between email clients by analyzing rendering engine quirks (WebKit/Gecko) through logic gates.' },
+        { title: 'Fingerprint Recovery', desc: 'Architected logic to identify true devices behind Apple\'s Privacy Proxy using CSS render-path exfiltration and browser engine quirks.' },
+        { title: 'Temporal Heuristics', desc: 'Engineered high-precision dwell time measurement using keep-alive beacons and temporal analysis of network requests.' },
         { title: 'Reputation Analysis', desc: 'Designed an orchestration layer to filter security scanners and bots based on behavioral reputation and IP history.' }
       ]
     },
