@@ -2,7 +2,7 @@
 import boardwalkImg from '../assets/boardwalk_preview.png';
 import symbioImg from '../assets/symbio_preview.png';
 import gnnImg from '../assets/gnn_preview.png';
-import jarvisImg from '../assets/jarvis_preview.png';
+import intelligenceArchImg from '../assets/intelligence_arch.png';
 
 export const timelineData = [
     {
@@ -17,11 +17,11 @@ export const timelineData = [
     {
         year: '2024',
         title: 'AI Engineering',
-        subtitle: 'Bot Building & Automation',
-        description: 'Transitioned to code-based AI development. Built custom chatbots, automation scripts, and mastered prompt engineering.',
-        tech: ['Python', 'Chatbots', 'Automation'],
+        subtitle: 'Architecture & Orchestration',
+        description: 'Designed context-aware orchestration layers and autonomous bots. Focused on structural logic over simple prompt engineering.',
+        tech: ['Infrastructure', 'System Design', 'Orchestration'],
         link: 'https://github.com/ibraheemmryyian',
-        image: jarvisImg
+        image: intelligenceArchImg
     },
     {
         year: '2025',

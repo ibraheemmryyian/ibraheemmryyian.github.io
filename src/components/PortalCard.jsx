@@ -6,7 +6,8 @@ import TechnicalDocs from './TechnicalDocs';
 
 export default function PortalCard({ project, isExpanded, onExpand, onClose }) {
     const [isHovered, setIsHovered] = useState(false);
-    const [view, setView] = useState('preview'); // 'preview' or 'docs'
+    const isGitHub = project.url?.includes('github.com');
+    const [view, setView] = useState((isGitHub && project.documentation) ? 'docs' : 'preview'); // 'preview' or 'docs'
 
     // If this card is fully expanded, we allow interaction with the iframe
     const isInteractive = isExpanded && view === 'preview';
@@ -51,7 +52,7 @@ export default function PortalCard({ project, isExpanded, onExpand, onClose }) {
                                     onClick={(e) => { e.stopPropagation(); setView('preview'); }}
                                     className={`px-3 py-1.5 rounded-md transition-colors ${view === 'preview' ? 'bg-white shadow-sm text-blue-600' : 'text-gray-500 hover:text-gray-900'}`}
                                 >
-                                    Live Preview
+                                    {isGitHub ? 'GitHub Link' : 'Live Preview'}
                                 </button>
                                 <button
                                     onClick={(e) => { e.stopPropagation(); setView('docs'); }}
@@ -76,6 +77,23 @@ export default function PortalCard({ project, isExpanded, onExpand, onClose }) {
                     <>
                         {project.component === 'JarvisSimulator' ? (
                             <JarvisArchitecture isActive={isInteractive} />
+                        ) : isGitHub ? (
+                            <div className="flex flex-col items-center justify-center h-full bg-gray-50 p-8 text-center space-y-6">
+                                <div className="p-6 bg-white rounded-2xl border border-gray-200 shadow-sm max-w-md">
+                                    <h4 className="text-xl font-bold mb-2">Repository Signal detected</h4>
+                                    <p className="text-neutral-600 text-sm mb-6">
+                                        GitHub prevents architectural embedding via iframe for security. Enter the source link directly to inspect the logic.
+                                    </p>
+                                    <a
+                                        href={project.url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-2 rounded-lg font-bold hover:bg-blue-700 transition-colors"
+                                    >
+                                        Inspect Source Code <ExternalLink size={16} />
+                                    </a>
+                                </div>
+                            </div>
                         ) : (
                             <iframe
                                 src={project.url}
@@ -89,7 +107,7 @@ export default function PortalCard({ project, isExpanded, onExpand, onClose }) {
                             />
                         )}
                         {/* Overlay to prevent interaction when not expanded */}
-                        {!isInteractive && <div className="portal-overlay" />}
+                        {!isInteractive && !isGitHub && <div className="portal-overlay" />}
                     </>
                 )}
             </div>
