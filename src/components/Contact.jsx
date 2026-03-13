@@ -9,7 +9,7 @@ export default function Contact() {
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                className="max-w-3xl mx-auto bg-gradient-to-b from-card to-background p-10 rounded-2xl border border-border"
+                className="max-w-3xl mx-auto bg-white p-10 rounded-2xl border border-gray-100 shadow-xl shadow-blue-500/5"
             >
                 <h2 className="text-3xl md:text-4xl font-bold mb-6">Read to build something exceptional?</h2>
                 <p className="text-xl text-text-secondary mb-8">

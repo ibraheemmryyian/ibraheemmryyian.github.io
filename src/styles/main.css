@@ -1,24 +1,23 @@
 @import "tailwindcss";
 
 :root {
-    /* Premium Executive Theme */
-    --bg-color: #020617;
-    /* Slate 950 - Deep dark */
-    --text-primary: #f8fafc;
-    /* Slate 50 */
-    --text-secondary: #94a3b8;
-    /* Slate 400 */
-    --accent: #38bdf8;
-    /* Sky 400 */
-    --accent-glow: rgba(56, 189, 248, 0.4);
+    /* Clinical Light Theme */
+    --bg-color: #ffffff;
+    --text-primary: #0f172a;
+    /* Slate 900 */
+    --text-secondary: #475569;
+    /* Slate 600 */
+    --accent: #0ea5e9;
+    /* Sky 600 - Deeper for light mode */
+    --accent-glow: rgba(14, 165, 233, 0.15);
 
-    --card-bg: rgba(15, 23, 42, 0.6);
-    /* Slate 900 with transparency */
-    --card-border: rgba(51, 65, 85, 0.5);
-    /* Slate 700 with transparency */
+    --card-bg: rgba(255, 255, 255, 0.8);
+    --card-border: rgba(226, 232, 240, 0.8);
+    /* Slate 200 */
     --glass-blur: 20px;
 
-    --timeline-line: #1e293b;
+    --timeline-line: #e2e8f0;
+    /* Slate 200 */
 }
 
 .glass-card {
@@ -29,7 +28,7 @@
 }
 
 .text-reveal {
-    background: linear-gradient(to right, #fff 20%, #475569 100%);
+    background: linear-gradient(to right, var(--text-primary) 20%, var(--text-secondary) 100%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -62,8 +61,8 @@ body::before {
     width: 100%;
     height: 100%;
     background-image:
-        linear-gradient(rgba(56, 189, 248, 0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(56, 189, 248, 0.05) 1px, transparent 1px);
+        linear-gradient(rgba(14, 165, 233, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(14, 165, 233, 0.05) 1px, transparent 1px);
     background-size: 40px 40px;
     mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 1) 0%, transparent 80%);
     pointer-events: none;
@@ -97,8 +96,7 @@ body::before {
     line-height: 0.9;
     margin: 0;
     color: var(--text-primary);
-    background: linear-gradient(to bottom right, #fff, #64748b);
-    /* Replaced slate-400 with 500 for more depth */
+    background: linear-gradient(to bottom right, var(--text-primary), var(--text-secondary));
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -194,15 +192,15 @@ body::before {
     flex-direction: column;
     cursor: pointer;
     transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+    /* Softer shadow for light mode */
     z-index: 1;
 }
 
 .portal-card:hover {
     transform: translateY(-4px);
-    /* Minimal lift */
-    box-shadow: 0 40px 80px -20px rgba(0, 0, 0, 0.9);
-    border-color: rgba(56, 189, 248, 0.4);
+    box-shadow: 0 40px 80px -20px rgba(0, 0, 0, 0.1);
+    border-color: var(--accent);
 }
 
 .portal-card::after {
@@ -229,9 +227,10 @@ body::before {
     z-index: 2000;
     cursor: default;
     border-radius: 32px;
-    box-shadow: 0 0 0 100vmax rgba(2, 6, 23, 0.9);
-    border: 1px solid rgba(56, 189, 248, 0.3);
-    background: #0f172a !important;
+    box-shadow: 0 0 0 100vmax rgba(255, 255, 255, 0.9);
+    /* Brightening backdrop */
+    border: 1px solid var(--card-border);
+    background: #ffffff !important;
 }
 
 @media (max-width: 768px) {

@@ -27,7 +27,7 @@ export default function Mission() {
                     </div>
 
                     <p className="text-lg text-text-secondary/80 leading-relaxed max-w-3xl">
-                        I specialize in <strong className="text-white">autonomous drift correction</strong> and high-integrity infrastructure. My focus is on the delta between a functioning system and an optimized one. I don't build to impress; I build to finish.
+                        I specialize in <strong className="text-text-primary">autonomous drift correction</strong> and high-integrity infrastructure. My focus is on the delta between a functioning system and an optimized one. I don't build to impress; I build to finish.
                     </p>
 
                     <div className="grid md:grid-cols-2 gap-8 pt-4">

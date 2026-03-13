@@ -13,7 +13,7 @@ export default function About() {
                     className="grid md:grid-cols-2 gap-12 items-center"
                 >
                     <div className="space-y-6">
-                        <h2 className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">
+                        <h2 className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-slate-500">
                             Beyond the Code
                         </h2>
                         <p className="text-lg text-text-secondary leading-relaxed">
@@ -21,7 +21,7 @@ export default function About() {
                             My work bridges the gap between theoretical AI research and production-grade applications.
                         </p>
                         <p className="text-text-secondary leading-relaxed">
-                            Currently, I'm building <strong className="text-white">SymbioFlows</strong>, an industrial waste valorization platform, and <strong className="text-white">Jarvis</strong>, a local autonomous agent ecosystem. I specialize in turning complex data problems into elegant, self-healing software solutions.
+                            Currently, I'm building <strong className="text-text-primary">SymbioFlows</strong>, an industrial waste valorization platform, and <strong className="text-text-primary">Jarvis</strong>, a local autonomous agent ecosystem. I specialize in turning complex data problems into elegant, self-healing software solutions.
                         </p>
 
                         <div className="grid grid-cols-3 gap-4 pt-6">
@@ -32,8 +32,8 @@ export default function About() {
                     </div>
 
                     <div className="relative group">
-                        <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200" />
-                        <div className="relative p-8 bg-card rounded-lg border border-border">
+                        <div className="absolute -inset-1 bg-gradient-to-r from-blue-400 to-purple-400 rounded-lg blur opacity-10 group-hover:opacity-30 transition duration-1000 group-hover:duration-200" />
+                        <div className="relative p-8 bg-white rounded-lg border border-gray-100 shadow-sm">
                             <h3 className="text-xl font-bold mb-4 flex items-center">
                                 <Terminal className="mr-2 text-accent" size={20} />
                                 Current Focus
@@ -66,9 +66,9 @@ export default function About() {
 
 function Stat({ icon: Icon, label, value }) {
     return (
-        <div className="text-center p-4 bg-card/50 rounded-lg border border-border hover:border-accent/50 transition-colors">
+        <div className="text-center p-4 bg-white rounded-lg border border-gray-100 hover:border-accent/50 transition-colors shadow-sm">
             <Icon className="mx-auto mb-2 text-accent" size={24} />
-            <div className="text-2xl font-bold text-white">{value}</div>
+            <div className="text-2xl font-bold text-slate-900">{value}</div>
             <div className="text-xs text-text-secondary uppercase tracking-wider">{label}</div>
         </div>
     );

@@ -6,9 +6,9 @@ export default function JarvisFlowDiagram() {
         <div style={{
             width: '100%',
             minHeight: '350px',
-            backgroundColor: '#0f172a',
+            backgroundColor: '#f8fafc',
             borderRadius: '12px',
-            border: '1px solid rgba(100, 116, 139, 0.5)',
+            border: '1px solid var(--card-border)',
             padding: '24px',
             boxSizing: 'border-box',
             fontFamily: 'monospace',
@@ -43,8 +43,8 @@ export default function JarvisFlowDiagram() {
                         flex: '0 0 auto',
                         width: '120px',
                         padding: '16px',
-                        backgroundColor: '#1e293b',
-                        border: '2px solid #475569',
+                        backgroundColor: '#ffffff',
+                        border: '2px solid #e2e8f0',
                         borderRadius: '12px',
                         textAlign: 'center',
                         position: 'relative'
@@ -60,8 +60,8 @@ export default function JarvisFlowDiagram() {
                         backgroundColor: '#22c55e',
                         borderRadius: '50%'
                     }} />
-                    <div style={{ color: 'white', fontWeight: 'bold', fontSize: '13px' }}>ROUTER</div>
-                    <div style={{ color: '#94a3b8', fontSize: '10px', marginTop: '4px' }}>Intention Parsing</div>
+                    <div style={{ color: '#0f172a', fontWeight: 'bold', fontSize: '13px' }}>ROUTER</div>
+                    <div style={{ color: '#64748b', fontSize: '10px', marginTop: '4px' }}>Intention Parsing</div>
                 </motion.div>
 
                 {/* Arrow */}
@@ -69,20 +69,20 @@ export default function JarvisFlowDiagram() {
 
                 {/* Orchestrator */}
                 <motion.div
-                    animate={{ boxShadow: ['0 0 0px #3b82f6', '0 0 15px #3b82f6', '0 0 0px #3b82f6'] }}
+                    animate={{ boxShadow: ['0 0 0px #3b82f6', '0 0 15px rgba(59, 130, 246, 0.3)', '0 0 0px #3b82f6'] }}
                     transition={{ duration: 3, repeat: Infinity }}
                     style={{
                         flex: '0 0 auto',
                         width: '150px',
                         padding: '20px 16px',
-                        backgroundColor: 'rgba(30, 58, 138, 0.4)',
+                        backgroundColor: '#eff6ff',
                         border: '2px solid #3b82f6',
                         borderRadius: '12px',
                         textAlign: 'center'
                     }}
                 >
-                    <div style={{ color: '#bfdbfe', fontWeight: 'bold', fontSize: '13px' }}>ORCHESTRATOR</div>
-                    <div style={{ color: '#60a5fa', fontSize: '10px', marginTop: '4px' }}>Task Dispatch</div>
+                    <div style={{ color: '#1e40af', fontWeight: 'bold', fontSize: '13px' }}>ORCHESTRATOR</div>
+                    <div style={{ color: '#3b82f6', fontSize: '10px', marginTop: '4px' }}>Task Dispatch</div>
                 </motion.div>
 
                 {/* Arrow */}
@@ -120,11 +120,11 @@ export default function JarvisFlowDiagram() {
             <div style={{ display: 'flex', justifyContent: 'center' }}>
                 <div style={{
                     padding: '10px 20px',
-                    backgroundColor: '#1e293b',
-                    border: '1px solid #475569',
+                    backgroundColor: '#ffffff',
+                    border: '1px solid #e2e8f0',
                     borderRadius: '8px'
                 }}>
-                    <span style={{ color: '#cbd5e1', fontSize: '11px' }}>Recycler (Context Window Mgmt)</span>
+                    <span style={{ color: '#64748b', fontSize: '11px' }}>Recycler (Context Window Mgmt)</span>
                 </div>
             </div>
         </div>

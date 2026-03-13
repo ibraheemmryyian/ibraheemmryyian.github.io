@@ -21,15 +21,15 @@ export default function PortalCard({ project, isExpanded, onExpand, onClose }) {
                 zIndex: isExpanded ? 2000 : 1
             }}
             style={{
-                background: `linear-gradient(135deg, ${project.color}22, #000000)`,
+                background: `linear-gradient(135deg, ${project.color}11, #ffffff)`,
                 border: project.isFlagship
-                    ? `2px solid #fbbf24` // FLAGSHIP: Golden Border
-                    : `1px solid ${project.color}44`,
+                    ? `1px solid #fbbf24` // Slimmer border for light mode
+                    : `1px solid var(--card-border)`,
                 boxShadow: isExpanded
-                    ? `0 0 100px ${project.color}22`
+                    ? `0 0 100px rgba(0,0,0,0.1)`
                     : project.isFlagship
-                        ? `0 0 30px -5px #fbbf2444, 0 0 20px -5px ${project.color}22` // FLAGSHIP: Gold Glow
-                        : `0 0 20px -5px ${project.color}22`,
+                        ? `0 10px 30px -5px rgba(251, 191, 36, 0.2)`
+                        : `0 10px 30px -5px rgba(0,0,0,0.05)`,
             }}
             onClick={() => !isExpanded && onExpand(project)}
             onMouseEnter={() => setIsHovered(true)}
@@ -46,16 +46,16 @@ export default function PortalCard({ project, isExpanded, onExpand, onClose }) {
                     <div className="flex items-center gap-4">
                         {/* View Toggle */}
                         {project.documentation && (
-                            <div className="bg-white/5 rounded-lg p-1 flex gap-1 border border-white/10 text-sm">
+                            <div className="bg-gray-100 rounded-lg p-1 flex gap-1 border border-gray-200 text-sm">
                                 <button
                                     onClick={(e) => { e.stopPropagation(); setView('preview'); }}
-                                    className={`px-3 py-1.5 rounded-md transition-colors ${view === 'preview' ? 'bg-white/10 text-white' : 'text-gray-400 hover:text-white'}`}
+                                    className={`px-3 py-1.5 rounded-md transition-colors ${view === 'preview' ? 'bg-white shadow-sm text-blue-600' : 'text-gray-500 hover:text-gray-900'}`}
                                 >
                                     Live Preview
                                 </button>
                                 <button
                                     onClick={(e) => { e.stopPropagation(); setView('docs'); }}
-                                    className={`px-3 py-1.5 rounded-md transition-colors ${view === 'docs' ? 'bg-white/10 text-white' : 'text-gray-400 hover:text-white'}`}
+                                    className={`px-3 py-1.5 rounded-md transition-colors ${view === 'docs' ? 'bg-white shadow-sm text-blue-600' : 'text-gray-500 hover:text-gray-900'}`}
                                 >
                                     System Architecture
                                 </button>
