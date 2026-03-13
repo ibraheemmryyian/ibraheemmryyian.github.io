@@ -20,11 +20,11 @@ export default function TechnicalDocs({ project }) {
         <div className="technical-docs w-full text-text-primary font-sans">
             <div className="max-w-4xl mx-auto space-y-12">
                 {/* Header */}
-                <header className="border-b border-white/10 pb-8">
-                    <h1 className="text-4xl font-bold mb-2">
+                <header className="border-b border-neutral-200 pb-8">
+                    <h1 className="text-4xl font-bold mb-2 text-neutral-900">
                         {project.title} <span className="text-accent">Architecture</span>
                     </h1>
-                    <p className="text-xl text-text-secondary">{project.subtitle}</p>
+                    <p className="text-xl text-neutral-600">{project.subtitle}</p>
                 </header>
 
                 {/* Git Story / Development Log */}
@@ -38,17 +38,17 @@ export default function TechnicalDocs({ project }) {
                             <span className="text-accent text-sm font-mono">00.</span>
                             Development Log
                         </h2>
-                        <div className="bg-card border border-white/5 rounded-lg p-6 font-mono text-sm max-h-96 overflow-y-auto custom-scrollbar shadow-inner">
+                        <div className="bg-neutral-50 border border-neutral-200 rounded-lg p-6 font-mono text-sm max-h-96 overflow-y-auto custom-scrollbar shadow-inner">
                             <div className="flex flex-col gap-4">
                                 {project.gitStory.map((commit, idx) => (
                                     <div key={idx} className="flex gap-4 group">
-                                        <div className="min-w-[100px] text-text-secondary pt-1 border-r border-white/5 pr-4 text-right text-xs">
+                                        <div className="min-w-[100px] text-neutral-500 pt-1 border-r border-neutral-200 pr-4 text-right text-xs">
                                             {commit.date}
                                         </div>
-                                        <div className="flex-1 pb-4 border-b border-white/5 last:border-0 last:pb-0 relative">
+                                        <div className="flex-1 pb-4 border-b border-neutral-100 last:border-0 last:pb-0 relative">
                                             {/* Dot indicator */}
-                                            <div className="absolute -left-[21px] top-1.5 w-2 h-2 rounded-full bg-slate-700 group-hover:bg-accent transition-colors shadow-[0_0_8px_rgba(99,102,241,0.5)] opacity-0 group-hover:opacity-100" />
-                                            <p className="text-gray-300 group-hover:text-white transition-colors leading-relaxed">
+                                            <div className="absolute -left-[21px] top-1.5 w-2 h-2 rounded-full bg-neutral-300 group-hover:bg-accent transition-colors shadow-[0_0_8px_rgba(0,102,255,0.3)] opacity-0 group-hover:opacity-100" />
+                                            <p className="text-neutral-700 group-hover:text-black transition-colors leading-relaxed">
                                                 {commit.message}
                                             </p>
                                         </div>
@@ -72,7 +72,7 @@ export default function TechnicalDocs({ project }) {
                             <span className="text-accent text-sm font-mono">0{index + 1}.</span>
                             {section.title}
                         </h2>
-                        <div className="prose prose-invert max-w-none prose-p:text-gray-300 prose-headings:text-white prose-strong:text-accent">
+                        <div className="prose max-w-none prose-p:text-neutral-700 prose-headings:text-neutral-900 prose-strong:text-accent font-sans">
                             {/* Render content - checks for custom component or string/JSX */}
                             {section.component && COMPONENT_MAP[section.component] ? (
                                 <div className="my-8">

@@ -8,15 +8,15 @@ export default {
     theme: {
         extend: {
             colors: {
-                background: "#0f172a",
-                "background-alt": "#1e293b",
-                card: "#1e293b",
-                border: "#334155",
-                "text-primary": "#f8fafc",
-                "text-secondary": "#94a3b8",
-                accent: "#6366f1",
-                "accent-hover": "#4f46e5",
-                "text-disabled": "#475569"
+                background: "#ffffff",
+                "background-alt": "#fafafa",
+                card: "#ffffff",
+                border: "#e5e5e7",
+                "text-primary": "#000000",
+                "text-secondary": "#52525b",
+                accent: "#0066ff",
+                "accent-hover": "#0052cc",
+                "text-disabled": "#a1a1aa"
             },
             fontFamily: {
                 sans: ['Inter', 'system-ui', 'sans-serif'],

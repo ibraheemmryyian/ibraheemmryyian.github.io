@@ -28,7 +28,7 @@ export default function PortalCard({ project, isExpanded, onExpand, onClose }) {
                 boxShadow: isExpanded
                     ? `0 0 100px rgba(0,0,0,0.1)`
                     : project.isFlagship
-                        ? `0 10px 30px -5px rgba(251, 191, 36, 0.2)`
+                        ? `0 10px 30px -5px rgba(0, 102, 255, 0.2)`
                         : `0 10px 30px -5px rgba(0,0,0,0.05)`,
             }}
             onClick={() => !isExpanded && onExpand(project)}

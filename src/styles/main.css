@@ -1,23 +1,21 @@
 @import "tailwindcss";
 
 :root {
-    /* Clinical Light Theme */
+    /* High-Contrast Neutral Light Theme */
     --bg-color: #ffffff;
-    --text-primary: #0f172a;
-    /* Slate 900 */
-    --text-secondary: #475569;
-    /* Slate 600 */
-    --accent: #0ea5e9;
-    /* Sky 600 - Deeper for light mode */
-    --accent-glow: rgba(14, 165, 233, 0.15);
+    --text-primary: #000000;
+    --text-secondary: #52525b;
+    /* Zinc 600 */
+    --accent: #0066ff;
+    /* Vibrant Blue */
+    --accent-glow: rgba(0, 102, 255, 0.1);
 
-    --card-bg: rgba(255, 255, 255, 0.8);
-    --card-border: rgba(226, 232, 240, 0.8);
-    /* Slate 200 */
+    --card-bg: #ffffff;
+    --card-border: #e4e4e7;
+    /* Zinc 200 */
     --glass-blur: 20px;
 
-    --timeline-line: #e2e8f0;
-    /* Slate 200 */
+    --timeline-line: #e4e4e7;
 }
 
 .glass-card {
@@ -377,8 +375,8 @@ body::before {
 
 /* Jarvis & Footer */
 .jarvis-interface {
-    background: #0f172a;
-    color: #e2e8f0;
+    background: #ffffff;
+    color: #000000;
     height: 100%;
 }
 

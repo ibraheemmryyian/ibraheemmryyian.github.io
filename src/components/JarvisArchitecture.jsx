@@ -44,18 +44,18 @@ export default function JarvisArchitecture({ isActive }) {
     }, [isActive]);
 
     return (
-        <div className="w-full h-full bg-[#f8fafc] font-mono text-xs overflow-hidden flex flex-col border-t border-gray-100">
+        <div className="w-full h-full bg-white font-mono text-xs overflow-hidden flex flex-col border-t border-gray-200">
             {/* Top Bar */}
-            <div className="h-8 bg-white border-b border-gray-100 flex items-center px-4 justify-between backdrop-blur-sm">
+            <div className="h-8 bg-gray-50 border-b border-gray-200 flex items-center px-4 justify-between backdrop-blur-sm">
                 <div className="flex gap-4">
                     {Object.entries(features).map(([key, data]) => (
-                        <div key={key} className="flex items-center gap-2 opacity-70">
+                        <div key={key} className="flex items-center gap-2">
                             <span style={{ color: data.color }}>{data.icon}</span>
-                            <span className="text-[10px] font-bold tracking-wider text-gray-500">{key}</span>
+                            <span className="text-[10px] font-bold tracking-wider text-neutral-600">{key}</span>
                         </div>
                     ))}
                 </div>
-                <div className="flex items-center gap-2 text-green-500/80">
+                <div className="flex items-center gap-2 text-green-600">
                     <Activity size={12} className="animate-pulse" />
                     <span className="text-[10px] font-bold">ONLINE</span>
                 </div>
@@ -96,8 +96,8 @@ export default function JarvisArchitecture({ isActive }) {
                     </div>
 
                     {/* Middle: Terminal Logs */}
-                    <div className="col-span-2 md:col-span-2 border border-blue-900/10 rounded-lg bg-slate-900 p-3 font-mono text-xs md:text-sm shadow-inner relative overflow-hidden">
-                        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-blue-500/30 to-transparent opacity-50" />
+                    <div className="col-span-2 md:col-span-2 border border-blue-200 rounded-lg bg-white p-3 font-mono text-xs md:text-sm shadow-inner relative overflow-hidden">
+                        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-blue-200 to-transparent opacity-50" />
                         <div className="flex flex-col gap-2 h-full justify-end">
                             <AnimatePresence>
                                 {logs.map((log, i) => (
@@ -107,15 +107,15 @@ export default function JarvisArchitecture({ isActive }) {
                                         animate={{ opacity: 1, x: 0 }}
                                         className="flex gap-3"
                                     >
-                                        <span className="text-blue-500/50">[{new Date().toLocaleTimeString().split(' ')[0]}]</span>
+                                        <span className="text-blue-500/70">[{new Date().toLocaleTimeString().split(' ')[0]}]</span>
                                         <span className={`
-                                            ${log.type === 'cns' ? 'text-purple-400' : ''}
-                                            ${log.type === 'tel' ? 'text-blue-400' : ''}
-                                            ${log.type === 'sec' ? 'text-red-400' : ''}
-                                            ${log.type === 'info' ? 'text-gray-400' : ''}
-                                            ${log.type === 'agent' ? 'text-green-400' : ''}
+                                            ${log.type === 'cns' ? 'text-purple-600 font-medium' : ''}
+                                            ${log.type === 'tel' ? 'text-blue-600 font-medium' : ''}
+                                            ${log.type === 'sec' ? 'text-red-600 font-medium' : ''}
+                                            ${log.type === 'info' ? 'text-neutral-500' : ''}
+                                            ${log.type === 'agent' ? 'text-green-600 font-medium' : ''}
                                         `}>
-                                            {log.type === 'sys' ? <span className="text-yellow-500/80">root@jarvis:~# {log.msg}</span> : log.msg}
+                                            {log.type === 'sys' ? <span className="text-amber-600 font-bold">root@jarvis:~# {log.msg}</span> : log.msg}
                                         </span>
                                     </motion.div>
                                 ))}
