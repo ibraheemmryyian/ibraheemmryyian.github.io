@@ -17,11 +17,11 @@ export default function About() {
                             Beyond the Code
                         </h2>
                         <p className="text-lg text-text-secondary leading-relaxed">
-                            I am an engineer obsessed with <span className="text-accent">system autonomy</span> and <span className="text-accent">scalable architecture</span>.
-                            My work bridges the gap between theoretical AI research and production-grade applications.
+                            I am an architect obsessed with <span className="text-accent">system orchestration</span> and <span className="text-accent">structural integrity</span>.
+                            My work centers on the high-stakes logic required to deploy autonomous agentic workforces at scale.
                         </p>
                         <p className="text-text-secondary leading-relaxed">
-                            Currently, I'm building <strong className="text-text-primary">SymbioFlows</strong>, an industrial waste valorization platform, and <strong className="text-text-primary">Jarvis</strong>, a local autonomous agent ecosystem. I specialize in turning complex data problems into elegant, self-healing software solutions.
+                            Currently, I'm architecting <strong className="text-text-primary">SymbioFlows</strong>, an industrial waste valorization platform, and <strong className="text-text-primary">Jarvis</strong>, a local autonomous agent ecosystem. I specialize in turning complex logic puzzles into self-healing architectural frameworks.
                         </p>
 
                         <div className="grid grid-cols-3 gap-4 pt-6">

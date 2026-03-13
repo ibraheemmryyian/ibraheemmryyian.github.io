@@ -53,8 +53,6 @@ function App() {
         script={schema}
       />
 
-      {view === 'resume' && <Resume onBack={() => setView('home')} />}
-
       {view === 'resume' ? (
         <Resume onBack={() => setView('home')} />
       ) : (

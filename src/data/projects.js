@@ -3,54 +3,54 @@ export const projects = [
   {
     id: 'symbioflows',
     title: 'SymbioFlows',
-    subtitle: 'Founder & Lead Engineer',
+    subtitle: 'Architectural Orchestrator & Founder',
     url: 'https://symbioflows.com',
-    description: 'Enterprise-grade AI platform for industrial symbiosis. Orchestrates a proprietary data moat of 3M+ material listings to quantify waste-to-revenue potential with 100% financial audit accuracy.',
+    description: 'High-integrity AI architecture for industrial symbiosis. Orchestrates a proprietary data moat of 3M+ material listings through a deterministic decision engine, achieving 100% financial audit accuracy.',
     color: '#10b981',
-    tech: ['Node.js', 'AWS Lambda', 'Python', 'DeepSeek R1', 'PostgreSQL'],
+    tech: ['System Architecture', 'Orchestration', 'DeepSeek R1', 'High-Integrity Data', 'PostgreSQL'],
     isFlagship: true,
     details: {
-      problem: "Industrial waste data is fragmented and unstructured, making it impossible to identify high-value circular economy opportunities at scale.",
-      solution: "A production-grade distributed system that ingests company profiles, predicts waste streams using context-aware AI, and rigorously verifies financial viability through a deterministic projection engine.",
+      problem: "Industrial waste data is fragmented and unstructured. The challenge isn't just coding; it's architecting a system that can trust its own conclusions.",
+      solution: "A production-grade distributed architecture that ingests company profiles and predicts waste streams through a context-aware AI orchestration layer, verified by a deterministic projection engine.",
       features: [
         {
-          title: "Financial Projection Engine",
-          desc: "Deterministic computation layer that models revenue creation, CO2 offsets, and ROI. Validated against real-world market rates with 100% accuracy in production audits."
+          title: "Deterministic Financial Ledger",
+          desc: "Architected a computation layer that models revenue creation with 100% accuracy. The logic flow is designed to be mathematically improbable to fail."
         },
         {
-          title: "Generative Data Pipeline",
-          desc: "Multi-stage AI pipeline where DeepSeek R1 infers waste streams, followed by a heuristic validation layer that eliminates hallucinations before data enters the ledger."
+          title: "Generative Logic Pipeline",
+          desc: "Multi-stage orchestration where DeepSeek R1 infers data, governed by modular heuristic guardrails that eliminate hallucinations before they reach the persistent state."
         },
         {
-          title: "Microservices Architecture",
-          desc: "Decoupled system with specific workers for PDF generation, email dispatch (SES), and heavy computational tasks (Python/NumPy), communicating via message queues."
+          title: "Decoupled Micro-Services",
+          desc: "Designed a high-concurrency system where specialized workers handle PDF generation, email (SES), and heavy compute (Python/NumPy) via clean message queues."
         },
         {
-          title: "Automated LOI Service",
-          desc: "Programmatic generation of legal Letters of Intent, dynamically populated with negotiated terms and financial projections, capable of handling 500+ concurrent requests."
+          title: "Programmatic LOI Generation",
+          desc: "Scaling legal intent through automation. Orchestrated the dynamic population of terms and projections for 500+ concurrent negotiated agreements."
         },
         {
-          title: "Universal CNS Integration",
-          desc: "Codebase is indexed for autonomous navigation, allowing AI agents to understand and refactor the system without human guidance."
+          title: "Universal CNS Indexing",
+          desc: "The entire system architecture is semantically indexed, enabling autonomous navigation and agentic self-maintenance without manual code intervention."
         }
       ]
     },
     gitStory: [
-      { date: '2024-08-15', message: 'init: Core microservices architecture setup' },
-      { date: '2024-10-20', message: 'feat: Implement Financial Projection Engine with verified market data' },
-      { date: '2024-11-10', message: 'perf: Optimize heuristic validation layer (latency < 100ms)' },
-      { date: '2024-12-05', message: 'audit: Production Readiness Audit - Passed 100% Stability Checks' },
-      { date: '2025-01-12', message: 'feat: Deploy Universal CNS indexing for autonomous maintenance' },
-      { date: '2025-02-01', message: 'scale: Horizontal scaling of LOI generation service on AWS Lambda' }
+      { date: '2024-08-15', message: 'arch: Core microservices structure finalized' },
+      { date: '2024-10-20', message: 'feat: Orchestrated Financial Projection Engine with verified market data' },
+      { date: '2024-11-10', message: 'perf: Refined heuristic validation logic (latency < 100ms)' },
+      { date: '2024-12-05', message: 'audit: Production Readiness Audit - Passed 100% System Integrity' },
+      { date: '2025-01-12', message: 'feat: Unified CNS integration for agentic orchestration' },
+      { date: '2025-02-01', message: 'scale: Orchestrated AWS Lambda scaling for LOI generation' }
     ],
     documentation: [
       {
-        title: "Architecture: The Symbio Engine",
-        content: "A distributed system built for high-integrity data processing. Unlike standard CRUD apps, SymbioFlows enforces strict state transitions for every data point.\n\n1. Ingestion: Raw company data is normalized.\n2. Inference: AI models predict probable waste streams.\n3. Validation: Heuristic guardrails reject physically impossible scenarios.\n4. Projection: Financial engine calculates net present value (NPV) and IRR for potential deals."
+        title: "Architecture: The Symbio Orchestrator",
+        content: "A master-planned distributed system. Every state transition is architected to ensure data integrity.\n\n1. Normalization: Raw data ingestion.\n2. AI Inference: Orchestrated prediction of waste streams.\n3. Logic Guardrails: Heuristic verification layer.\n4. Financial Projection: Deterministic NPV and IRR computation."
       },
       {
-        title: "The 'Golden Standard' Audit",
-        content: "The system recently underwent a comprehensive Production Readiness Audit, achieving a 100% success rate across user safety, financial accuracy, and system stability metrics. This validated the 'Zero-Hallucination' architecture."
+        title: "The Integrity Lockdown",
+        content: "Engineered a Zero-Hallucination environment. By architecting the flow of information through multiple validation gates, the system achieves enterprise-grade clinical results without manual oversight."
       }
     ]
   },
@@ -58,36 +58,36 @@ export const projects = [
   {
     id: 'jarvis',
     title: 'J.A.R.V.I.S',
-    subtitle: 'Autonomous AI Workforce Platform',
+    subtitle: 'Chief Intelligence Architect',
     url: 'https://github.com/ibraheemmryyian/jarvis',
     component: 'JarvisSimulator',
-    description: 'A comprehensive local AI operating system managing 57 specialized agents. Features self-healing execution loops and a 4-layer security sandbox.',
+    description: 'A local AI command center orchestrating 57 specialized agents. Architected with a biological-inspired self-healing runtime and a 4-layer kernel-level security sandbox.',
     color: '#3b82f6',
-    tech: ['Python', 'FastAPI', 'Local LLMs', 'PyQt6', 'SQLite'],
+    tech: ['Autonomous Orchestration', 'Self-Healing Loops', 'Security Architecture', 'Local LLMs', 'CNS'],
     isFlagship: true,
     details: {
-      problem: "Current AI agents are brittle, insecure, and lack deep context. They fail at multi-step autonomous tasks and cannot be trusted with system access.",
-      solution: "A local-first autonomous platform with a biological-inspired 'immune system' for error correction and a kernel-level security sandbox for safe execution.",
+      problem: "Modern AI agents are brittle and lack supervision. An elite system requires a robust architecture to handle multi-step autonomous failures.",
+      solution: "A context-aware orchestration platform with a recursive 'immune system' for error correction and a kernel-resident sandbox for safe agent execution.",
       features: [
-        { title: 'Universal CNS', desc: 'Codebase Navigation System: Indexes entire repositories into a semantic graph, allowing agents to traverse and understand complex dependencies instantly.' },
-        { title: 'Self-Healing Runtime', desc: 'Recursive error handling loop: If an agent fails, the system captures the stderr, analyzes the root cause, patches the code, and restarts the process automatically.' },
-        { title: '4-Layer Security Sandbox', desc: 'Kernel-level interception of dangerous syscalls. Blocks rm -rf, network exfiltration, and unauthorized file access at the process level.' },
-        { title: 'Agent Swarm Protocol', desc: 'Orchestrator that dynamically spawns and kills specialized agents (Researcher, Coder, Reviewer) based on task complexity.' },
-        { title: 'Context-Aware Memory', desc: 'Vector database (ChromaDB) for long-term recall of user preferences and project history.' }
+        { title: 'Universal CNS', desc: 'Codebase Navigation System: A semantic map architected to allow agents to traverse and understand complex dependencies without manual guidance.' },
+        { title: 'Self-Healing Loops', desc: 'Designed a recursive runtime: On failure, the system captures trace, orchestrates an analysis, generates a patch, and auto-resumes.' },
+        { title: '4-Layer Security Sandbox', desc: 'Architected kernel-level interception of syscalls. Blocks dangerous operations at the process level before they can execute.' },
+        { title: 'Agent Swarm Protocol', desc: 'Dynamic orchestration of specialized agent units (Researcher, Coder, Reviewer) based on real-time task complexity analysis.' },
+        { title: 'Semantic Long-term Recall', desc: 'Designed a high-integrity vector memory system (ChromaDB) for persistent user context and project history.' }
       ]
     },
     documentation: [
       {
-        title: "Universal CNS (Codebase Navigation System)",
-        content: "The crown jewel of Jarvis. CNS is not just 'search'—it's a semantic map of the codebase.\n\nCapabilities:\n• Dependency Graphing: 'What breaks if I change this function?'\n• Semantic Jump: 'Go to the authentication logic', not just string matching.\n• Auto-Context: Automatically loads relevant files into the LLM context window based on the active task."
+        title: "The CNS Architecture",
+        content: "CNS is the architectural foundation of Jarvis. It's a semantic graph that eliminates the need for manual context injection.\n\nDesign Pillars:\n• Dependency Mapping: Predicting architectural ripple effects.\n• Semantic Intelligence: Logic-based jumping between system modules.\n• Autonomous Context: Dynamic window management based on active orchestration."
       },
       {
-        title: "Self-Healing Architecture",
-        content: "The system implements a Try-Catch-Analyze-Fix loop.\n\n1. Agent attempts task.\n2. Runtime error occurs.\n3. Error trace is fed to the 'Debugger' agent.\n4. Debugger generates a patch.\n5. 'Patcher' agent applies the fix and verifies with tests.\n6. Task resumes."
+        title: "Recursive Self-Correction",
+        content: "Engineered the 'Immune Loop': A design where the system monitors its own state.\n\n1. Execution Monitoring.\n2. Trace Capture.\n3. Root Cause Analysis (Orchestrated).\n4. Patch Generation & Verification.\n5. State Restoration."
       },
       {
-        title: "4-Layer Security Model",
-        content: "Security is not an afterthought.\n\nLayer 1: Regex Filter (Blocks obvious commands like rm -rf)\nLayer 2: AST Analysis (Detects malicious code patterns)\nLayer 3: Syscall Interception (Ptrace-based monitoring)\nLayer 4: Network Airgap (Optional mode for fully local operation)"
+        title: "Zero-Trust Security Design",
+        content: "Security is a fundamental architectural constraint, not a feature.\n\nGate 1: Logic Filtering (Regex)\nGate 2: Structural Analysis (AST)\nGate 3: Process Monitoring (Ptrace)\nGate 4: Architectural Isolation (Airgap Mode)"
       }
     ]
   },
@@ -95,73 +95,73 @@ export const projects = [
   {
     id: 'email-telemetry',
     title: 'Nexus Analytics',
-    subtitle: 'Engagement Intelligence System',
+    subtitle: 'Forensic Logic Architect',
     url: 'https://github.com/ibraheemmryyian/nexus-telemetry',
-    description: 'Advanced engagement intelligence system for fingerprinting client environments and tracking behavioral data behind privacy proxies.',
+    description: 'Advanced engagement intelligence system. Architected timing-attack logic and CSS fingerprinting to recover user behavioral data behind privacy proxies.',
     color: '#ef4444',
-    tech: ['Node.js', 'Canvas API', 'Redis', 'Pixel Tracking'],
+    tech: ['Forensic Analysis', 'Logic Engineering', 'Timing Attacks', 'Behavioral Tracking'],
     isFlagship: true,
     details: {
-      problem: "Modern email clients (Apple Mail Privacy Protection, Gmail Image Proxy) obfuscate open rates and user data, making standard tracking useless.",
-      solution: "A forensic-grade telemetry engine using CSS fingerprinting, canvas noise, and timing attacks to pierce through privacy proxies and recover granular user data.",
+      problem: "Privacy proxies (Apple Mail, Gmail) break standard tracking. Resolving this requires architectural ingenuity over simple coding.",
+      solution: "A forensic-grade engine architected using CSS media query leaks and timing heuristics to pierce proxies and recover granular environment data.",
       features: [
-        { title: 'Proxy Penetration', desc: 'Identifies true device type (iPhone/Desktop) even behind Apple\'s privacy proxy using CSS media query leaks.' },
-        { title: 'Read-Time Heuristics', desc: 'Measures exact dwell time on email content using keep-alive beacons and scroll tracking.' },
-        { title: 'Client Fingerprinting', desc: 'Differentiates between Outlook, Gmail, and Apple Mail based on rendering engine quirks (WebKit vs Gecko vs Word).' },
-        { title: 'Bot Detection', desc: 'Machine learning model that analyzes click latency and IP reputation to filter out security scanners and bots.' }
+        { title: 'Fingerprint Recovery', desc: 'Architected logic to identify true devices behind Apple\'s Privacy Proxy using CSS render-path exfiltration.' },
+        { title: 'Temporal Heuristics', desc: 'Engineered high-precision dwell time measurement using keep-alive beacons and scroll-depth analysis.' },
+        { title: 'Render-Engine Profiling', desc: 'Differentiates between email clients by analyzing rendering engine quirks (WebKit/Gecko) through logic gates.' },
+        { title: 'Reputation Analysis', desc: 'Designed an orchestration layer to filter security scanners and bots based on behavioral reputation and IP history.' }
       ]
     },
     gitStory: [
-      { date: '2024-01-10', message: 'init: Telemetry beacon server setup' },
-      { date: '2024-01-15', message: 'feat: Implement CSS media query exfiltration for device detection' },
-      { date: '2024-01-22', message: 'algo: Develop timing-attack algorithm to bypass image proxies' },
-      { date: '2024-01-28', message: 'ui: Real-time dashboard with websocket feed' }
+      { date: '2024-01-10', message: 'arch: Forensic beacon infrastructure setup' },
+      { date: '2024-01-15', message: 'feat: Orchestrated CSS exfiltration for device recovery' },
+      { date: '2024-01-22', message: 'algo: Designed timing-attack logic for proxy penetration' },
+      { date: '2024-01-28', message: 'ui: Real-time telemetry orchestration dashboard' }
     ]
   },
 
   {
     id: 'gnn',
     title: 'GNN Visualizer',
-    subtitle: 'Graph Neural Network Frontend',
+    subtitle: 'High-Performance UI Architect',
     url: 'https://gnn.vercel.app/demo',
-    description: 'Interactive educational tool for visualizing message passing in Graph Neural Networks.',
+    description: 'Physics-based visualization architecture for Message Passing in Graph Neural Networks. Engineered for real-time pedagogical clarity.',
     color: '#8b5cf6',
-    tech: ['React', 'D3.js', 'Vercel', 'WebGL'],
+    tech: ['UI Architecture', 'Physics Engines', 'WebGL Integration', 'D3.js'],
     details: {
-      problem: "GNNs are abstract and hard to intuit. Students struggle to understand how 'aggregation' actually works.",
-      solution: "A physics-based visualization that renders the flow of information across a graph in real-time.",
+      problem: "Aggregation and message passing are abstract concepts. Understanding them requires a visual architecture that mirrors the underlying math.",
+      solution: "A hybrid rendering system architected to switch between SVG and WebGL depending on graph complexity and user interaction.",
       features: [
-        { title: 'Hybrid Rendering', desc: 'Seamlessly switches between SVG (interaction) and Canvas/WebGL (performance) for large graphs.' },
-        { title: 'Force-Directed Physics', desc: 'Real-time layout optimization using D3-force with Barnes-Hut approximation.' },
-        { title: 'Algorithm Playground', desc: 'Live execution of Dijkstra, BFS, and Louvain Community Detection in the browser.' }
+        { title: 'Hybrid Render Design', desc: 'Engineered seamless context switching between high-interaction SVG and high-performance WebGL.' },
+        { title: 'Spatial Optimization', desc: 'Architected real-time force-directed layouts using Barnes-Hut approximations for efficient spatial partitioning.' },
+        { title: 'Logic Playground', desc: 'Designed an interactive environment for live execution of Dijkstra and Louvain algorithms.' }
       ]
     }
   },
   {
     id: 'telegravity',
     title: 'TeleGravity',
-    subtitle: 'Headless Agentic Infrastructure',
+    subtitle: 'Infrastructure Architect & Founder',
     url: 'https://github.com/ibraheemmryyian/telegravity',
-    description: 'High-performance Telegram RMM bridge for headless IDE supervision. Built for 24/7 remote monitoring and high-stakes decision pipeline management for autonomous agents.',
+    description: 'High-performance RMM bridge for headless IDE supervision. Architected as the command-link for high-stakes decision pipelines in autonomous deployments.',
     color: '#3b82f6',
-    tech: ['Python', 'Telebot', 'VS Code API', 'PostgreSQL'],
+    tech: ['RMM Architecture', 'Logic Supervision', 'VS Code API', 'Security Gates'],
     isFlagship: true,
     details: {
-      problem: "Autonomous agents require high-integrity supervision that isn't tethered to a desktop environment, especially during multi-hour deployment loops.",
-      solution: "A custom Telegram-to-IDE bridge that enables headless project orchestration, real-time log streaming, and deterministic approval/rejection of code changes via phone.",
+      problem: "Autonomous agents require 24/7 high-integrity oversight. The challenge is architecting a secure, low-latency bridge outside the desktop environment.",
+      solution: "A master-planned Telegram-to-IDE bridge enabling headless orchestration, real-time log streaming, and deterministic approval logic via mobile.",
       features: [
-        { title: 'Supervisory UI', desc: 'Full-duplex bridge for IDE screenshots, real-time terminal streaming, and agent conversation management over Telegram.' },
-        { title: 'Remote Orchestration', desc: 'Deterministic control over "Approve/Reject" cycles, allowing for 24/7 supervised autonomous iterations from any location.' }
+        { title: 'Supervisory Architecture', desc: 'Designed a full-duplex bridge for IDE state capture and terminal streaming over Telegram.' },
+        { title: 'Remote Command Link', desc: 'Architected deterministic "Approve/Reject" cycles, ensuring the human-in-the-loop is never bypassed.' }
       ]
     }
   },
   {
     id: 'betterteams',
     title: 'BetterTeams',
-    subtitle: 'Team Management Platform',
+    subtitle: 'SaaS Solutions Architect',
     url: 'https://betterteams.vercel.app/demo',
-    description: 'SaaS platform for optimizing team workflows and task distribution.',
+    description: 'Workforce optimization platform. Architected for streamlined team management and task distribution logic.',
     color: '#f97316',
-    tech: ['React', 'Supabase', 'Vercel']
+    tech: ['Modular UI Architecture', 'System Design', 'Supabase', 'Vercel']
   }
 ];

@@ -32,9 +32,9 @@ export default function Resume({ onBack }) {
             <div className="max-w-[21cm] mx-auto bg-white shadow-2xl print:shadow-none p-[1.5cm] md:p-[2cm] min-h-[29.7cm] flex flex-col">
 
                 {/* Header */}
-                <header className="border-b-2 border-gray-900 pb-6 mb-6">
-                    <h1 className="text-4xl font-bold uppercase tracking-tight mb-2">Ibraheem Mryyian</h1>
-                    <div className="flex flex-wrap gap-y-2 gap-x-6 text-sm text-gray-600">
+                <header className="border-b-2 border-slate-900 pb-6 mb-6">
+                    <h1 className="text-4xl font-bold uppercase tracking-tight mb-2 text-slate-900">Ibraheem Mryyian</h1>
+                    <div className="flex flex-wrap gap-y-2 gap-x-6 text-sm text-slate-600">
                         <div className="flex items-center gap-1.5">
                             <Mail size={14} className="text-blue-600" /> Imrryyian@gmail.com
                         </div>
@@ -52,22 +52,22 @@ export default function Resume({ onBack }) {
 
                 {/* Summary */}
                 <section className="mb-6">
-                    <h2 className="text-sm font-bold uppercase tracking-wider text-gray-400 mb-3 border-b border-gray-100 pb-1">Professional Profile</h2>
-                    <p className="text-gray-900 leading-relaxed text-sm text-justify font-medium">
-                        Solo founder and AI systems engineer building SymbioFlows, an industrial symbiosis marketplace for the GCC market.
-                        Built a proprietary 89-agent autonomous coding system (J.A.R.V.I.S) from scratch in two weeks.
-                        Consistently delivering high-integrity infrastructure with 1000+ commits in the last 6 months—all pre-funding, at 19.
+                    <h2 className="text-sm font-bold uppercase tracking-wider text-slate-500 mb-3 border-b border-slate-100 pb-1">Professional Profile</h2>
+                    <p className="text-slate-900 leading-relaxed text-sm text-justify font-medium">
+                        Architectural Orchestrator and Systems Engineer specializing in high-integrity AI infrastructure.
+                        I design the structural logic and state-machines for complex applications, deploying proprietary agentic workforces (like the 89-agent J.A.R.V.I.S) to execute architectural blueprints with zero-hallucination precision.
+                        My philosophy of "Clinical Excellence" centers on building self-healing, deterministic systems where failure is handled by design, not manual intervention.
                     </p>
                 </section>
 
                 {/* Technical Skills */}
                 <section className="mb-6">
-                    <h2 className="text-sm font-bold uppercase tracking-wider text-gray-400 mb-3 border-b border-gray-100 pb-1">Technical Proficiency</h2>
+                    <h2 className="text-sm font-bold uppercase tracking-wider text-slate-500 mb-3 border-b border-slate-100 pb-1">Architecture & Stack</h2>
                     <div className="grid grid-cols-2 gap-y-3 gap-x-8 text-[13px]">
                         {Object.entries(skills).map(([category, items]) => (
                             <div key={category}>
-                                <span className="font-bold text-gray-900 block mb-0.5">{category}</span>
-                                <span className="text-gray-600 leading-tight">{items.join(' • ')}</span>
+                                <span className="font-bold text-slate-900 block mb-0.5">{category}</span>
+                                <span className="text-slate-600 leading-tight">{items.join(' • ')}</span>
                             </div>
                         ))}
                     </div>
@@ -75,25 +75,25 @@ export default function Resume({ onBack }) {
 
                 {/* Experience & Projects */}
                 <section className="mb-6">
-                    <h2 className="text-sm font-bold uppercase tracking-wider text-gray-400 mb-4 border-b border-gray-100 pb-1">Engineering & Ventures</h2>
+                    <h2 className="text-sm font-bold uppercase tracking-wider text-slate-500 mb-4 border-b border-slate-100 pb-1">System Design & Orchestration</h2>
 
                     {/* Flagship Projects */}
                     <div className="space-y-5">
                         {resumeProjects.map((project) => (
                             <div key={project.id}>
                                 <div className="flex justify-between items-baseline mb-1">
-                                    <h3 className="font-bold text-gray-900 text-base">{project.title}</h3>
+                                    <h3 className="font-bold text-slate-900 text-base">{project.title}</h3>
                                     <span className="text-[10px] font-bold text-blue-700 bg-blue-50 px-2 py-0.5 rounded uppercase tracking-wider">
                                         {project.tech.slice(0, 3).join(' / ')}
                                     </span>
                                 </div>
-                                <p className="text-xs text-gray-500 font-bold mb-1.5 uppercase tracking-wide">{project.subtitle}</p>
-                                <div className="text-[13px] text-gray-700 leading-snug">
+                                <p className="text-xs text-slate-500 font-bold mb-1.5 uppercase tracking-wide">{project.subtitle}</p>
+                                <div className="text-[13px] text-slate-700 leading-snug">
                                     {project.details.features ? (
                                         <ul className="list-disc list-outside ml-4 space-y-1">
                                             {project.details.features.slice(0, 2).map((feat, i) => (
                                                 <li key={i}>
-                                                    <span className="font-semibold text-gray-900">{feat.title}:</span> {feat.desc}
+                                                    <span className="font-semibold text-slate-900">{feat.title}:</span> {feat.desc}
                                                 </li>
                                             ))}
                                         </ul>
@@ -106,34 +106,34 @@ export default function Resume({ onBack }) {
                     </div>
 
                     {/* Freelance Work */}
-                    <div className="mt-5 pt-4 border-t border-gray-100">
+                    <div className="mt-5 pt-4 border-t border-slate-100">
                         <div className="flex justify-between items-baseline mb-1">
-                            <h3 className="font-bold text-gray-900 text-base">Systems Consultant (Freelance)</h3>
-                            <span className="text-xs font-bold text-gray-500">Jan 2022 - Present</span>
+                            <h3 className="font-bold text-slate-900 text-base">Solutions Architect (Consultant)</h3>
+                            <span className="text-xs font-bold text-slate-500">Jan 2022 - Present</span>
                         </div>
-                        <p className="text-[13px] text-gray-700 leading-snug">
-                            Architected high-concurrency data pipelines and custom internal tooling for regional SMBs. Delivered optimized e-commerce infrastructures and automated reporting systems for non-technical stakeholders.
+                        <p className="text-[13px] text-slate-700 leading-snug">
+                            Architected high-concurrency logic pipelines and proprietary orchestration layers for regional enterprises. Designed and supervised the deployment of automated reporting systems and forensic data recovery tools, prioritizing structural integrity over manual maintenance.
                         </p>
                     </div>
                 </section>
 
                 {/* Education */}
                 <section>
-                    <h2 className="text-sm font-bold uppercase tracking-wider text-gray-400 mb-3 border-b border-gray-100 pb-1">Education</h2>
+                    <h2 className="text-sm font-bold uppercase tracking-wider text-slate-500 mb-3 border-b border-slate-100 pb-1">Education</h2>
                     <div className="space-y-4">
                         <div>
                             <div className="flex justify-between items-baseline">
-                                <h3 className="font-bold text-gray-900 text-base">B.S. in Computer Engineering</h3>
-                                <span className="text-xs font-bold text-gray-500 italic">2025 - 2030 (Expected)</span>
+                                <h3 className="font-bold text-slate-900 text-base">B.S. in Computer Engineering</h3>
+                                <span className="text-xs font-bold text-slate-500 italic">2025 - 2030 (Expected)</span>
                             </div>
-                            <p className="text-sm text-gray-800 font-medium">Hashemite University (HU), Jordan</p>
+                            <p className="text-sm text-slate-800 font-medium">Hashemite University (HU), Jordan</p>
                         </div>
                         <div>
                             <div className="flex justify-between items-baseline">
-                                <h3 className="font-bold text-gray-900 text-base">High School Diploma</h3>
-                                <span className="text-xs font-bold text-gray-500 italic">2021 - 2025</span>
+                                <h3 className="font-bold text-slate-900 text-base">High School Diploma</h3>
+                                <span className="text-xs font-bold text-slate-500 italic">2021 - 2025</span>
                             </div>
-                            <p className="text-[13px] text-gray-700">International Pioneers Academy • Student Leader • Peer Tutoring Initiative</p>
+                            <p className="text-[13px] text-slate-700">International Pioneers Academy • Student Leader • Peer Tutoring Initiative</p>
                         </div>
                         <div className="flex flex-wrap gap-x-6 gap-y-2 mt-2">
                             <div className="text-sm"><span className="font-bold">Languages:</span> Arabic (Native), English (C2)</div>

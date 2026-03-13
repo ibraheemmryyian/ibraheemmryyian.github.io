@@ -27,28 +27,28 @@ export default function Mission() {
                     </div>
 
                     <p className="text-lg text-text-secondary/80 leading-relaxed max-w-3xl">
-                        I specialize in <strong className="text-text-primary">autonomous drift correction</strong> and high-integrity infrastructure. My focus is on the delta between a functioning system and an optimized one. I don't build to impress; I build to finish.
+                        I specialize in <strong className="text-text-primary">high-integrity architectural orchestration</strong> and autonomous drift correction. My focus is on the delta between a functioning system and a master-planned one. I don't just build to impress; I architect to finish.
                     </p>
 
                     <div className="grid md:grid-cols-2 gap-8 pt-4">
                         <MissionCard
                             icon={Shield}
-                            title="Zero-Trust Integrity"
+                            title="Architectural Integrity"
                             desc="Security and stability as foundational constants, not secondary layers."
                         />
                         <MissionCard
                             icon={Zap}
-                            title="Pure Autonomy"
+                            title="Clinical Orchestration"
                             desc="Agentic systems designed for independent problem-solving and self-healing."
                         />
                         <MissionCard
                             icon={Target}
-                            title="Surgical Scaling"
+                            title="Systemic Scaling"
                             desc="Expanding capacity without expanding complexity or overhead."
                         />
                         <MissionCard
                             icon={Coffee}
-                            title="Cold Execution"
+                            title="Deterministic Execution"
                             desc="Technical delivery stripped of drama. Results-only orientation."
                         />
                     </div>
