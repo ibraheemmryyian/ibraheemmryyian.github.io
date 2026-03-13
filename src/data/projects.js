@@ -140,18 +140,18 @@ export const projects = [
   {
     id: 'telegravity',
     title: 'TeleGravity',
-    subtitle: 'Autonomous Coding Infrastructure',
+    subtitle: 'Headless Agentic Infrastructure',
     url: 'https://github.com/ibraheemmryyian/telegravity',
-    description: 'Proprietary 89-agent autonomous coding system engineered for high-velocity software evolution. Capable of driving 1000+ verified commits in 6 months from scratch.',
+    description: 'High-performance Telegram RMM bridge for headless IDE supervision. Built for 24/7 remote monitoring and high-stakes decision pipeline management for autonomous agents.',
     color: '#3b82f6',
-    tech: ['Node.js', 'Go', 'Local LLMs', 'PostgreSQL'],
+    tech: ['Python', 'Telebot', 'VS Code API', 'PostgreSQL'],
     isFlagship: true,
     details: {
-      problem: "Traditional software development cycles are hindered by human bottlenecks and slow iteration loops in complex architectures.",
-      solution: "A massively parallel agentic framework that understands, refactors, and deploys code autonomously within high-integrity sandboxes.",
+      problem: "Autonomous agents require high-integrity supervision that isn't tethered to a desktop environment, especially during multi-hour deployment loops.",
+      solution: "A custom Telegram-to-IDE bridge that enables headless project orchestration, real-time log streaming, and deterministic approval/rejection of code changes via phone.",
       features: [
-        { title: '89-Agent Swarm', desc: 'Specialized workforce including researchers, architects, and recursive debuggers operating in concert.' },
-        { title: 'High-Velocity Output', desc: 'Demonstrated capacity of 1000+ production-ready commits over a 6-month period, pre-funding.' }
+        { title: 'Supervisory UI', desc: 'Full-duplex bridge for IDE screenshots, real-time terminal streaming, and agent conversation management over Telegram.' },
+        { title: 'Remote Orchestration', desc: 'Deterministic control over "Approve/Reject" cycles, allowing for 24/7 supervised autonomous iterations from any location.' }
       ]
     }
   },

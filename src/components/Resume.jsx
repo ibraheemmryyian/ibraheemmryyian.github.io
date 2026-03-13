@@ -55,7 +55,7 @@ export default function Resume({ onBack }) {
                     <h2 className="text-sm font-bold uppercase tracking-wider text-gray-400 mb-3 border-b border-gray-100 pb-1">Professional Profile</h2>
                     <p className="text-gray-900 leading-relaxed text-sm text-justify font-medium">
                         Solo founder and AI systems engineer building SymbioFlows, an industrial symbiosis marketplace for the GCC market.
-                        Built a proprietary 89-agent autonomous coding system (TeleGravity) from scratch in two weeks.
+                        Built a proprietary 89-agent autonomous coding system (J.A.R.V.I.S) from scratch in two weeks.
                         Consistently delivering high-integrity infrastructure with 1000+ commits in the last 6 months—all pre-funding, at 19.
                     </p>
                 </section>
