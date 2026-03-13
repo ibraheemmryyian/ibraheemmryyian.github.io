@@ -64,10 +64,61 @@ export default function Resume({ onBack }) {
                 </section>
 
                 {/* Technical Skills */}
-                {/* ... (remains similar, will pick up updated data/skills.js) */}
+                <section className="mb-6">
+                    <h2 className="text-sm font-bold uppercase tracking-wider text-neutral-500 mb-3 border-b border-neutral-100 pb-1">Architecture & Stack</h2>
+                    <div className="grid grid-cols-2 gap-y-3 gap-x-8 text-[13px]">
+                        {Object.entries(skills).map(([category, items]) => (
+                            <div key={category}>
+                                <span className="font-bold text-neutral-950 block mb-0.5">{category}</span>
+                                <span className="text-neutral-600 leading-tight">{items.join(' • ')}</span>
+                            </div>
+                        ))}
+                    </div>
+                </section>
 
                 {/* Experience & Projects */}
-                {/* ... (remains similar, will pick up updated data/projects.js) */}
+                <section className="mb-6">
+                    <h2 className="text-sm font-bold uppercase tracking-wider text-neutral-500 mb-4 border-b border-neutral-100 pb-1">System Design & Orchestration</h2>
+
+                    {/* Flagship Projects */}
+                    <div className="space-y-5">
+                        {resumeProjects.map((project) => (
+                            <div key={project.id}>
+                                <div className="flex justify-between items-baseline mb-1">
+                                    <h3 className="font-bold text-neutral-950 text-base">{project.title}</h3>
+                                    <span className="text-[10px] font-bold text-blue-700 bg-blue-50 px-2 py-0.5 rounded uppercase tracking-wider">
+                                        {project.tech.slice(0, 3).join(' / ')}
+                                    </span>
+                                </div>
+                                <p className="text-xs text-neutral-500 font-bold mb-1.5 uppercase tracking-wide">{project.subtitle}</p>
+                                <div className="text-[13px] text-neutral-700 leading-snug">
+                                    {project.details.features ? (
+                                        <ul className="list-disc list-outside ml-4 space-y-1">
+                                            {project.details.features.slice(0, 2).map((feat, i) => (
+                                                <li key={i}>
+                                                    <span className="font-semibold text-neutral-900">{feat.title}:</span> {feat.desc}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    ) : (
+                                        <p>{project.description}</p>
+                                    )}
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+
+                    {/* Freelance Work */}
+                    <div className="mt-5 pt-4 border-t border-neutral-100">
+                        <div className="flex justify-between items-baseline mb-1">
+                            <h3 className="font-bold text-neutral-950 text-base">Solutions Architect (Consultant)</h3>
+                            <span className="text-xs font-bold text-neutral-500">Jan 2022 - Present</span>
+                        </div>
+                        <p className="text-[13px] text-neutral-700 leading-snug">
+                            Architected high-concurrency logic pipelines and proprietary orchestration layers for regional enterprises. Designed and supervised the deployment of automated reporting systems and forensic data recovery tools, prioritizing structural integrity over manual maintenance.
+                        </p>
+                    </div>
+                </section>
 
                 {/* Education */}
                 <section>
