@@ -1,7 +1,8 @@
 
 export const skills = {
-    "AI & Architecture": ["DeepSeek R1", "Agentic Orchestration", "AST Analysis", "Recursive Error-Correction", "RAG Infrastructure"],
-    "Foundational Logic": ["State Machines", "Compiler Principles", "Browser Internals", "Temporal Heuristics", "Security Sandboxing"],
-    "Backend & Systems": ["Node.js", "FastAPI", "PostgreSQL", "Supabase", "Redis", "Distributed Microservices"],
-    "Frontend & Rendering": ["React", "WebGL", "TypeScript", "TailwindCSS", "Framer Motion", "D3.js"]
+    "Languages": ["Python", "JavaScript", "TypeScript", "HTML/CSS", "SQL"],
+    "AI & LLMs": ["DeepSeek R1", "LLM Integration", "Multi-Agent Pipelines", "RAG", "Prompt Engineering"],
+    "Backend": ["Node.js", "FastAPI", "PostgreSQL", "Supabase", "Redis"],
+    "Frontend": ["React", "Vite", "Tailwind CSS", "Framer Motion", "D3.js"],
+    "Tools": ["Git", "VS Code Extensions", "Telegram Bot API", "Vercel", "Netlify"]
 };

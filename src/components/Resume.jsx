@@ -1,152 +1,472 @@
 
 import React from 'react';
-import { Mail, Github, Globe, MapPin, Printer, ArrowLeft, Phone } from 'lucide-react';
-import { projects } from '../data/projects';
+import { Printer, ArrowLeft } from 'lucide-react';
 import { skills } from '../data/skills';
 
 export default function Resume({ onBack }) {
-    // Filter projects
-    const resumeProjects = projects.filter(p => p.isFlagship || p.id === 'email-telemetry' || p.id === 'telegravity');
-
     return (
-        <div className="min-h-screen bg-gray-100 py-12 px-4 md:px-8 print:p-0 print:bg-white text-gray-900 font-sans">
+        <div className="resume-page-wrapper">
 
             {/* Controls - Hidden in Print */}
-            <div className="max-w-[21cm] mx-auto mb-8 flex justify-between items-center print:hidden">
-                <button
-                    onClick={onBack}
-                    className="flex items-center gap-2 px-4 py-2 bg-white rounded-lg shadow-sm hover:bg-gray-50 text-gray-700 transition-colors"
-                >
-                    <ArrowLeft size={18} /> Back to Portfolio
+            <div className="resume-controls print-hide">
+                <button onClick={onBack} className="resume-btn resume-btn-back">
+                    <ArrowLeft size={16} /> Back
                 </button>
                 <button
                     onClick={() => window.print()}
                     title="Save as PDF using the system print dialog"
-                    className="flex items-center gap-2 px-6 py-2 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700 transition-colors font-medium"
+                    className="resume-btn resume-btn-download"
                 >
-                    <Printer size={18} /> Download PDF
+                    <Printer size={16} /> Download PDF
                 </button>
             </div>
 
             {/* A4 Resume Page */}
-            <div className="max-w-[21cm] mx-auto bg-white shadow-2xl print:shadow-none p-[1.5cm] md:p-[2cm] min-h-[29.7cm] flex flex-col">
+            <div className="resume-a4">
 
                 {/* Header */}
-                <header className="border-b-2 border-neutral-900 pb-6 mb-6">
-                    <h1 className="text-4xl font-bold uppercase tracking-tight mb-2 text-neutral-950">Ibraheem Mryyian</h1>
-                    <div className="flex flex-wrap gap-y-2 gap-x-6 text-sm text-neutral-600">
-                        <div className="flex items-center gap-1.5">
-                            <Mail size={14} className="text-blue-600" /> Imrryyian@gmail.com
-                        </div>
-                        <div className="flex items-center gap-1.5">
-                            <Phone size={14} className="text-blue-600" /> 0792313484
-                        </div>
-                        <div className="flex items-center gap-1.5">
-                            <MapPin size={14} className="text-blue-600" /> Amman 11831, Jordan
-                        </div>
-                        <div className="flex items-center gap-1.5">
-                            <Globe size={14} className="text-blue-600" /> ibraheemmryyian.github.io
-                        </div>
+                <header className="resume-header">
+                    <h1 className="resume-name">Ibraheem Mryyian</h1>
+                    <div className="resume-contact-row">
+                        <span>Imrryyian@gmail.com</span>
+                        <span className="resume-sep">•</span>
+                        <span>+962 79 231 3484</span>
+                        <span className="resume-sep">•</span>
+                        <span>Amman, Jordan</span>
+                        <span className="resume-sep">•</span>
+                        <a href="https://www.linkedin.com/in/ibraheem-r/" target="_blank" rel="noopener noreferrer">linkedin.com/in/ibraheem-r</a>
+                        <span className="resume-sep">•</span>
+                        <a href="https://ibraheemmryyian.github.io" target="_blank" rel="noopener noreferrer">ibraheemmryyian.github.io</a>
                     </div>
                 </header>
 
                 {/* Summary */}
-                <section className="mb-6">
-                    <h2 className="text-sm font-bold uppercase tracking-wider text-neutral-500 mb-3 border-b border-neutral-100 pb-1">Professional Profile</h2>
-                    <p className="text-neutral-900 leading-relaxed text-sm text-justify font-medium">
-                        Architectural Orchestrator and Systems Engineer specializing in high-integrity, deterministic AI infrastructure.
-                        I design the foundational logic and state-machines for complex distributed systems, employing
-                        proprietary agentic swarm protocols (e.g., J.A.R.V.I.S. with 89+ specialized units) to execute
-                        architectural blueprints with zero-hallucination precision.
-                        Driven by a philosophy of "Clinical Excellence," I build self-healing runtimes where failure
-                        is handled by design through recursive error-correction and kernel-level security gates.
+                <section className="resume-section">
+                    <h2 className="resume-section-title">Summary</h2>
+                    <p className="resume-summary-text">
+                        Startup founder and Computer Engineering student. I build AI-powered products — from an industrial symbiosis marketplace
+                        (SymbioFlows) to a multi-agent AI assistant (J.A.R.V.I.S) — and I've been pitching investors since I was 18.
+                        Strongest with AI-driven backends and shipping fast with modern tooling.
                     </p>
                 </section>
 
                 {/* Technical Skills */}
-                <section className="mb-6">
-                    <h2 className="text-sm font-bold uppercase tracking-wider text-neutral-500 mb-3 border-b border-neutral-100 pb-1">Architecture & Stack</h2>
-                    <div className="grid grid-cols-2 gap-y-3 gap-x-8 text-[13px]">
+                <section className="resume-section">
+                    <h2 className="resume-section-title">Technical Skills</h2>
+                    <div className="resume-skills-grid">
                         {Object.entries(skills).map(([category, items]) => (
-                            <div key={category}>
-                                <span className="font-bold text-neutral-950 block mb-0.5">{category}</span>
-                                <span className="text-neutral-600 leading-tight">{items.join(' • ')}</span>
+                            <div key={category} className="resume-skill-row">
+                                <span className="resume-skill-category">{category}: </span>
+                                <span className="resume-skill-items">{items.join(', ')}</span>
                             </div>
                         ))}
                     </div>
                 </section>
 
-                {/* Experience & Projects */}
-                <section className="mb-6">
-                    <h2 className="text-sm font-bold uppercase tracking-wider text-neutral-500 mb-4 border-b border-neutral-100 pb-1">System Design & Orchestration</h2>
+                {/* Projects */}
+                <section className="resume-section">
+                    <h2 className="resume-section-title">Projects</h2>
+                    <div className="resume-entries">
 
-                    {/* Flagship Projects */}
-                    <div className="space-y-5">
-                        {resumeProjects.map((project) => (
-                            <div key={project.id}>
-                                <div className="flex justify-between items-baseline mb-1">
-                                    <h3 className="font-bold text-neutral-950 text-base">{project.title}</h3>
-                                    <span className="text-[10px] font-bold text-blue-700 bg-blue-50 px-2 py-0.5 rounded uppercase tracking-wider">
-                                        {project.tech.slice(0, 3).join(' / ')}
-                                    </span>
+                        <div className="resume-entry">
+                            <div className="resume-entry-header">
+                                <div>
+                                    <h3 className="resume-entry-title">SymbioFlows</h3>
+                                    <span className="resume-entry-subtitle">Founder & Lead Developer</span>
                                 </div>
-                                <p className="text-xs text-neutral-500 font-bold mb-1.5 uppercase tracking-wide">{project.subtitle}</p>
-                                <div className="text-[13px] text-neutral-700 leading-snug">
-                                    {project.details.features ? (
-                                        <ul className="list-disc list-outside ml-4 space-y-1">
-                                            {project.details.features.slice(0, 2).map((feat, i) => (
-                                                <li key={i}>
-                                                    <span className="font-semibold text-neutral-900">{feat.title}:</span> {feat.desc}
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    ) : (
-                                        <p>{project.description}</p>
-                                    )}
-                                </div>
+                                <span className="resume-entry-date">2025 — Present</span>
                             </div>
-                        ))}
-                    </div>
-
-                    {/* Freelance Work */}
-                    <div className="mt-5 pt-4 border-t border-neutral-100">
-                        <div className="flex justify-between items-baseline mb-1">
-                            <h3 className="font-bold text-neutral-950 text-base">Solutions Architect (Consultant)</h3>
-                            <span className="text-xs font-bold text-neutral-500">Jan 2022 - Present</span>
+                            <ul className="resume-entry-list">
+                                <li>Built an AI industrial symbiosis marketplace that connects waste producers with recyclers through intelligent matching</li>
+                                <li>Integrated DeepSeek R1 for intelligent waste stream prediction with heuristic guardrails to validate outputs</li>
+                                <li>Developed financial projection engine generating revenue reports for 500+ potential material matches</li>
+                                <li>Secured investor meetings at age 18 to pitch the platform for GCC-region enterprise partnerships</li>
+                            </ul>
+                            <div className="resume-entry-tech">Python · Node.js · PostgreSQL · Supabase · DeepSeek R1 · FastAPI</div>
                         </div>
-                        <p className="text-[13px] text-neutral-700 leading-snug">
-                            Architected high-concurrency logic pipelines and proprietary orchestration layers for regional enterprises. Designed and supervised the deployment of automated reporting systems and forensic data recovery tools, prioritizing structural integrity over manual maintenance.
-                        </p>
+
+                        <div className="resume-entry">
+                            <div className="resume-entry-header">
+                                <div>
+                                    <h3 className="resume-entry-title">J.A.R.V.I.S</h3>
+                                    <span className="resume-entry-subtitle">Personal Project</span>
+                                </div>
+                                <span className="resume-entry-date">2025 — Present</span>
+                            </div>
+                            <ul className="resume-entry-list">
+                                <li>Built an AI command center that orchestrates multiple specialized agents for daily task automation</li>
+                                <li>Implemented self-healing error loops — on failure, the system captures context, diagnoses, patches, and resumes</li>
+                                <li>Designed a codebase navigation system using AST parsing for agents to traverse project dependencies</li>
+                            </ul>
+                            <div className="resume-entry-tech">Python · Local LLMs · AST Parsing · Security Sandboxing</div>
+                        </div>
+
+                        <div className="resume-entry">
+                            <div className="resume-entry-header">
+                                <div>
+                                    <h3 className="resume-entry-title">TeleGravity</h3>
+                                    <span className="resume-entry-subtitle">Personal Project</span>
+                                </div>
+                                <span className="resume-entry-date">2025</span>
+                            </div>
+                            <ul className="resume-entry-list">
+                                <li>Built a Telegram-to-VS Code bridge for remote IDE control, terminal streaming, and agent supervision from mobile</li>
+                                <li>Implemented approval/reject workflows to keep a human in the loop for autonomous agent actions</li>
+                            </ul>
+                            <div className="resume-entry-tech">Node.js · VS Code Extension API · Telegram Bot API</div>
+                        </div>
+
+                        <div className="resume-entry">
+                            <div className="resume-entry-header">
+                                <div>
+                                    <h3 className="resume-entry-title">Email Telemetry Engine</h3>
+                                    <span className="resume-entry-subtitle">Personal Project</span>
+                                </div>
+                                <span className="resume-entry-date">2025</span>
+                            </div>
+                            <ul className="resume-entry-list">
+                                <li>Built an email engagement tracking system that recovers user data behind privacy proxies (Apple Mail, Gmail)</li>
+                                <li>Used CSS media query techniques and timing heuristics to identify true client environments</li>
+                            </ul>
+                            <div className="resume-entry-tech">JavaScript · CSS · Browser Internals · Node.js</div>
+                        </div>
+
+                    </div>
+                </section>
+
+                {/* Experience */}
+                <section className="resume-section">
+                    <h2 className="resume-section-title">Experience</h2>
+                    <div className="resume-entries">
+                        <div className="resume-entry">
+                            <div className="resume-entry-header">
+                                <div>
+                                    <h3 className="resume-entry-title">Software Developer</h3>
+                                    <span className="resume-entry-subtitle">Internal Tools — Contract</span>
+                                </div>
+                                <span className="resume-entry-date">Jun 2025 — Jul 2025</span>
+                            </div>
+                            <ul className="resume-entry-list">
+                                <li>Hired in a sales capacity but transitioned to a development role within the first week based on technical ability</li>
+                                <li>Built internal tooling and operational software for the company's day-to-day workflows</li>
+                            </ul>
+                        </div>
+                        <div className="resume-entry">
+                            <div className="resume-entry-header">
+                                <div>
+                                    <h3 className="resume-entry-title">Freelance Web Developer</h3>
+                                    <span className="resume-entry-subtitle">Self-Employed</span>
+                                </div>
+                                <span className="resume-entry-date">2023</span>
+                            </div>
+                            <ul className="resume-entry-list">
+                                <li>Designed and built a website for a local café as a client project</li>
+                            </ul>
+                        </div>
                     </div>
                 </section>
 
                 {/* Education */}
-                <section>
-                    <h2 className="text-sm font-bold uppercase tracking-wider text-neutral-500 mb-3 border-b border-neutral-100 pb-1">Education</h2>
-                    <div className="space-y-4">
-                        <div>
-                            <div className="flex justify-between items-baseline">
-                                <h3 className="font-bold text-neutral-950 text-base">B.S. in Computer Engineering Candidate</h3>
-                                <span className="text-xs font-bold text-blue-600 italic">Expected Completion 2030 (Accelerated Track)</span>
+                <section className="resume-section">
+                    <h2 className="resume-section-title">Education</h2>
+                    <div className="resume-entries">
+                        <div className="resume-entry">
+                            <div className="resume-entry-header">
+                                <div>
+                                    <h3 className="resume-entry-title">B.Sc. Computer Engineering</h3>
+                                    <span className="resume-entry-subtitle">Hashemite University, Jordan</span>
+                                </div>
+                                <span className="resume-entry-date">Sep 2025 — Present</span>
                             </div>
-                            <p className="text-sm text-neutral-800 font-medium">Hashemite University (HU), Jordan</p>
-                            <p className="text-[12px] text-neutral-500 mt-1 italic">Focusing on Distributed Architecture, AI Safety, and Low-Level Systems Optimization.</p>
                         </div>
-                        <div>
-                            <div className="flex justify-between items-baseline">
-                                <h3 className="font-bold text-neutral-950 text-base">High School Diploma</h3>
-                                <span className="text-xs font-bold text-neutral-500 italic">Honors Distinction</span>
+                        <div className="resume-entry">
+                            <div className="resume-entry-header">
+                                <div>
+                                    <h3 className="resume-entry-title">High School Diploma</h3>
+                                    <span className="resume-entry-subtitle">International Pioneers Academy</span>
+                                </div>
                             </div>
-                            <p className="text-[13px] text-neutral-700">International Pioneers Academy • Student Leader • Peer Tutoring Initiative</p>
-                        </div>
-                        <div className="flex flex-wrap gap-x-6 gap-y-2 mt-2">
-                            <div className="text-sm"><span className="font-bold">Languages:</span> Arabic (Native), English (C2)</div>
-                            <div className="text-sm"><span className="font-bold">Certifications:</span> Intro to Applied Psych (Yale/Coursera)</div>
                         </div>
                     </div>
                 </section>
 
+                {/* Footer row */}
+                <div className="resume-footer-row">
+                    <div className="resume-footer-item">
+                        <span className="resume-skill-category">Languages:</span> English (Native), Arabic (Fluent)
+                    </div>
+                    <div className="resume-footer-item">
+                        <span className="resume-skill-category">Coursework:</span> Intro to Applied Psychology (Yale/Coursera)
+                    </div>
+                </div>
+
             </div>
+
+            {/* Print-specific embedded styles */}
+            <style>{`
+                /* === RESUME PAGE WRAPPER === */
+                .resume-page-wrapper {
+                    min-height: 100vh;
+                    background: #f0f0f0;
+                    padding: 2rem 1rem;
+                    font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+                    color: #1a1a1a;
+                }
+
+                .resume-controls {
+                    max-width: 794px;
+                    margin: 0 auto 1.5rem;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+
+                .resume-btn {
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                    padding: 0.5rem 1.25rem;
+                    border: none;
+                    border-radius: 8px;
+                    font-size: 0.875rem;
+                    font-weight: 600;
+                    cursor: pointer;
+                    transition: all 0.2s;
+                }
+
+                .resume-btn-back {
+                    background: #fff;
+                    color: #374151;
+                    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+                }
+                .resume-btn-back:hover { background: #f3f4f6; }
+
+                .resume-btn-download {
+                    background: #111827;
+                    color: #fff;
+                }
+                .resume-btn-download:hover { background: #1f2937; }
+
+                /* === A4 SHEET === */
+                .resume-a4 {
+                    width: 794px;
+                    min-height: 1123px;
+                    margin: 0 auto;
+                    background: #fff;
+                    box-shadow: 0 4px 40px rgba(0,0,0,0.12);
+                    padding: 48px 56px;
+                    box-sizing: border-box;
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                /* === HEADER === */
+                .resume-header {
+                    margin-bottom: 20px;
+                    padding-bottom: 16px;
+                    border-bottom: 2px solid #111827;
+                }
+
+                .resume-name {
+                    font-size: 28px;
+                    font-weight: 800;
+                    letter-spacing: -0.5px;
+                    margin: 0 0 8px;
+                    color: #111827;
+                }
+
+                .resume-contact-row {
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    gap: 0;
+                    font-size: 12.5px;
+                    color: #4b5563;
+                }
+
+                .resume-contact-row a {
+                    color: #2563eb;
+                    text-decoration: none;
+                }
+                .resume-contact-row a:hover { text-decoration: underline; }
+
+                .resume-sep {
+                    margin: 0 8px;
+                    color: #9ca3af;
+                }
+
+                /* === SECTIONS === */
+                .resume-section {
+                    margin-bottom: 16px;
+                }
+
+                .resume-section-title {
+                    font-size: 13px;
+                    font-weight: 800;
+                    text-transform: uppercase;
+                    letter-spacing: 1.5px;
+                    color: #111827;
+                    margin: 0 0 8px;
+                    padding-bottom: 4px;
+                    border-bottom: 1px solid #e5e7eb;
+                }
+
+                /* === SUMMARY === */
+                .resume-summary-text {
+                    font-size: 13px;
+                    line-height: 1.6;
+                    color: #374151;
+                    margin: 0;
+                }
+
+                /* === SKILLS === */
+                .resume-skills-grid {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 4px;
+                }
+
+                .resume-skill-row {
+                    font-size: 13px;
+                    line-height: 1.5;
+                }
+
+                .resume-skill-category {
+                    font-weight: 700;
+                    color: #111827;
+                }
+
+                .resume-skill-items {
+                    color: #374151;
+                }
+
+                /* === ENTRIES (Projects, Experience, Education) === */
+                .resume-entries {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 12px;
+                }
+
+                .resume-entry {
+                    page-break-inside: avoid;
+                }
+
+                .resume-entry-header {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: baseline;
+                    margin-bottom: 2px;
+                }
+
+                .resume-entry-title {
+                    font-size: 14px;
+                    font-weight: 700;
+                    margin: 0;
+                    color: #111827;
+                }
+
+                .resume-entry-subtitle {
+                    font-size: 12.5px;
+                    color: #6b7280;
+                    font-weight: 500;
+                }
+
+                .resume-entry-date {
+                    font-size: 12px;
+                    color: #6b7280;
+                    font-weight: 600;
+                    white-space: nowrap;
+                }
+
+                .resume-entry-list {
+                    margin: 4px 0 0;
+                    padding-left: 18px;
+                    list-style-type: disc;
+                }
+
+                .resume-entry-list li {
+                    font-size: 12.5px;
+                    line-height: 1.55;
+                    color: #374151;
+                    margin-bottom: 1px;
+                }
+
+                .resume-entry-list li::marker {
+                    color: #9ca3af;
+                }
+
+                .resume-entry-tech {
+                    font-size: 11.5px;
+                    color: #6b7280;
+                    margin-top: 4px;
+                    font-style: italic;
+                }
+
+                /* === FOOTER ROW === */
+                .resume-footer-row {
+                    margin-top: auto;
+                    padding-top: 12px;
+                    border-top: 1px solid #e5e7eb;
+                    display: flex;
+                    gap: 2rem;
+                    font-size: 12.5px;
+                    color: #374151;
+                }
+
+                /* === RESPONSIVE === */
+                @media (max-width: 850px) {
+                    .resume-a4 {
+                        width: 100%;
+                        min-height: auto;
+                        padding: 24px;
+                        box-shadow: none;
+                    }
+                    .resume-entry-header {
+                        flex-direction: column;
+                    }
+                }
+
+                /* === PRINT STYLES === */
+                @media print {
+                    * {
+                        -webkit-print-color-adjust: exact !important;
+                        print-color-adjust: exact !important;
+                    }
+
+                    html, body {
+                        margin: 0 !important;
+                        padding: 0 !important;
+                        background: #fff !important;
+                    }
+
+                    .print-hide {
+                        display: none !important;
+                    }
+
+                    .resume-page-wrapper {
+                        padding: 0 !important;
+                        background: #fff !important;
+                        min-height: auto !important;
+                    }
+
+                    .resume-a4 {
+                        width: 100% !important;
+                        margin: 0 !important;
+                        padding: 40px 48px !important;
+                        box-shadow: none !important;
+                        min-height: auto !important;
+                    }
+
+                    .resume-section { margin-bottom: 14px !important; }
+                    .resume-entries { gap: 10px !important; }
+                    .resume-entry { page-break-inside: avoid; }
+
+                    @page {
+                        size: A4;
+                        margin: 0;
+                    }
+                }
+            `}</style>
         </div>
     );
 }
