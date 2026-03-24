@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Terminal, Cpu, Share2, Shield, Activity, GitBranch, MessageSquare } from 'lucide-react';
+import jarvisLiveImg from '../assets/jarvis_live.png';
 
 export default function JarvisArchitecture({ isActive }) {
     const [activeTab, setActiveTab] = useState('TERMINAL');
@@ -143,23 +144,20 @@ export default function JarvisArchitecture({ isActive }) {
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             className="w-full h-full border border-purple-500/30 rounded-lg bg-black/20 backdrop-blur-sm relative overflow-hidden flex flex-col"
+                            style={{
+                                backgroundImage: `url(${jarvisLiveImg})`,
+                                backgroundSize: 'cover',
+                                backgroundPosition: 'center'
+                            }}
                         >
-                            <div className="absolute inset-0 z-0">
-                                {/* If user is running Jarvis locally, this renders their view */}
-                                <iframe 
-                                    src="http://localhost:7777" 
-                                    className="w-full h-full border-none opacity-90"
-                                    title="Jarvis Live View"
-                                    onError={(e) => console.log('Iframe load error fallback')}
-                                />
-                            </div>
+                            {/* Full High-Fidelity Snapshot background */}
                             
                             {/* Fallback & Helper Overlay */}
                             <div className="absolute inset-0 pointer-events-none z-10 bg-slate-950/20 flex flex-col p-4 justify-between">
                                 <div className="p-3 border border-purple-500/20 rounded-lg bg-slate-900/80 backdrop-blur-md max-w-sm self-end">
-                                    <div className="text-[10px] text-purple-400 font-bold mb-1">LOCAL SUITE DETECTION</div>
+                                    <div className="text-[10px] text-purple-400 font-bold mb-1">LIVE SYSTEM SNAPSHOT</div>
                                     <div className="text-xs text-slate-300">
-                                        This view embeds `localhost:7777` if Jarvis is active on your machine.
+                                        Rendered visual of the local Mission Control architecture dashboard.
                                     </div>
                                 </div>
 
@@ -167,12 +165,12 @@ export default function JarvisArchitecture({ isActive }) {
                                     <div className="p-3 border border-slate-800 rounded-lg bg-slate-900/80 backdrop-blur-md flex flex-col gap-1">
                                         <div className="text-[10px] text-green-400 font-bold">MISSION STATUS</div>
                                         <div className="text-sm font-bold text-white">PLAN EXECUTING</div>
-                                        <div className="text-[10px] text-slate-500">Step 4 of 12 (Deployment Verification)</div>
+                                        <div className="text-[10px] text-slate-500">DeepSeek R1 executing sequence</div>
                                     </div>
                                     <div className="p-3 border border-slate-800 rounded-lg bg-slate-900/80 backdrop-blur-md flex flex-col gap-1">
                                         <div className="text-[10px] text-blue-400 font-bold">ACTIVE CONTROL</div>
                                         <div className="text-sm font-bold text-white">HUMAN-IN-LOOP</div>
-                                        <div className="text-[10px] text-slate-500">Awaiting Telegram Release</div>
+                                        <div className="text-[10px] text-slate-500">Monitoring Node Processes</div>
                                     </div>
                                 </div>
                             </div>
