@@ -3,31 +3,31 @@ export const projects = [
   {
     id: 'symbioflows',
     title: 'SymbioFlows',
-    subtitle: 'Architectural Orchestrator & Founder',
+    subtitle: 'Founder & Lead Developer',
     url: 'https://symbioflows.com',
-    description: 'High-integrity AI architecture for industrial symbiosis. Orchestrates a proprietary data moat of 3M+ material listings, predicting waste streams with 100% financial audit accuracy for $1.5M+ in projected revenue.',
+    description: 'An AI-powered industrial symbiosis marketplace that connects waste producers with recyclers through intelligent matching.',
     color: '#10b981',
-    tech: ['Distributed Systems', 'Orchestration', 'DeepSeek R1', 'High-Integrity Data', 'PostgreSQL'],
+    tech: ['Python', 'Node.js', 'PostgreSQL', 'Supabase', 'DeepSeek R1', 'FastAPI'],
     isFlagship: true,
     details: {
-      problem: "Industrial waste data is fragmented and unstructured. The challenge isn't just coding; it's architecting a system that can trust its own conclusions.",
-      solution: "A production-grade distributed architecture that ingests company profiles and predicts waste streams through a context-aware AI orchestration layer, verified by a deterministic projection engine.",
+      problem: "Industrial waste data is fragmented and unstructured, making it difficult to find sustainable recycling opportunities.",
+      solution: "An AI-driven matching platform that aggregates company profiles and predicts matches to facilitate safer and faster waste valorization.",
       features: [
         {
-          title: "Deterministic Financial Ledger",
-          desc: "Architected a computation layer that models $1.5M+ in revenue creation with 100% accuracy. The logic flow is designed to be mathematically improbable to fail."
+          title: "Intelligent Match Engine",
+          desc: "Integrated DeepSeek R1 for predicting waste streams with guardrails to validate data output."
         },
         {
-          title: "Generative Logic Pipeline",
-          desc: "Multi-stage orchestration where DeepSeek R1 infers data, governed by modular heuristic guardrails (AST-based) that eliminate hallucinations."
+          title: "Ledger Pipeline",
+          desc: "Developed a computation layer for generating financial metrics for potential material matches."
         },
         {
-          title: "Decoupled Micro-Services",
-          desc: "Designed a high-concurrency system where specialized workers handle PDF generation and heavy compute (Python/NumPy) via clean message queues."
+          title: "Service Management",
+          desc: "Handles concurrent users and file processing safely via clean architecture design."
         },
         {
-          title: "Programmatic LOI Generation",
-          desc: "Scaling legal intent through automation. Orchestrated the dynamic population of terms and projections for 500+ concurrent negotiated agreements."
+          title: "Legal Automation",
+          desc: "Dynamic generation of LOIs to streamline pilot project negotiation."
         }
       ]
     },
@@ -48,21 +48,19 @@ export const projects = [
   {
     id: 'jarvis',
     title: 'J.A.R.V.I.S',
-    subtitle: 'Chief Intelligence Architect',
+    subtitle: 'Personal Project',
     url: 'https://github.com/ibraheemmryyian/jarvis',
     component: 'JarvisSimulator',
-    description: 'A local AI command center orchestrating 89 specialized agents across 500+ daily task cycles. Built with a biological-inspired self-healing runtime and a 4-layer kernel-level security sandbox.',
+    description: 'An AI command center orchestrating multiple specialized agents for daily task automation, featuring self-healing error loops.',
     color: '#3b82f6',
-    tech: ['Autonomous Orchestration', 'Self-Healing Loops', 'Security Architecture', 'Local LLMs', 'CNS'],
+    tech: ['Python', 'Node.js', 'FastAPI', 'Multi-Agent Frameworks'],
     isFlagship: true,
     details: {
-      problem: "Modern AI agents are brittle and lack supervision. An elite system requires a robust architecture to handle multi-step autonomous failures.",
-      solution: "A context-aware orchestration platform with a recursive 'immune system' for error correction and a kernel-resident sandbox for safe agent execution.",
+      problem: "Modern AI solutions often require manual supervision. Autonomous workflows need robust error-handling to proceed on failure.",
+      solution: "A multi-agent environment featuring self-healing mechanism logic for autonomous correction flow.",
       features: [
-        { title: 'Universal CNS', desc: 'Codebase Navigation System: A semantic map architected to allow agents to traverse complex dependencies (AST-based) without manual guidance.' },
-        { title: 'Self-Healing Loops', desc: 'Designed a recursive runtime: On failure, the system captures trace, orchestrates an analysis, generates a patch, and auto-resumes.' },
-        { title: '4-Layer Security Sandbox', desc: 'Architected kernel-level interception of syscalls. Blocks dangerous operations at the process level before they can execute.' },
-        { title: 'Agent Swarm Protocol', desc: 'Dynamic orchestration of 89+ specialized agent units based on real-time task complexity analysis.' }
+        { title: 'Self-Healing Loops', desc: 'On failure, the system captures trace, orchestrates an analysis, generates a diagnosis, and auto-resumes.' },
+        { title: 'Code Navigation', desc: 'Allows agents to traverse project dependencies safely using tree-based analysis.' }
       ]
     },
     documentation: [
@@ -75,20 +73,19 @@ export const projects = [
 
   {
     id: 'email-telemetry',
-    title: 'Nexus Analytics',
-    subtitle: 'Forensic Logic Architect',
+    title: 'Email Telemetry Engine',
+    subtitle: 'Personal Project',
     url: 'https://github.com/ibraheemmryyian/nexus-telemetry',
-    description: 'Advanced engagement intelligence system. Architected timing-attack logic and CSS fingerprinting to recover user behavioral data behind privacy proxies.',
+    description: 'An email engagement tracking system that recovers user data behind privacy proxies (Apple Mail, Gmail).',
     color: '#ef4444',
-    tech: ['Forensic Analysis', 'Logic Engineering', 'Timing Attacks', 'Browser Internals'],
+    tech: ['Python', 'Node.js', 'PostgreSQL', 'Browser Internals'],
     isFlagship: true,
     details: {
-      problem: "Privacy proxies (Apple Mail, Gmail) break standard tracking. Resolving this requires architectural ingenuity over simple coding.",
-      solution: "A forensic-grade engine architected using CSS media query leaks and timing heuristics to pierce proxies and recover granular environment data.",
+      problem: "Privacy proxies break standard tracking methods for email analytics.",
+      solution: "An intelligence system built to analyze engagement data safely through proxy-aware mechanisms.",
       features: [
-        { title: 'Fingerprint Recovery', desc: 'Architected logic to identify true devices behind Apple\'s Privacy Proxy using CSS render-path exfiltration and browser engine quirks.' },
-        { title: 'Temporal Heuristics', desc: 'Engineered high-precision dwell time measurement using keep-alive beacons and temporal analysis of network requests.' },
-        { title: 'Reputation Analysis', desc: 'Designed an orchestration layer to filter security scanners and bots based on behavioral reputation and IP history.' }
+        { title: 'Proxy Analysis', desc: 'System identifies engagement metrics safely through device paths.' },
+        { title: 'Precise Exfiltration', desc: 'Heuristics verification covering proxy timing heuristics.' }
       ]
     },
     gitStory: [
@@ -120,18 +117,18 @@ export const projects = [
   {
     id: 'telegravity',
     title: 'TeleGravity',
-    subtitle: 'Infrastructure Architect & Founder',
+    subtitle: 'Personal Project',
     url: 'https://github.com/ibraheemmryyian/telegravity',
-    description: 'High-performance RMM bridge for headless IDE supervision. Architected as the command-link for high-stakes decision pipelines in autonomous deployments.',
+    description: 'An RMM bridge for headless IDE supervision. Built as a command-link for monitoring autonomous deployments.',
     color: '#3b82f6',
-    tech: ['RMM Architecture', 'Logic Supervision', 'VS Code API', 'Security Gates'],
+    tech: ['Node.js', 'Telegram API', 'VS Code API'],
     isFlagship: true,
     details: {
-      problem: "Autonomous agents require 24/7 high-integrity oversight. The challenge is architecting a secure, low-latency bridge outside the desktop environment.",
-      solution: "A master-planned Telegram-to-IDE bridge enabling headless orchestration, real-time log streaming, and deterministic approval logic via mobile.",
+      problem: "Autonomous agents require oversight outside the desktop environment.",
+      solution: "A Telegram-to-IDE bridge enabling live supervision and log streaming via mobile.",
       features: [
-        { title: 'Supervisory Architecture', desc: 'Designed a full-duplex bridge for IDE state capture and terminal streaming over Telegram.' },
-        { title: 'Remote Command Link', desc: 'Architected deterministic "Approve/Reject" cycles, ensuring the human-in-the-loop is never bypassed.' }
+        { title: 'Supervisory Link', desc: 'Connects IDE state capture with simple stream logic over Telegram.' },
+        { title: 'Structure Approval', desc: 'Allows approval cycles to ensure safer validation loops.' }
       ]
     }
   },

@@ -16,19 +16,19 @@ export const timelineData = [
     },
     {
         year: '2024',
-        title: 'AI Engineering',
-        subtitle: 'Architecture & Orchestration',
-        description: 'Designed context-aware orchestration layers and autonomous bots. Focused on structural logic over simple prompt engineering.',
-        tech: ['Infrastructure', 'System Design', 'Orchestration'],
+        title: 'Application Development',
+        subtitle: 'Logic & Automation',
+        description: 'Built automated workflows and tooling. Focused on solving specific problems with software and understanding system logic.',
+        tech: ['Infrastructure', 'FastAPI', 'Automation'],
         link: 'https://github.com/ibraheemmryyian',
         image: intelligenceArchImg
     },
     {
         year: '2025',
-        title: 'Complex Systems',
-        subtitle: 'SymbioFlows & Jarvis',
-        description: 'Architecting full-scale autonomous agent systems and enterprise-grade microservice platforms.',
-        tech: ['System Architecture', 'DeepSeek R1', 'Microservices'],
+        title: 'AI Products',
+        subtitle: 'SymbioFlows & J.A.R.V.I.S',
+        description: 'Building AI-powered products, including an industrial symbiosis marketplace and autonomous agent workflows.',
+        tech: ['Node.js', 'DeepSeek R1', 'Python'],
         link: 'https://symbioflows.com',
         image: symbioImg
     }
