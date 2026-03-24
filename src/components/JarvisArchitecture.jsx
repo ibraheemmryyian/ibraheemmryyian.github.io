@@ -30,7 +30,7 @@ export default function JarvisArchitecture({ isActive }) {
 
     // Log rotation effect
     useEffect(() => {
-        if (!isActive) return;
+        if (!isActive || activeTab !== 'TERMINAL') return;
         let index = 0;
         const interval = setInterval(() => {
             setLogs(prev => {
@@ -41,19 +41,33 @@ export default function JarvisArchitecture({ isActive }) {
             index++;
         }, 1500);
         return () => clearInterval(interval);
-    }, [isActive]);
+    }, [isActive, activeTab]);
 
     return (
         <div className="w-full h-full bg-[#0f172a] font-mono text-xs overflow-hidden flex flex-col border-t border-slate-800">
             {/* Top Bar */}
-            <div className="h-8 bg-slate-950/50 border-b border-slate-800 flex items-center px-4 justify-between backdrop-blur-sm">
-                <div className="flex gap-4">
-                    {Object.entries(features).map(([key, data]) => (
-                        <div key={key} className="flex items-center gap-2">
-                            <span style={{ color: data.color }}>{data.icon}</span>
-                            <span className="text-[10px] font-bold tracking-wider text-slate-400">{key}</span>
-                        </div>
-                    ))}
+            <div className="h-10 bg-slate-950/50 border-b border-slate-800 flex items-center px-4 justify-between backdrop-blur-sm">
+                <div className="flex gap-2">
+                    <button 
+                        onClick={() => setActiveTab('TERMINAL')}
+                        className={`px-3 py-1 rounded-md text-[10px] font-bold tracking-wider transition-all ${
+                            activeTab === 'TERMINAL' 
+                            ? 'bg-blue-500/20 text-blue-400 border border-blue-500/30' 
+                            : 'text-slate-500 hover:text-slate-400'
+                        }`}
+                    >
+                        TERMINAL
+                    </button>
+                    <button 
+                        onClick={() => setActiveTab('LIVE')}
+                        className={`px-3 py-1 rounded-md text-[10px] font-bold tracking-wider transition-all ${
+                            activeTab === 'LIVE' 
+                            ? 'bg-purple-500/20 text-purple-400 border border-purple-500/30' 
+                            : 'text-slate-500 hover:text-slate-400'
+                        }`}
+                    >
+                        LIVE VIEW (7777)
+                    </button>
                 </div>
                 <div className="flex items-center gap-2 text-green-400">
                     <Activity size={12} className="animate-pulse" />
@@ -71,58 +85,99 @@ export default function JarvisArchitecture({ isActive }) {
                 </div>
 
                 {/* Content Container */}
-                <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-4 h-full">
+                <div className="relative z-10 h-full">
+                    {activeTab === 'TERMINAL' ? (
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 h-full">
+                            {/* Left: System Stats */}
+                            <div className="hidden md:flex flex-col gap-4">
+                                <div className="p-3 border border-slate-800 rounded-lg bg-slate-900/50">
+                                    <div className="text-[10px] text-slate-500 mb-2">CPU LOAD (AGENTS)</div>
+                                    <div className="h-16 flex items-end gap-1">
+                                        {[40, 65, 30, 80, 50, 90, 45].map((h, i) => (
+                                            <motion.div
+                                                key={i}
+                                                animate={{ height: `${h + Math.random() * 20}%` }}
+                                                transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+                                                className="flex-1 bg-blue-500/20 rounded-sm"
+                                            />
+                                        ))}
+                                    </div>
+                                </div>
+                                <div className="p-3 border border-slate-800 rounded-lg bg-slate-900/50">
+                                    <div className="text-[10px] text-slate-500 mb-2">MEMORY (VECTOR DB)</div>
+                                    <div className="text-xl font-bold text-purple-400">8.2 GB</div>
+                                    <div className="text-[10px] text-slate-400">Context Window: 128k</div>
+                                </div>
+                            </div>
 
-                    {/* Left: System Stats */}
-                    <div className="hidden md:flex flex-col gap-4">
-                        <div className="p-3 border border-slate-800 rounded-lg bg-slate-900/50">
-                            <div className="text-[10px] text-slate-500 mb-2">CPU LOAD (AGENTS)</div>
-                            <div className="h-16 flex items-end gap-1">
-                                {[40, 65, 30, 80, 50, 90, 45].map((h, i) => (
-                                    <motion.div
-                                        key={i}
-                                        animate={{ height: `${h + Math.random() * 20}%` }}
-                                        transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-                                        className="flex-1 bg-blue-500/20 rounded-sm"
-                                    />
-                                ))}
+                            {/* Middle: Terminal Logs */}
+                            <div className="col-span-2 md:col-span-2 border border-blue-500/30 rounded-lg bg-black/40 p-3 font-mono text-xs md:text-sm shadow-inner relative overflow-hidden flex flex-col justify-end">
+                                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-blue-500/20 to-transparent opacity-50" />
+                                <div className="flex flex-col gap-2 h-full justify-end">
+                                    <AnimatePresence>
+                                        {logs.map((log, i) => (
+                                            <motion.div
+                                                key={i}
+                                                initial={{ opacity: 0, x: -10 }}
+                                                animate={{ opacity: 1, x: 0 }}
+                                                className="flex gap-3"
+                                            >
+                                                <span className="text-blue-400/50">[{new Date().toLocaleTimeString().split(' ')[0]}]</span>
+                                                <span className={`
+                                                    ${log.type === 'cns' ? 'text-purple-400 font-medium' : ''}
+                                                    ${log.type === 'tel' ? 'text-blue-400 font-medium' : ''}
+                                                    ${log.type === 'sec' ? 'text-red-400 font-medium' : ''}
+                                                    ${log.type === 'info' ? 'text-slate-500' : ''}
+                                                    ${log.type === 'agent' ? 'text-green-400 font-medium' : ''}
+                                                `}>
+                                                    {log.type === 'sys' ? <span className="text-amber-400 font-bold">root@jarvis:~# {log.msg}</span> : log.msg}
+                                                </span>
+                                            </motion.div>
+                                        ))}
+                                    </AnimatePresence>
+                                </div>
                             </div>
                         </div>
-                        <div className="p-3 border border-slate-800 rounded-lg bg-slate-900/50">
-                            <div className="text-[10px] text-slate-500 mb-2">MEMORY (VECTOR DB)</div>
-                            <div className="text-xl font-bold text-purple-400">8.2 GB</div>
-                            <div className="text-[10px] text-slate-400">Context Window: 128k</div>
-                        </div>
-                    </div>
+                    ) : (
+                        <motion.div 
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            className="w-full h-full border border-purple-500/30 rounded-lg bg-black/20 backdrop-blur-sm relative overflow-hidden flex flex-col"
+                        >
+                            <div className="absolute inset-0 z-0">
+                                {/* If user is running Jarvis locally, this renders their view */}
+                                <iframe 
+                                    src="http://localhost:7777" 
+                                    className="w-full h-full border-none opacity-90"
+                                    title="Jarvis Live View"
+                                    onError={(e) => console.log('Iframe load error fallback')}
+                                />
+                            </div>
+                            
+                            {/* Fallback & Helper Overlay */}
+                            <div className="absolute inset-0 pointer-events-none z-10 bg-slate-950/20 flex flex-col p-4 justify-between">
+                                <div className="p-3 border border-purple-500/20 rounded-lg bg-slate-900/80 backdrop-blur-md max-w-sm self-end">
+                                    <div className="text-[10px] text-purple-400 font-bold mb-1">LOCAL SUITE DETECTION</div>
+                                    <div className="text-xs text-slate-300">
+                                        This view embeds `localhost:7777` if Jarvis is active on your machine.
+                                    </div>
+                                </div>
 
-                    {/* Middle: Terminal Logs */}
-                    <div className="col-span-2 md:col-span-2 border border-blue-500/30 rounded-lg bg-black/40 p-3 font-mono text-xs md:text-sm shadow-inner relative overflow-hidden">
-                        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-blue-500/20 to-transparent opacity-50" />
-                        <div className="flex flex-col gap-2 h-full justify-end">
-                            <AnimatePresence>
-                                {logs.map((log, i) => (
-                                    <motion.div
-                                        key={i}
-                                        initial={{ opacity: 0, x: -10 }}
-                                        animate={{ opacity: 1, x: 0 }}
-                                        className="flex gap-3"
-                                    >
-                                        <span className="text-blue-400/50">[{new Date().toLocaleTimeString().split(' ')[0]}]</span>
-                                        <span className={`
-                                            ${log.type === 'cns' ? 'text-purple-400 font-medium' : ''}
-                                            ${log.type === 'tel' ? 'text-blue-400 font-medium' : ''}
-                                            ${log.type === 'sec' ? 'text-red-400 font-medium' : ''}
-                                            ${log.type === 'info' ? 'text-slate-500' : ''}
-                                            ${log.type === 'agent' ? 'text-green-400 font-medium' : ''}
-                                        `}>
-                                            {log.type === 'sys' ? <span className="text-amber-400 font-bold">root@jarvis:~# {log.msg}</span> : log.msg}
-                                        </span>
-                                    </motion.div>
-                                ))}
-                            </AnimatePresence>
-                        </div>
-                    </div>
-
+                                <div className="grid grid-cols-2 gap-4 max-w-sm">
+                                    <div className="p-3 border border-slate-800 rounded-lg bg-slate-900/80 backdrop-blur-md flex flex-col gap-1">
+                                        <div className="text-[10px] text-green-400 font-bold">MISSION STATUS</div>
+                                        <div className="text-sm font-bold text-white">PLAN EXECUTING</div>
+                                        <div className="text-[10px] text-slate-500">Step 4 of 12 (Deployment Verification)</div>
+                                    </div>
+                                    <div className="p-3 border border-slate-800 rounded-lg bg-slate-900/80 backdrop-blur-md flex flex-col gap-1">
+                                        <div className="text-[10px] text-blue-400 font-bold">ACTIVE CONTROL</div>
+                                        <div className="text-sm font-bold text-white">HUMAN-IN-LOOP</div>
+                                        <div className="text-[10px] text-slate-500">Awaiting Telegram Release</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </motion.div>
+                    )}
                 </div>
             </div>
 
