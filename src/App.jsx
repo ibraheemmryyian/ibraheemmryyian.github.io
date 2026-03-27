@@ -23,8 +23,8 @@ function App() {
   };
 
   // Group projects
-  const aiProjects = projects.filter(p => ['symbioflows', 'jarvis', 'telegravity'].includes(p.id));
-  const frontendProjects = projects.filter(p => !['symbioflows', 'jarvis'].includes(p.id));
+  const aiProjects = projects.filter(p => ['symbioflows', 'veiktuor', 'telegravity'].includes(p.id));
+  const frontendProjects = projects.filter(p => !['symbioflows', 'veiktuor'].includes(p.id));
 
   // JSON-LD Structured Data (Schema.org)
   const schema = {
@@ -77,7 +77,7 @@ function App() {
             )}
           </AnimatePresence>
 
-          <header className="hero min-h-[60vh] flex flex-col justify-center">
+          <header className="hero min-h-[40vh] flex flex-col justify-center">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -99,15 +99,24 @@ function App() {
                 className="brand-subtitle flex items-center gap-4"
               >
                 <span className="w-12 h-[1px] bg-accent" />
-                High-Performance AI Engineering
+                AI & Software Engineering
               </motion.div>
             </motion.div>
+
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.55, duration: 0.8 }}
+              className="text-text-secondary text-base mt-4 max-w-sm"
+            >
+              Computer Engineering student. I build AI-driven software on the side.
+            </motion.p>
 
             <motion.div
               className="social-links"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.6, duration: 0.8 }}
+              transition={{ delay: 0.7, duration: 0.8 }}
             >
               <SocialLink href="https://github.com/ibraheemmryyian" icon={Github} />
               <SocialLink href="mailto:imrryyian@gmail.com" icon={Mail} />
@@ -128,13 +137,13 @@ function App() {
 
           {/* TIMELINE SECTION */}
           <section className="portfolio-section">
-            <h2 className="section-title">The Evolution</h2>
+            <h2 className="section-title">Background</h2>
             <Timeline />
           </section>
 
           {/* Section 1: AI Infrastructure */}
           <section className="portfolio-section">
-            <h2 className="section-title">Intelligence Infrastructure</h2>
+            <h2 className="section-title">Projects</h2>
             <div className="project-grid featured">
               {aiProjects.map((project) => (
                 <PortalCard
@@ -150,7 +159,7 @@ function App() {
 
           {/* Section 2: Frontend Experiences */}
           <section className="portfolio-section">
-            <h2 className="section-title">Digital Experiences</h2>
+            <h2 className="section-title">More Projects</h2>
             <div className="project-grid standard">
               {frontendProjects.map((project) => (
                 <PortalCard
@@ -166,8 +175,8 @@ function App() {
 
           {/* Section 3: Technical Deep Dives */}
           <section className="portfolio-section architecture-section">
-            <h2 className="section-title">Technical Deep Dives</h2>
-            <p className="section-intro">Explore the architecture and engineering decisions behind each flagship project.</p>
+            <h2 className="section-title">Under the Hood</h2>
+            <p className="section-intro">How some of these actually work.</p>
             <div className="architecture-grid">
               {aiProjects.filter(p => p.documentation).map((project) => (
                 <motion.div
@@ -204,7 +213,7 @@ function App() {
           </section>
 
           <footer className="footer">
-            <p>© 2025 Ibraheem Mryyian. Advanced Engineering Portfolio.</p>
+            <p>© 2025 Ibraheem Mryyian.</p>
           </footer>
         </>
       )}

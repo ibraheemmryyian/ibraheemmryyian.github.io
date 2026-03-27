@@ -1,10 +1,10 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import JarvisFlowDiagram from './JarvisFlowDiagram';
+import VeiktuorFlowDiagram from './VeiktuorFlowDiagram';
 
 const COMPONENT_MAP = {
-    'JarvisFlowDiagram': <JarvisFlowDiagram />
+    'VeiktuorFlowDiagram': <VeiktuorFlowDiagram />
 };
 
 export default function TechnicalDocs({ project }) {
@@ -22,9 +22,8 @@ export default function TechnicalDocs({ project }) {
                 {/* Header */}
                 <header className="border-b border-neutral-200 pb-8">
                     <h1 className="text-4xl font-bold mb-2 text-neutral-900">
-                        {project.title} <span className="text-accent">Architecture</span>
+                        {project.title}
                     </h1>
-                    <p className="text-xl text-neutral-600">{project.subtitle}</p>
                 </header>
 
                 {/* Git Story / Development Log */}

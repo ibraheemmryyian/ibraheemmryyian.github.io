@@ -14,42 +14,39 @@ export default function Mission() {
                     className="space-y-12"
                 >
                     <div className="space-y-4">
-                        <h2 className="text-xs font-bold tracking-[0.5em] text-accent uppercase opacity-50">
-                            Protocol 00
-                        </h2>
                         <h3 className="text-4xl md:text-5xl font-medium tracking-tight">
-                            The Architecture of <span className="text-reveal">Result.</span>
+                            What I focus on
                         </h3>
                     </div>
 
                     <div className="text-xl md:text-2xl text-text-secondary leading-relaxed font-light border-l border-accent/20 pl-8 py-2">
-                        "Reliability is not an achievement; it is a requirement. I design systems where failure is mathematically improbable and manual intervention is a legacy concept. The goal is silence."
+                        "I write software that does a specific thing reliably. If it breaks, I want to know exactly why and exactly how to fix it."
                     </div>
 
                     <p className="text-lg text-text-secondary/80 leading-relaxed max-w-3xl">
-                        I specialize in <strong className="text-text-primary">high-integrity architectural orchestration</strong> and autonomous drift correction. My focus is on the delta between a functioning system and a master-planned one. I don't just build to impress; I architect to finish.
+                        I'm a 19-year-old Computer Engineering student who builds AI-driven products in my own time. Currently working on <strong className="text-text-primary">SymbioFlows</strong> — an industrial waste marketplace — and <strong className="text-text-primary">Veiktuor</strong>, a personal automation assistant.
                     </p>
 
                     <div className="grid md:grid-cols-2 gap-8 pt-4">
                         <MissionCard
                             icon={Shield}
-                            title="Architectural Integrity"
-                            desc="Security and stability as foundational constants, not secondary layers."
+                            title="Reliability"
+                            desc="Making sure things actually work before launch — not after."
                         />
                         <MissionCard
                             icon={Zap}
-                            title="Clinical Orchestration"
-                            desc="Agentic systems designed for independent problem-solving and self-healing."
+                            title="Automation first"
+                            desc="If I'm doing something more than twice, I write a script."
                         />
                         <MissionCard
                             icon={Target}
-                            title="Systemic Scaling"
-                            desc="Expanding capacity without expanding complexity or overhead."
+                            title="Clean backends"
+                            desc="Simple structure that doesn't collapse under load."
                         />
                         <MissionCard
                             icon={Coffee}
-                            title="Deterministic Execution"
-                            desc="Technical delivery stripped of drama. Results-only orientation."
+                            title="Shipping"
+                            desc="I finish what I start."
                         />
                     </div>
                 </motion.div>

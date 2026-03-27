@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-export default function JarvisFlowDiagram() {
+export default function VeiktuorFlowDiagram() {
     return (
         <div style={{
             width: '100%',

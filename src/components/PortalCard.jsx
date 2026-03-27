@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink, Maximize2 } from 'lucide-react';
-import JarvisArchitecture from './JarvisArchitecture';
+import VeiktuorArchitecture from './VeiktuorArchitecture';
 import TechnicalDocs from './TechnicalDocs';
 
 export default function PortalCard({ project, isExpanded, onExpand, onClose }) {
     const [isHovered, setIsHovered] = useState(false);
     const isGitHub = project.url?.includes('github.com');
-    const [view, setView] = useState((isGitHub && project.documentation) ? 'docs' : 'preview'); // 'preview' or 'docs'
+    const noEmbed = project.noEmbed || isGitHub;
+    const [view, setView] = useState((noEmbed && project.documentation) ? 'docs' : 'preview'); // 'preview' or 'docs'
 
     // If this card is fully expanded, we allow interaction with the iframe
-    const isInteractive = isExpanded && view === 'preview';
+    const isInteractive = isExpanded && view === 'preview' && !noEmbed;
 
     return (
         <motion.div
@@ -52,18 +53,18 @@ export default function PortalCard({ project, isExpanded, onExpand, onClose }) {
                                     onClick={(e) => { e.stopPropagation(); setView('preview'); }}
                                     className={`px-3 py-1.5 rounded-md transition-colors ${view === 'preview' ? 'bg-white shadow-sm text-blue-600' : 'text-gray-500 hover:text-gray-900'}`}
                                 >
-                                    {isGitHub ? 'GitHub Link' : 'Live Preview'}
+                                    {noEmbed ? 'View Project' : 'Live Preview'}
                                 </button>
                                 <button
                                     onClick={(e) => { e.stopPropagation(); setView('docs'); }}
                                     className={`px-3 py-1.5 rounded-md transition-colors ${view === 'docs' ? 'bg-white shadow-sm text-blue-600' : 'text-gray-500 hover:text-gray-900'}`}
                                 >
-                                    System Architecture
+                                    How it works
                                 </button>
                             </div>
                         )}
                         <button className="close-btn" onClick={(e) => { e.stopPropagation(); onClose(); }}>
-                            Close Portal
+                            Close
                         </button>
                     </div>
                 )}
@@ -75,14 +76,13 @@ export default function PortalCard({ project, isExpanded, onExpand, onClose }) {
                     <TechnicalDocs project={project} />
                 ) : (
                     <>
-                        {project.component === 'JarvisSimulator' ? (
-                            <JarvisArchitecture isActive={isInteractive} />
-                        ) : isGitHub ? (
+                        {project.component === 'VeiktuorSimulator' ? (
+                            <VeiktuorArchitecture isActive={isInteractive} />
+                        ) : noEmbed ? (
                             <div className="flex flex-col items-center justify-center h-full bg-gray-50 p-8 text-center space-y-6">
                                 <div className="p-6 bg-white rounded-2xl border border-gray-200 shadow-sm max-w-md">
-                                    <h4 className="text-xl font-bold mb-2">Repository Signal detected</h4>
                                     <p className="text-neutral-600 text-sm mb-6">
-                                        GitHub prevents architectural embedding via iframe for security. Enter the source link directly to inspect the logic.
+                                        {project.description}
                                     </p>
                                     <a
                                         href={project.url}
@@ -90,7 +90,7 @@ export default function PortalCard({ project, isExpanded, onExpand, onClose }) {
                                         rel="noopener noreferrer"
                                         className="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-2 rounded-lg font-bold hover:bg-blue-700 transition-colors"
                                     >
-                                        Inspect Source Code <ExternalLink size={16} />
+                                        View on GitHub <ExternalLink size={16} />
                                     </a>
                                 </div>
                             </div>
@@ -107,7 +107,7 @@ export default function PortalCard({ project, isExpanded, onExpand, onClose }) {
                             />
                         )}
                         {/* Overlay to prevent interaction when not expanded */}
-                        {!isInteractive && !isGitHub && <div className="portal-overlay" />}
+                        {!isInteractive && !noEmbed && <div className="portal-overlay" />}
                     </>
                 )}
             </div>
@@ -123,7 +123,7 @@ export default function PortalCard({ project, isExpanded, onExpand, onClose }) {
                     <div className="tech-stack">
                         {project.tech?.map(t => <span key={t} className="tag">{t}</span>)}
                     </div>
-                    <div className="hint">Click to Enter Portal</div>
+                    <div className="hint">View Project</div>
                 </motion.div>
             )}
         </motion.div>

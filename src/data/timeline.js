@@ -26,7 +26,7 @@ export const timelineData = [
     {
         year: '2025',
         title: 'AI Products',
-        subtitle: 'SymbioFlows & J.A.R.V.I.S',
+        subtitle: 'SymbioFlows & Veiktuor',
         description: 'Building AI-powered products, including an industrial symbiosis marketplace and autonomous agent workflows.',
         tech: ['Node.js', 'DeepSeek R1', 'Python'],
         link: 'https://symbioflows.com',

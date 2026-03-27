@@ -2,9 +2,9 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Terminal, Cpu, Share2, Shield, Activity, GitBranch, MessageSquare } from 'lucide-react';
-import jarvisLiveImg from '../assets/jarvis_live.png';
+import veiktuorLiveImg from '../assets/veiktuor_live.png';
 
-export default function JarvisArchitecture({ isActive }) {
+export default function VeiktuorArchitecture({ isActive }) {
     const [activeTab, setActiveTab] = useState('TERMINAL');
     const [logs, setLogs] = useState([]);
 
@@ -16,7 +16,7 @@ export default function JarvisArchitecture({ isActive }) {
     };
 
     const bootSequence = [
-        { type: 'sys', msg: 'J.A.R.V.I.S kernel_v2.4.0 active' },
+        { type: 'sys', msg: 'Veiktuor kernel_v2.4.0 active' },
         { type: 'sys', msg: 'Loading neural interface...' },
         { type: 'info', msg: 'Connecting to local LLM (DeepSeek-R1-Distill)... OK' },
         { type: 'cns', msg: 'CNS: Indexing repository... 1,024 nodes found.' },
@@ -131,7 +131,7 @@ export default function JarvisArchitecture({ isActive }) {
                                                     ${log.type === 'info' ? 'text-slate-500' : ''}
                                                     ${log.type === 'agent' ? 'text-green-400 font-medium' : ''}
                                                 `}>
-                                                    {log.type === 'sys' ? <span className="text-amber-400 font-bold">root@jarvis:~# {log.msg}</span> : log.msg}
+                                                    {log.type === 'sys' ? <span className="text-amber-400 font-bold">root@veiktuor:~# {log.msg}</span> : log.msg}
                                                 </span>
                                             </motion.div>
                                         ))}
@@ -145,7 +145,7 @@ export default function JarvisArchitecture({ isActive }) {
                             animate={{ opacity: 1 }}
                             className="w-full h-full border border-purple-500/30 rounded-lg bg-black/20 backdrop-blur-sm relative overflow-hidden flex flex-col"
                             style={{
-                                backgroundImage: `url(${jarvisLiveImg})`,
+                                backgroundImage: `url(${veiktuorLiveImg})`,
                                 backgroundSize: 'cover',
                                 backgroundPosition: 'center'
                             }}

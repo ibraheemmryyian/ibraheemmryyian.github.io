@@ -3,70 +3,70 @@ export const projects = [
   {
     id: 'symbioflows',
     title: 'SymbioFlows',
-    subtitle: 'Founder & Lead Developer',
+    subtitle: 'Founder & Developer',
     url: 'https://symbioflows.com',
-    description: 'An AI-powered industrial symbiosis marketplace that connects waste producers with recyclers through intelligent matching.',
+    description: 'A marketplace that matches industrial waste producers with buyers using LLM-assisted classification and financial reporting.',
     color: '#10b981',
     tech: ['Python', 'Node.js', 'PostgreSQL', 'Supabase', 'DeepSeek R1', 'FastAPI'],
     isFlagship: true,
     details: {
-      problem: "Industrial waste data is fragmented and unstructured, making it difficult to find sustainable recycling opportunities.",
-      solution: "An AI-driven matching platform that aggregates company profiles and predicts matches to facilitate safer and faster waste valorization.",
+      problem: "Industrial waste data is fragmented and unstructured, making it hard to find recycling buyers.",
+      solution: "An AI-assisted matching platform that classifies waste streams and generates financial projections for each potential match.",
       features: [
         {
-          title: "Intelligent Match Engine",
-          desc: "Integrated DeepSeek R1 for predicting waste streams with guardrails to validate data output."
+          title: "Matching Engine",
+          desc: "Uses DeepSeek R1 to classify waste streams, with hard-coded heuristics to validate outputs before they surface."
         },
         {
-          title: "Ledger Pipeline",
-          desc: "Developed a computation layer for generating financial metrics for potential material matches."
+          title: "Financial Projection",
+          desc: "Calculates NPV and projected revenue for each matched material pair."
         },
         {
-          title: "Service Management",
-          desc: "Handles concurrent users and file processing safely via clean architecture design."
+          title: "Concurrent Processing",
+          desc: "Handles multiple users and file uploads simultaneously without blocking."
         },
         {
           title: "Legal Automation",
-          desc: "Dynamic generation of LOIs to streamline pilot project negotiation."
+          desc: "Generates Letters of Intent automatically to speed up pilot project negotiations."
         }
       ]
     },
     gitStory: [
       { date: '2024-08-15', message: 'arch: Core microservices structure finalized' },
-      { date: '2024-10-20', message: 'feat: Orchestrated Financial Projection Engine with verified market data' },
-      { date: '2024-11-10', message: 'perf: Refined heuristic validation logic (latency < 100ms)' },
-      { date: '2024-12-05', message: 'audit: Production Readiness Audit - Passed 100% System Integrity' }
+      { date: '2024-10-20', message: 'feat: Financial projection engine with verified market data' },
+      { date: '2024-11-10', message: 'perf: Heuristic validation layer (latency < 100ms)' },
+      { date: '2024-12-05', message: 'audit: Production readiness audit — passed 100% system integrity' }
     ],
     documentation: [
       {
-        title: "Architecture: The Symbio Orchestrator",
-        content: "A master-planned distributed system. Every state transition is architected to ensure data integrity.\n\n1. Normalization: Raw data ingestion.\n2. AI Inference: Orchestrated prediction of waste streams.\n3. Logic Guardrails: Heuristic verification layer.\n4. Financial Projection: Deterministic NPV and IRR computation."
+        title: "How the pipeline works",
+        content: "A multi-step pipeline: raw data comes in, gets normalized, fed into the AI for classification, validated by hard rules, then a financial report is generated.\n\n1. Normalization: Raw data ingestion and cleaning.\n2. AI Inference: DeepSeek R1 classifies waste streams.\n3. Validation: Heuristic guardrails reject bad outputs.\n4. Financial Projection: Deterministic NPV and IRR computation."
       }
     ]
   },
 
   {
-    id: 'jarvis',
-    title: 'J.A.R.V.I.S',
+    id: 'veiktuor',
+    title: 'Veiktuor',
     subtitle: 'Personal Project',
-    url: 'https://github.com/ibraheemmryyian/jarvis',
-    component: 'JarvisSimulator',
-    description: 'An AI command center orchestrating multiple specialized agents for daily task automation, featuring self-healing error loops.',
+    url: 'https://github.com/ibraheemmryyian/veiktuor',
+    component: 'VeiktuorSimulator',
+    description: 'A local multi-agent assistant that handles automation tasks. When a step fails, it captures the error, analyzes it, and retries automatically.',
     color: '#3b82f6',
-    tech: ['Python', 'Node.js', 'FastAPI', 'Multi-Agent Frameworks'],
+    tech: ['Python', 'Node.js', 'FastAPI', 'Local LLMs', 'AST Parsing'],
     isFlagship: true,
     details: {
-      problem: "Modern AI solutions often require manual supervision. Autonomous workflows need robust error-handling to proceed on failure.",
-      solution: "A multi-agent environment featuring self-healing mechanism logic for autonomous correction flow.",
+      problem: "Running complex multi-step tasks without crashing halfway through.",
+      solution: "A multi-agent environment with automatic error recovery — when something fails, the system diagnoses and retries without manual intervention.",
       features: [
-        { title: 'Self-Healing Loops', desc: 'On failure, the system captures trace, orchestrates an analysis, generates a diagnosis, and auto-resumes.' },
-        { title: 'Code Navigation', desc: 'Allows agents to traverse project dependencies safely using tree-based analysis.' }
+        { title: 'Error Recovery', desc: 'On failure, the system captures the trace, runs a diagnosis, generates a fix, and resumes.' },
+        { title: 'Code Navigation', desc: 'Agents can traverse project file dependencies using an AST-based index — no manual context injection needed.' }
       ]
     },
     documentation: [
       {
-        title: "The CNS Architecture",
-        content: "CNS is the architectural foundation. It's a semantic graph that eliminates the need for manual context injection using tree-sitter based indexing."
+        title: "The CNS Code Index",
+        content: "A code index built with tree-sitter that maps file dependencies across the project. Agents use it to understand the codebase structure without needing manual context injection."
       }
     ]
   },
@@ -76,41 +76,41 @@ export const projects = [
     title: 'Email Telemetry Engine',
     subtitle: 'Personal Project',
     url: 'https://github.com/ibraheemmryyian/nexus-telemetry',
-    description: 'An email engagement tracking system that recovers user data behind privacy proxies (Apple Mail, Gmail).',
+    description: 'An email tracking system that works around Apple Mail and Gmail privacy proxies using CSS media queries and timing techniques.',
     color: '#ef4444',
-    tech: ['Python', 'Node.js', 'PostgreSQL', 'Browser Internals'],
+    tech: ['Python', 'Node.js', 'PostgreSQL', 'JavaScript', 'CSS'],
     isFlagship: true,
     details: {
-      problem: "Privacy proxies break standard tracking methods for email analytics.",
-      solution: "An intelligence system built to analyze engagement data safely through proxy-aware mechanisms.",
+      problem: "Privacy proxies (Apple Mail, Gmail) break standard open-tracking pixels.",
+      solution: "A system that infers client environment and engagement using CSS media queries and request timing analysis.",
       features: [
-        { title: 'Proxy Analysis', desc: 'System identifies engagement metrics safely through device paths.' },
-        { title: 'Precise Exfiltration', desc: 'Heuristics verification covering proxy timing heuristics.' }
+        { title: 'Proxy Detection', desc: 'Identifies whether a request came from a privacy proxy or the real client by analyzing timing and headers.' },
+        { title: 'Timing Analysis', desc: 'Uses heuristics on proxy response timing to infer real device engagement.' }
       ]
     },
     gitStory: [
-      { date: '2024-01-10', message: 'arch: Forensic beacon infrastructure setup' },
-      { date: '2024-01-15', message: 'feat: Orchestrated CSS exfiltration for device recovery' },
-      { date: '2024-01-22', message: 'algo: Designed timing-attack logic for proxy penetration' },
-      { date: '2024-01-28', message: 'ui: Real-time telemetry orchestration dashboard' }
+      { date: '2024-01-10', message: 'arch: Beacon infrastructure setup' },
+      { date: '2024-01-15', message: 'feat: CSS media query fingerprinting' },
+      { date: '2024-01-22', message: 'algo: Timing heuristics for proxy identification' },
+      { date: '2024-01-28', message: 'ui: Real-time telemetry dashboard' }
     ]
   },
 
   {
     id: 'gnn',
     title: 'GNN Visualizer',
-    subtitle: 'High-Performance UI Architect',
+    subtitle: 'Personal Project',
     url: 'https://gnn.vercel.app/demo',
-    description: 'Physics-based visualization architecture for Message Passing in Graph Neural Networks. Engineered for real-time pedagogical clarity.',
+    description: 'Interactive visualizer for how message passing works in Graph Neural Networks. Switches between SVG and WebGL depending on graph size.',
     color: '#8b5cf6',
-    tech: ['UI Architecture', 'Physics Engines', 'WebGL Integration', 'D3.js'],
+    tech: ['React', 'D3.js', 'WebGL', 'SVG'],
     details: {
-      problem: "Aggregation and message passing are abstract concepts. Understanding them requires a visual architecture that mirrors the underlying math.",
-      solution: "A hybrid rendering system architected to switch between SVG and WebGL depending on graph complexity and user interaction.",
+      problem: "Message passing in GNNs is hard to understand from equations alone.",
+      solution: "A visual playground where you can watch aggregation happen step-by-step on a live graph.",
       features: [
-        { title: 'Hybrid Render Design', desc: 'Engineered seamless context switching between high-interaction SVG and high-performance WebGL.' },
-        { title: 'Spatial Optimization', desc: 'Architected real-time force-directed layouts using Barnes-Hut approximations for efficient spatial partitioning.' },
-        { title: 'Logic Playground', desc: 'Designed an interactive environment for live execution of Dijkstra and Louvain algorithms.' }
+        { title: 'Hybrid Rendering', desc: 'Switches between SVG for small graphs and WebGL for large ones to stay performant.' },
+        { title: 'Force Layout', desc: 'Uses Barnes-Hut approximation for real-time force-directed positioning.' },
+        { title: 'Algorithm Playground', desc: 'Lets you run Dijkstra and Louvain on the graph interactively.' }
       ]
     }
   },
@@ -119,26 +119,27 @@ export const projects = [
     title: 'TeleGravity',
     subtitle: 'Personal Project',
     url: 'https://github.com/ibraheemmryyian/telegravity',
-    description: 'An RMM bridge for headless IDE supervision. Built as a command-link for monitoring autonomous deployments.',
+    description: 'A Telegram bot that connects to VS Code so I can monitor and control agents from my phone.',
     color: '#3b82f6',
     tech: ['Node.js', 'Telegram API', 'VS Code API'],
     isFlagship: true,
     details: {
-      problem: "Autonomous agents require oversight outside the desktop environment.",
-      solution: "A Telegram-to-IDE bridge enabling live supervision and log streaming via mobile.",
+      problem: "Autonomous agents run unattended — hard to monitor without sitting at the desktop.",
+      solution: "A Telegram-to-VS Code bridge that streams logs and lets me approve or reject agent actions from mobile.",
       features: [
-        { title: 'Supervisory Link', desc: 'Connects IDE state capture with simple stream logic over Telegram.' },
-        { title: 'Structure Approval', desc: 'Allows approval cycles to ensure safer validation loops.' }
+        { title: 'Log Streaming', desc: 'Pipes terminal output to Telegram in real time.' },
+        { title: 'Approval Workflows', desc: 'Agent actions requiring confirmation wait for a Telegram reply before proceeding.' }
       ]
     }
   },
   {
     id: 'betterteams',
     title: 'BetterTeams',
-    subtitle: 'SaaS Solutions Architect',
+    subtitle: 'Personal Project',
     url: 'https://betterteams.vercel.app/demo',
-    description: 'Workforce optimization platform. Architected for streamlined team management and task distribution logic.',
+    description: 'A workforce management tool for task distribution and team tracking.',
     color: '#f97316',
-    tech: ['Modular UI Architecture', 'System Design', 'Supabase', 'Vercel']
+    noEmbed: true,
+    tech: ['React', 'Supabase', 'Vercel']
   }
 ];

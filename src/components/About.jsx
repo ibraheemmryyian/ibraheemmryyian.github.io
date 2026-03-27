@@ -1,6 +1,6 @@
 
 import { motion } from 'framer-motion';
-import { Terminal, Cpu, Globe } from 'lucide-react';
+import { Terminal, Globe } from 'lucide-react';
 
 export default function About() {
     return (
@@ -14,19 +14,17 @@ export default function About() {
                 >
                     <div className="space-y-6">
                         <h2 className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-slate-500">
-                            Beyond the Code
+                            About me
                         </h2>
                         <p className="text-lg text-text-secondary leading-relaxed">
-                            I am an architect obsessed with <span className="text-accent">system orchestration</span> and <span className="text-accent">structural integrity</span>.
-                            My work centers on the high-stakes logic required to deploy autonomous agentic workforces at scale.
+                            I mostly work at the backend and infrastructure level — databases, APIs, and the plumbing that connects them.
                         </p>
                         <p className="text-text-secondary leading-relaxed">
-                            Currently, I'm architecting <strong className="text-text-primary">SymbioFlows</strong>, an industrial waste valorization platform, and <strong className="text-text-primary">Jarvis</strong>, a local autonomous agent ecosystem. I specialize in turning complex logic puzzles into self-healing architectural frameworks.
+                            Currently building <strong className="text-text-primary">SymbioFlows</strong>, an industrial waste marketplace, and <strong className="text-text-primary">Veiktuor</strong>, a local agent assistant that handles recurring automation tasks.
                         </p>
 
-                        <div className="grid grid-cols-3 gap-4 pt-6">
+                        <div className="grid grid-cols-2 gap-4 pt-6">
                             <Stat icon={Terminal} label="Commits" value="2k+" />
-                            <Stat icon={Cpu} label="Agents" value="57" />
                             <Stat icon={Globe} label="Deployments" value="100+" />
                         </div>
                     </div>
@@ -36,24 +34,20 @@ export default function About() {
                         <div className="relative p-8 bg-white rounded-lg border border-gray-100 shadow-sm">
                             <h3 className="text-xl font-bold mb-4 flex items-center">
                                 <Terminal className="mr-2 text-accent" size={20} />
-                                Current Focus
+                                What I'm working on
                             </h3>
                             <ul className="space-y-3 text-text-secondary">
                                 <li className="flex items-start">
                                     <span className="mr-2 text-accent">▹</span>
-                                    Agentic Workflows & Self-Healing Systems
+                                    SymbioFlows — AI-assisted industrial waste marketplace
                                 </li>
                                 <li className="flex items-start">
                                     <span className="mr-2 text-accent">▹</span>
-                                    High-Performance React/Node.js Architectures
+                                    Veiktuor — local multi-agent automation system
                                 </li>
                                 <li className="flex items-start">
                                     <span className="mr-2 text-accent">▹</span>
-                                    Industrial Data Valorization & Sustainability
-                                </li>
-                                <li className="flex items-start">
-                                    <span className="mr-2 text-accent">▹</span>
-                                    Privacy-first Telemetry & Analytics
+                                    B.Sc. Computer Engineering @ Hashemite University
                                 </li>
                             </ul>
                         </div>

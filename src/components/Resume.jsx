@@ -45,7 +45,7 @@ export default function Resume({ onBack }) {
                     <h2 className="resume-section-title">Summary</h2>
                     <p className="resume-summary-text">
                         Startup founder and Computer Engineering student. I build AI-powered products — from an industrial symbiosis marketplace
-                        (SymbioFlows) to a multi-agent AI assistant (J.A.R.V.I.S) — and I've been pitching investors since I was 18.
+                        (SymbioFlows) to a multi-agent AI assistant (Veiktuor) — and I've been pitching investors since I was 18.
                         Strongest with AI-driven backends and shipping fast with modern tooling.
                     </p>
                 </section>
@@ -88,7 +88,7 @@ export default function Resume({ onBack }) {
                         <div className="resume-entry">
                             <div className="resume-entry-header">
                                 <div>
-                                    <h3 className="resume-entry-title">J.A.R.V.I.S</h3>
+                                    <h3 className="resume-entry-title">Veiktuor</h3>
                                     <span className="resume-entry-subtitle">Personal Project</span>
                                 </div>
                                 <span className="resume-entry-date">2025 — Present</span>
